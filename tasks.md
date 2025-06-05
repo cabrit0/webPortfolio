@@ -158,11 +158,11 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ### 4.3. Sections
 
-- [ ] HeroSection
-- [ ] AboutSection
-- [ ] ProjectsSection
-- [ ] ContactSection
-- [ ] FooterSection
+- [x] HeroSection
+- [x] AboutSection
+- [x] ProjectsSection
+- [x] ContactSection
+- [x] FooterSection
 
 ---
 
