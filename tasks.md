@@ -21,7 +21,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [x] **Opção A (Recomendada)**: Inicializar com Next.js 14 + React + TypeScript
 - [ ] **Opção B**: Inicializar projeto com Vite + React + TypeScript
 - [x] Instalar TailwindCSS para styling utilitário
-- [ ] Instalar Shadcn/ui para componentes modernos e acessíveis
+- [x] Instalar Shadcn/ui para componentes modernos e acessíveis
 - [ ] Instalar React Router (se Vite) ou usar App Router (se Next.js)
 - [ ] Instalar Framer Motion para animações suaves
 - [ ] Instalar GSAP para animações profissionais avançadas
