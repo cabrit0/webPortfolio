@@ -242,7 +242,7 @@ export default function PortfolioDemo() {
         ]}
         showTechnologies={true}
         showBackToTop={true}
-        copyright="© 2024 João Cabrito. All rights reserved."
+        copyright="© 2025 João Filipe Campos Cabrito. All rights reserved."
       />
     </div>
   )

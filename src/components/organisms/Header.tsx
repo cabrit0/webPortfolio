@@ -188,7 +188,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   onClick={toggleDrawer}
                   className="p-2 hover:bg-brand-primary/10 transition-colors group"
                 >
-                  <Icon name="menu" size="md" className="group-hover:scale-110 transition-transform" />
+                  <Icon name="menu" size="default" className="group-hover:scale-110 transition-transform" />
                   <span className="hidden md:inline ml-2 font-medium">Menu</span>
                 </Button>
               </motion.div>

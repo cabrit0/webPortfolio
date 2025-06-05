@@ -10,6 +10,7 @@ import GlitchText from "@/components/animations/GlitchText"
 import ParallaxSection from "@/components/animations/ParallaxSection"
 import { fadeInUp, fadeInDown, staggerContainer, staggerItem } from "@/lib/animations"
 import { Header } from "@/components/organisms"
+import { personalInfo, projects, technologies } from "@/data/profile"
 
 export default function Home() {
   const handleCtaClick = () => {
@@ -60,7 +61,7 @@ export default function Home() {
             <AnimatedSection animation={fadeInDown}>
               <TypographyH1 className="text-6xl md:text-8xl lg:text-9xl mb-6 text-geist-tight">
                 <GlitchText
-                  text="João Cabrito"
+                  text={personalInfo.name}
                   triggerOnHover={true}
                   autoGlitch={false}
                   className="font-display font-black tracking-tighter bg-gradient-to-r from-white via-white to-brand-accent/80 bg-clip-text text-transparent"
@@ -72,7 +73,7 @@ export default function Home() {
           <AnimatedSection animation={fadeInUp} delay={0.3} className="mb-16">
             <TypographyLead className="text-3xl md:text-4xl lg:text-5xl text-neutral-300 max-w-4xl mx-auto mb-8 text-geist-display">
               <TypewriterText
-                text="Developer & AI Enthusiast"
+                text={personalInfo.title}
                 delay={0.5}
                 speed={80}
                 className="font-medium tracking-tight bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent"
@@ -80,8 +81,7 @@ export default function Home() {
             </TypographyLead>
             <div className="max-w-3xl mx-auto">
               <TypographyLead className="text-xl md:text-2xl text-neutral-400 leading-relaxed font-light">
-                Creating <span className="text-brand-accent font-medium">exceptional digital experiences</span> with cutting-edge technology,
-                innovative design, and <span className="text-brand-primary font-medium">meticulous attention to detail</span>.
+                {personalInfo.description}
               </TypographyLead>
             </div>
           </AnimatedSection>
@@ -106,103 +106,43 @@ export default function Home() {
           </AnimatedSection>
         </AnimatedSection>
 
-        {/* Professional Tech Stack Showcase */}
+        {/* Tech Stack Showcase */}
         <ParallaxSection speed={0.3} className="max-w-6xl mx-auto">
           <AnimatedSection animation={fadeInUp} delay={0.8}>
             <Card className="glass-effect professional-shadow relative overflow-hidden">
-              {/* Professional gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 via-brand-secondary/5 to-brand-accent/5"></div>
 
               <CardHeader className="relative z-10 text-center pb-8">
                 <CardTitle className="text-3xl md:text-4xl font-display font-bold mb-4">
                   <GradientText>
-                    Professional Design System
+                    Tecnologias
                   </GradientText>
                 </CardTitle>
                 <CardDescription className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-                  A comprehensive design system built with cutting-edge technologies,
-                  cinematic animations, and meticulous attention to professional details.
+                  Linguagens e ferramentas que utilizo para criar soluções inovadoras
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="relative z-10">
-                {/* Technology Stack */}
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-4 text-center">Technology Stack</h3>
                   <AnimatedSection animation={staggerContainer} className="flex flex-wrap justify-center gap-3 mb-8">
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-brand-primary to-brand-primary/80 hover:from-brand-primary/90 hover:to-brand-primary/70 transition-all duration-300">
-                        React 18
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-neutral-700 to-neutral-800 hover:from-neutral-600 hover:to-neutral-700 transition-all duration-300">
-                        Next.js 15
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge variant="outline" className="px-4 py-2 text-sm font-medium border-brand-secondary/50 text-brand-secondary hover:bg-brand-secondary/10 transition-all duration-300">
-                        TypeScript
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-brand-accent to-brand-accent/80 hover:from-brand-accent/90 hover:to-brand-accent/70 transition-all duration-300">
-                        TailwindCSS
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-brand-secondary to-brand-secondary/80 hover:from-brand-secondary/90 hover:to-brand-secondary/70 transition-all duration-300">
-                        Shadcn/ui
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-500 hover:to-pink-600 transition-all duration-300">
-                        Framer Motion
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 transition-all duration-300">
-                        GSAP
-                      </Badge>
-                    </AnimatedSection>
-                    <AnimatedSection animation={staggerItem}>
-                      <Badge className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 transition-all duration-300">
-                        Lenis
-                      </Badge>
-                    </AnimatedSection>
+                    {[
+                      { name: "JavaScript", gradient: "from-yellow-500 to-yellow-600" },
+                      { name: "Python", gradient: "from-blue-500 to-blue-600" },
+                      { name: "React", gradient: "from-cyan-500 to-cyan-600" },
+                      { name: "Node.js", gradient: "from-green-500 to-green-600" },
+                      { name: "Flutter", gradient: "from-blue-400 to-blue-500" },
+                      { name: "MongoDB", gradient: "from-green-600 to-green-700" },
+                      { name: "PyTorch", gradient: "from-orange-500 to-orange-600" },
+                      { name: "Java", gradient: "from-red-500 to-red-600" }
+                    ].map((tech, index) => (
+                      <AnimatedSection key={tech.name} animation={staggerItem}>
+                        <Badge className={`px-4 py-2 text-sm font-medium bg-gradient-to-r ${tech.gradient} hover:scale-105 transition-all duration-300 text-white`}>
+                          {tech.name}
+                        </Badge>
+                      </AnimatedSection>
+                    ))}
                   </AnimatedSection>
-                </div>
-
-                {/* Professional Features */}
-                <div className="grid md:grid-cols-2 gap-6 text-neutral-300">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
-                      <span className="font-medium">Magnetic Interactions</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand-secondary rounded-full"></div>
-                      <span className="font-medium">Cinematic Animations</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand-accent rounded-full"></div>
-                      <span className="font-medium">Smooth Scrolling</span>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand-success rounded-full"></div>
-                      <span className="font-medium">Professional Typography</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand-warning rounded-full"></div>
-                      <span className="font-medium">Responsive Design</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                      <span className="font-medium">Accessibility First</span>
-                    </div>
-                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -226,14 +166,19 @@ export default function Home() {
                       />
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="text-center space-y-4">
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      Passionate developer with expertise in AI, multimedia technologies, and modern web development.
-                      Creating exceptional digital experiences with cutting-edge animations and interactions.
-                    </p>
+                  <CardContent className="text-center space-y-6">
+                    <div className="space-y-4">
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        Frontend Developer com competências autodidatas e espírito criativo. <span className="text-brand-primary font-medium">Finalista</span> da Licenciatura em Informática e Multimédia na <span className="text-brand-accent font-medium">ESTCB (IPCB)</span> com muito bom aproveitamento.
+                      </p>
+                      <p className="text-base text-muted-foreground leading-relaxed">
+                        Procuro uma mudança de carreira para alinhar com a minha <span className="text-brand-primary font-medium">paixão pela programação</span>.
+                        De <span className="text-brand-accent font-medium">Castelo Branco</span>, com o mantra <span className="text-brand-primary font-medium italic">&ldquo;{personalInfo.mantra}&rdquo;</span>.
+                      </p>
+                    </div>
                     <div className="flex justify-center">
                       <MagneticButton variant="outline" magneticStrength={0.3}>
-                        Learn More
+                        Ver Mais Sobre Mim
                       </MagneticButton>
                     </div>
                   </CardContent>
@@ -259,21 +204,22 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {[
-                        { name: "AI Portfolio Assistant", tech: ["React", "TypeScript", "OpenAI"] },
-                        { name: "Modern E-commerce", tech: ["Next.js", "Stripe", "Prisma"] },
-                        { name: "Real-time Chat App", tech: ["Node.js", "Socket.io", "MongoDB"] },
-                        { name: "Data Visualization", tech: ["D3.js", "Python", "FastAPI"] }
-                      ].map((project, index) => (
-                        <AnimatedSection key={project.name} animation={staggerItem} delay={index * 0.1}>
-                          <div className="p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-border/30">
-                            <h4 className="text-lg font-semibold mb-2">{project.name}</h4>
+                      {projects.filter(p => p.featured).slice(0, 4).map((project, index) => (
+                        <AnimatedSection key={project.title} animation={staggerItem} delay={index * 0.1}>
+                          <div className="p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-border/30 hover:border-brand-primary/30 transition-all duration-300">
+                            <h4 className="text-lg font-semibold mb-2 text-foreground">{project.title}</h4>
+                            <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{project.description}</p>
                             <div className="flex flex-wrap gap-2">
-                              {project.tech.map((tech) => (
+                              {project.technologies.slice(0, 3).map((tech) => (
                                 <Badge key={tech} variant="outline" className="text-xs">
                                   {tech}
                                 </Badge>
                               ))}
+                              {project.technologies.length > 3 && (
+                                <Badge variant="outline" className="text-xs opacity-60">
+                                  +{project.technologies.length - 3}
+                                </Badge>
+                              )}
                             </div>
                           </div>
                         </AnimatedSection>
@@ -300,13 +246,18 @@ export default function Home() {
                       />
                     </CardTitle>
                     <CardDescription className="text-center text-lg">
-                      Ready to create something amazing together?
+                      Pronto para criar algo incrível juntos?
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-center space-y-6">
-                    <p className="text-muted-foreground">
-                      Let&apos;s discuss your next project and bring your ideas to life with cutting-edge technology.
-                    </p>
+                    <div className="space-y-2">
+                      <p className="text-muted-foreground">
+                        Procuro oportunidades na área da programação para pôr em prática o conhecimento adquirido.
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Disponível imediatamente para oportunidades full-time • <span className="text-brand-primary">{personalInfo.location}</span>
+                      </p>
+                    </div>
                     <div className="flex gap-4 justify-center">
                       <MagneticButton
                         variant="default"

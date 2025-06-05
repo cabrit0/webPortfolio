@@ -4,17 +4,19 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { TypographyH2, TypographyH3, TypographyP } from "@/components/ui/typography"
 import { Avatar, Icon, Separator } from "@/components/atoms"
 import { TechStack, FeatureGrid } from "@/components/molecules"
 import AnimatedSection from "@/components/animations/AnimatedSection"
 import ParallaxSection from "@/components/animations/ParallaxSection"
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem } from "@/lib/animations"
+import { experience, education, socialSkills } from "@/data/profile"
 
 export interface Skill {
   name: string
   level: number // 0-100
-  category: 'frontend' | 'backend' | 'database' | 'tool' | 'language'
+  category: 'frontend' | 'backend' | 'mobile' | 'database' | 'ai' | 'tool' | 'language'
 }
 
 export interface AboutSectionProps {
@@ -248,6 +250,129 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
               }))}
               columns={3}
             />
+          </AnimatedSection>
+
+          {/* Experience & Education Timeline */}
+          <AnimatedSection animation={fadeInUp} className="mt-20">
+            <div className="text-center mb-12">
+              <TypographyH3 className="mb-4">Experiência & Formação</TypographyH3>
+              <TypographyP className="text-neutral-400 max-w-2xl mx-auto">
+                A minha jornada profissional e académica
+              </TypographyP>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+
+              {/* Experience */}
+              <div>
+                <h4 className="text-xl font-semibold mb-6 text-brand-primary">Experiência Profissional</h4>
+                <div className="space-y-6">
+                  {experience.map((exp, index) => (
+                    <motion.div
+                      key={exp.company}
+                      className="relative pl-8 pb-6 border-l-2 border-brand-primary/30 last:border-l-0"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                    >
+                      <div className="absolute -left-2 top-0 w-4 h-4 bg-brand-primary rounded-full"></div>
+                      <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border border-border/30">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="font-semibold text-foreground">{exp.position}</h5>
+                          <span className="text-sm text-muted-foreground">{exp.period}</span>
+                        </div>
+                        <p className="text-brand-primary font-medium mb-2">{exp.company}</p>
+                        <p className="text-sm text-muted-foreground mb-3">{exp.description}</p>
+                        <div className="flex flex-wrap gap-1">
+                          {exp.technologies.map((tech) => (
+                            <Badge key={tech} variant="outline" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Education */}
+              <div>
+                <h4 className="text-xl font-semibold mb-6 text-brand-secondary">Formação Académica</h4>
+                <div className="space-y-6">
+                  {education.map((edu, index) => (
+                    <motion.div
+                      key={edu.institution}
+                      className="relative pl-8 pb-6 border-l-2 border-brand-secondary/30 last:border-l-0"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                    >
+                      <div className="absolute -left-2 top-0 w-4 h-4 bg-brand-secondary rounded-full"></div>
+                      <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border border-border/30">
+                        <div className="flex justify-between items-start mb-2">
+                          <h5 className="font-semibold text-foreground">{edu.degree}</h5>
+                          <span className="text-sm text-muted-foreground">{edu.period}</span>
+                        </div>
+                        <p className="text-brand-secondary font-medium mb-1">{edu.institution}</p>
+                        <p className="text-sm text-muted-foreground mb-2">{edu.location}</p>
+                        <Badge
+                          variant={edu.status === 'completed' ? 'default' : 'outline'}
+                          className="text-xs"
+                        >
+                          {edu.status === 'completed' ? 'Concluído' : 'Em Curso'}
+                        </Badge>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </AnimatedSection>
+
+          {/* Social Skills */}
+          <AnimatedSection animation={fadeInUp} className="mt-20">
+            <div className="text-center mb-12">
+              <TypographyH3 className="mb-4">Competências Sociais</TypographyH3>
+              <TypographyP className="text-neutral-400 max-w-2xl mx-auto">
+                Destaco-me pela excelência na comunicação e capacidade de trabalho em equipa
+              </TypographyP>
+            </div>
+
+            <Card className="glass-effect">
+              <CardContent className="p-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {socialSkills.map((skill, index) => (
+                    <motion.div
+                      key={skill}
+                      className="flex items-start gap-3 p-4 rounded-lg bg-gradient-to-r from-brand-primary/5 to-brand-secondary/5 hover:from-brand-primary/10 hover:to-brand-secondary/10 transition-all duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                    >
+                      <div className="w-2 h-2 bg-brand-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground leading-relaxed">{skill}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </AnimatedSection>
 
         </div>

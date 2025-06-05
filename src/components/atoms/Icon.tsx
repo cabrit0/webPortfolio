@@ -4,13 +4,13 @@ import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ExternalLink, 
-  Download, 
-  ArrowRight, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Download,
+  ArrowRight,
   ArrowLeft,
   ArrowUp,
   ArrowDown,
@@ -37,6 +37,10 @@ import {
   ChevronLeft,
   ChevronUp,
   ChevronDown,
+  Building,
+  Smartphone,
+  Database,
+  Gamepad2,
   type LucideIcon
 } from "lucide-react"
 
@@ -82,12 +86,20 @@ const iconRegistry = {
   code: Code,
   palette: Palette,
   zap: Zap,
-  
+  database: Database,
+
   // Engagement
   star: Star,
   heart: Heart,
   eye: Eye,
-  
+
+  // Business
+  building: Building,
+
+  // Devices
+  smartphone: Smartphone,
+  gamepad: Gamepad2,
+
   // Theme
   moon: Moon,
   sun: Sun,

@@ -233,7 +233,7 @@ export default function DrawerMenu({
                     size="lg"
                     onClick={handleCloseWithAnimation}
                     className="back-button group px-6 py-3 hover:bg-brand-primary/10 transition-all duration-300 rounded-xl border border-border/30 hover:border-brand-primary/50 hover:shadow-lg"
-                    leftIcon={<Icon name="arrow-left" size="md" className="group-hover:-translate-x-1 transition-transform duration-300" />}
+                    leftIcon={<Icon name="arrowLeft" size="default" className="group-hover:-translate-x-1 transition-transform duration-300" />}
                   >
                     <span className="text-lg font-medium group-hover:text-brand-primary transition-colors duration-300">
                       Voltar
@@ -284,18 +284,18 @@ export default function DrawerMenu({
               <div className="p-8 border-t border-border/30 space-y-6">
                 <div className="text-center">
                   <p className="text-2xl font-medium text-brand-accent mb-2 italic">
-                    "Com calma e com alma"
+                    &ldquo;Com calma e com alma&rdquo;
                   </p>
                   <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto">
-                    "O importante não é aquilo que fazemos da nossa vida, mas aquilo que a nossa vida faz de nós."
+                    &ldquo;O importante não é aquilo que fazemos da nossa vida, mas aquilo que a nossa vida faz de nós.&rdquo;
                   </p>
                   <p className="text-sm text-muted-foreground/70 mt-2">
                     — Agostinho da Silva
                   </p>
                 </div>
                 <div className="text-center text-sm text-muted-foreground border-t border-border/20 pt-4">
-                  <p>© 2024 João Cabrito</p>
-                  <p className="mt-1">Developer & AI Enthusiast</p>
+                  <p>© 2025 João Filipe Campos Cabrito</p>
+                  <p className="mt-1">Frontend Developer</p>
                 </div>
               </div>
             </div>

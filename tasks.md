@@ -194,7 +194,67 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ---
 
-## 🎥 6. Animações e Interações Avançadas
+## 📋 6. Planeamento e Estrutura das Secções
+
+### 🎯 Análise do Perfil
+- [x] **Developer experiente** com stack completo (Frontend + Backend + Mobile + AI)
+- [x] **Projetos diversificados** (Web, Mobile, AI/ML, Sistemas)
+- [x] **Formação sólida** (Técnico + Licenciatura em curso)
+- [x] **Experiência profissional** (Dinefer + Estágios)
+- [x] **Competências sociais** fortes (comunicação, trabalho em equipa)
+
+### 🏗️ Estrutura das Secções Definida
+
+#### 1. 🏠 HOME/HERO *(Já implementada)*
+- [x] **Status**: Completa
+- [x] **Conteúdo**: Nome, título, call-to-actions
+
+#### 2. 👨‍💻 ABOUT
+- [x] **Intro pessoal** melhorada (mais cativante que o CV)
+- [x] **Jornada profissional** (timeline visual)
+- [x] **Paixões e motivações**
+- [x] **Localização** (Castelo Branco, Portugal)
+- [x] **Mantra**: "Com calma e com alma"
+
+#### 3. 💼 EXPERIENCE & SKILLS
+- [x] **Skills técnicas** (com níveis visuais)
+  - [x] Frontend: React, JavaScript, HTML/CSS, Tailwind
+  - [x] Backend: Node.js, Express.js, Python, PHP
+  - [x] Mobile: Flutter, Dart
+  - [x] Database: MongoDB, SQL
+  - [x] AI/ML: PyTorch, YOLO, OpenCV
+  - [x] Tools: Git, Unity, C#
+- [x] **Experiência profissional** (Dinefer, MobileTec, Horus Gaming)
+- [x] **Educação** (IEFP + ESTCB)
+- [x] **Competências sociais** destacadas (secção dedicada implementada)
+
+#### 4. 🚀 PROJECTS
+- [ ] **6 projetos principais** do CV
+  - [ ] Software Reconhecimento Visual (YOLO, PyTorch, Python)
+  - [ ] Website Feira de Emprego (HTML, Tailwind, JavaScript)
+  - [ ] Fitness4U (React, Tailwind, Node.js, MongoDB)
+  - [ ] Faltas4U (React, ChakraUI, Node.js, MongoDB)
+  - [ ] CryptoPartner (React, CSS)
+  - [ ] Contact with Login System (HTML, CSS, JavaScript, Node.js)
+- [ ] **Filtros por tecnologia** (React, Python, Mobile, etc.)
+- [ ] **Cards interativos** com demos/links
+- [ ] **Destaque**: Projeto de AI (reconhecimento visual)
+
+#### 5. 📞 CONTACT
+- [ ] **Informações de contacto**
+- [ ] **Formulário de contacto**
+- [ ] **Links sociais** (LinkedIn, GitHub)
+- [ ] **Disponibilidade** para projetos
+
+### 🎨 Melhorias de Texto Propostas
+- [ ] **About - Versão melhorada**: Texto mais cativante e storytelling
+- [ ] **Skills - Categorização**: Organização por áreas técnicas
+- [ ] **Projects - Descrições**: Textos mais impactantes para cada projeto
+- [ ] **Experience - Timeline**: Narrativa da jornada profissional
+
+---
+
+## 🎥 7. Animações e Interações Avançadas
 
 - [ ] **GSAP ScrollTrigger**: Animações complexas baseadas no scroll
 - [ ] **Framer Motion**: Animações de página e componentes
@@ -210,7 +270,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ---
 
-## 📱 7. Responsividade
+## 📱 8. Responsividade
 
 - [ ] Garantir que o layout funciona em:
   - [ ] Mobile (vertical)
@@ -221,7 +281,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ---
 
-## ⚙️ 8. Performance e Otimização Moderna
+## ⚙️ 9. Performance e Otimização Moderna
 
 - [ ] **Next.js optimizations**: Image component, font optimization
 - [ ] **Modern formats**: WebP, AVIF para imagens
@@ -235,7 +295,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ---
 
-## 🔐 9. Acessibilidade (a11y)
+## 🔐 10. Acessibilidade (a11y)
 
 - [ ] Alt em todas as imagens
 - [ ] Labels associados aos inputs
@@ -244,7 +304,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ---
 
-## 📤 10. Deploy
+## 📤 11. Deploy
 
 - [ ] Gerar build final com Vite
 - [ ] Fazer deploy em Vercel (ligar com GitHub)
@@ -254,11 +314,11 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ## ✅ 11. Commits Simples (boas práticas)
 
-- [ ] Usar mensagens simples e claras, por exemplo:
-  - [ ] `init: setup inicial do projeto`
-  - [ ] `feat: criar secção Hero`
-  - [ ] `style: aplicar paleta de cores`
-  - [ ] `fix: ajustar layout mobile dos projetos`
+- [x] Usar mensagens simples e claras, por exemplo:
+  - [x] `init: setup inicial do projeto`
+  - [x] `feat: criar secção Hero`
+  - [x] `style: aplicar paleta de cores`
+  - [x] `fix: ajustar layout mobile dos projetos`
 
 ---
 
