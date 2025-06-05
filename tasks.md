@@ -23,7 +23,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [x] Instalar TailwindCSS para styling utilitário
 - [x] Instalar Shadcn/ui para componentes modernos e acessíveis
 - [ ] Instalar React Router (se Vite) ou usar App Router (se Next.js)
-- [ ] Instalar Framer Motion para animações suaves
+- [x] Instalar Framer Motion para animações suaves
 - [ ] Instalar GSAP para animações profissionais avançadas
 - [ ] Instalar Lenis para smooth scrolling ultra-suave
 - [ ] Instalar Three.js + React Three Fiber para elementos 3D
