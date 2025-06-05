@@ -92,6 +92,8 @@ export const skills: Skill[] = [
   // Database
   { name: "MongoDB", level: 85, category: 'database' },
   { name: "SQL", level: 85, category: 'database' },
+  { name: "MySQL", level: 80, category: 'database' },
+  { name: "SQLite", level: 75, category: 'database' },
 
   // AI/ML
   { name: "PyTorch", level: 80, category: 'ai' },
@@ -214,6 +216,22 @@ export const projects: Project[] = [
     category: 'web',
     featured: false,
     image: "/images/projects/portfolio.jpg"
+  },
+  {
+    title: "Gestor de Gastos Financeiros",
+    description: "Aplicação móvel desenvolvida em Flutter para gestão pessoal de finanças. Permite aos utilizadores registar despesas e receitas, categorizar gastos, visualizar relatórios detalhados e acompanhar o orçamento mensal. Interface intuitiva com gráficos interativos para análise de padrões de consumo e controlo financeiro eficaz.",
+    technologies: ["Flutter", "Dart", "SQLite", "Charts"],
+    category: 'mobile',
+    featured: true,
+    image: "/images/projects/expense-manager.jpg"
+  },
+  {
+    title: "Sistema de Gestão de Bilhetes e Viagens",
+    description: "Aplicação web completa para gestão de bilhetes, viagens, rotas e clientes. Sistema desenvolvido para empresas de transporte com funcionalidades de reserva de bilhetes, gestão de rotas, controlo de clientes e relatórios administrativos. Interface responsiva com painel administrativo para gestão completa do sistema.",
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    category: 'web',
+    featured: true,
+    image: "/images/projects/travel-management.jpg"
   }
 ]
 
@@ -222,7 +240,7 @@ export const technologies = {
   frontend: ["React", "JavaScript", "HTML", "CSS", "TailwindCSS", "ChakraUI", "Bootstrap", "Sass"],
   backend: ["Node.js", "Express.js", "Python", "PHP"],
   mobile: ["Flutter", "Dart"],
-  database: ["MongoDB", "SQL"],
+  database: ["MongoDB", "SQL", "MySQL", "SQLite"],
   ai: ["PyTorch", "YOLO", "OpenCV", "LabelIMG"],
   tools: ["Unity", "Git", "Redux"],
   languages: ["JavaScript", "Python", "Java", "C", "Dart", "PHP"]

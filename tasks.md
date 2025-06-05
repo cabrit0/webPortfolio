@@ -229,16 +229,19 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [x] **Competências sociais** destacadas (secção dedicada implementada)
 
 #### 4. 🚀 PROJECTS
-- [ ] **6 projetos principais** do CV
-  - [ ] Software Reconhecimento Visual (YOLO, PyTorch, Python)
-  - [ ] Website Feira de Emprego (HTML, Tailwind, JavaScript)
-  - [ ] Fitness4U (React, Tailwind, Node.js, MongoDB)
-  - [ ] Faltas4U (React, ChakraUI, Node.js, MongoDB)
-  - [ ] CryptoPartner (React, CSS)
-  - [ ] Contact with Login System (HTML, CSS, JavaScript, Node.js)
-- [ ] **Filtros por tecnologia** (React, Python, Mobile, etc.)
-- [ ] **Cards interativos** com demos/links
-- [ ] **Destaque**: Projeto de AI (reconhecimento visual)
+- [x] **9 projetos principais** do CV
+  - [x] Software Reconhecimento Visual (YOLO, PyTorch, Python)
+  - [x] Website Feira de Emprego (HTML, Tailwind, JavaScript)
+  - [x] Fitness4U (React, Tailwind, Node.js, MongoDB)
+  - [x] Faltas4U (React, ChakraUI, Node.js, MongoDB)
+  - [x] CryptoPartner (React, CSS)
+  - [x] Contact with Login System (HTML, CSS, JavaScript, Node.js)
+  - [x] **Gestor de Gastos Financeiros** (Flutter, Dart, SQLite)
+  - [x] **Sistema de Gestão de Bilhetes e Viagens** (PHP, MySQL, HTML, CSS)
+  - [x] Personal Portfolio (HTML, CSS, Bootstrap, Sass)
+- [x] **Cards interativos** com demos/links
+- [x] **Destaque**: Projeto de AI (reconhecimento visual)
+- [x] **Diversidade**: Web, Mobile, AI, Backend
 
 #### 5. 📞 CONTACT
 - [ ] **Informações de contacto**

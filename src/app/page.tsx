@@ -130,11 +130,11 @@ export default function Home() {
                       { name: "JavaScript", gradient: "from-yellow-500 to-yellow-600" },
                       { name: "Python", gradient: "from-blue-500 to-blue-600" },
                       { name: "React", gradient: "from-cyan-500 to-cyan-600" },
-                      { name: "Node.js", gradient: "from-green-500 to-green-600" },
                       { name: "Flutter", gradient: "from-blue-400 to-blue-500" },
-                      { name: "MongoDB", gradient: "from-green-600 to-green-700" },
-                      { name: "PyTorch", gradient: "from-orange-500 to-orange-600" },
-                      { name: "Java", gradient: "from-red-500 to-red-600" }
+                      { name: "PHP", gradient: "from-purple-500 to-purple-600" },
+                      { name: "Node.js", gradient: "from-green-500 to-green-600" },
+                      { name: "MySQL", gradient: "from-orange-500 to-orange-600" },
+                      { name: "PyTorch", gradient: "from-red-500 to-red-600" }
                     ].map((tech, index) => (
                       <AnimatedSection key={tech.name} animation={staggerItem}>
                         <Badge className={`px-4 py-2 text-sm font-medium bg-gradient-to-r ${tech.gradient} hover:scale-105 transition-all duration-300 text-white`}>

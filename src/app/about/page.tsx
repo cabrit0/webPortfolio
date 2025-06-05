@@ -29,7 +29,7 @@ export default function AboutPage() {
     },
     {
       title: "Desenvolvimento Mobile",
-      description: "Aplicações móveis cross-platform com Flutter e Dart para Android e iOS.",
+      description: "Aplicações móveis cross-platform com Flutter e Dart, incluindo gestores financeiros e sistemas de controlo.",
       icon: "smartphone"
     },
     {
@@ -39,12 +39,12 @@ export default function AboutPage() {
     },
     {
       title: "Backend Development",
-      description: "APIs e sistemas backend com Node.js, Express.js, Python e PHP.",
-      icon: "database"
+      description: "APIs e sistemas backend com Node.js, Express.js, Python e PHP para gestão de dados complexos.",
+      icon: "code"
     },
     {
       title: "Bases de Dados",
-      description: "Gestão de dados com MongoDB e SQL para aplicações web e mobile.",
+      description: "Gestão de dados com MongoDB, MySQL, SQLite e SQL para aplicações web e mobile.",
       icon: "database"
     },
     {
@@ -56,8 +56,8 @@ export default function AboutPage() {
 
   // Stats based on real experience
   const stats = [
-    { label: "Projetos", value: "7+", icon: "briefcase" },
-    { label: "Tecnologias", value: "15+", icon: "code" },
+    { label: "Projetos", value: "9+", icon: "briefcase" },
+    { label: "Tecnologias", value: "17+", icon: "code" },
     { label: "Finalista", value: "2025", icon: "star" },
     { label: "Trabalhador-Estudante", value: "2+ anos", icon: "building" }
   ]
