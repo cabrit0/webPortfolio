@@ -2,12 +2,12 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TypographyH2, TypographyH3, TypographyP } from "@/components/ui/typography"
-import { 
-  Button, 
-  Input, 
+import {
+  Button,
+  Input,
   Textarea,
-  Icon, 
-  IconButton, 
+  Icon,
+  IconButton,
   SocialIcon,
   Avatar,
   AvatarGroup,
@@ -17,6 +17,15 @@ import {
   SkeletonCard,
   SkeletonText
 } from "@/components/atoms"
+import {
+  ProjectCard,
+  ContactForm,
+  TechBadge,
+  TechStack,
+  FeatureCard,
+  FeatureGrid,
+  TestimonialCard
+} from "@/components/molecules"
 import AnimatedSection from "@/components/animations/AnimatedSection"
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations"
 
@@ -214,6 +223,188 @@ export default function ComponentsDemo() {
                   <TypographyP className="mb-4 text-sm font-medium">Card Skeleton</TypographyP>
                   <SkeletonCard showAvatar showImage={false} />
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        {/* Molecules Section */}
+        <AnimatedSection animation={fadeInUp}>
+          <div className="text-center mb-12">
+            <TypographyH2 className="mb-4">
+              Molecule Components
+            </TypographyH2>
+            <TypographyP className="text-lg text-neutral-400 max-w-2xl mx-auto">
+              Complex components built by combining atoms for sophisticated functionality.
+            </TypographyP>
+          </div>
+        </AnimatedSection>
+
+        {/* Project Cards */}
+        <AnimatedSection animation={fadeInUp}>
+          <Card className="glass-effect">
+            <CardHeader>
+              <TypographyH3>Project Cards</TypographyH3>
+              <CardDescription>
+                Sophisticated project showcase cards with hover effects and interactions
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ProjectCard
+                  title="Portfolio Website"
+                  description="A modern, responsive portfolio built with Next.js, TypeScript, and Framer Motion. Features smooth animations and professional design."
+                  technologies={["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"]}
+                  liveUrl="https://example.com"
+                  githubUrl="https://github.com/example"
+                  featured
+                />
+                <ProjectCard
+                  title="E-commerce Platform"
+                  description="Full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management."
+                  technologies={["React", "Node.js", "MongoDB", "Stripe"]}
+                  liveUrl="https://example.com"
+                  githubUrl="https://github.com/example"
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        {/* Tech Badges */}
+        <AnimatedSection animation={fadeInUp}>
+          <Card className="glass-effect">
+            <CardHeader>
+              <TypographyH3>Technology Badges</TypographyH3>
+              <CardDescription>
+                Animated technology badges with icons and color coding
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div>
+                  <TypographyP className="mb-3 text-sm font-medium">Default Variant</TypographyP>
+                  <TechStack
+                    technologies={["React", "Next.js", "TypeScript", "TailwindCSS", "Framer Motion"]}
+                    variant="default"
+                  />
+                </div>
+                <div>
+                  <TypographyP className="mb-3 text-sm font-medium">Outlined Variant</TypographyP>
+                  <TechStack
+                    technologies={["Node.js", "Express", "MongoDB", "PostgreSQL"]}
+                    variant="outlined"
+                  />
+                </div>
+                <div>
+                  <TypographyP className="mb-3 text-sm font-medium">Glow Variant</TypographyP>
+                  <TechStack
+                    technologies={["Python", "FastAPI", "Docker", "Git"]}
+                    variant="glow"
+                    interactive
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        {/* Feature Cards */}
+        <AnimatedSection animation={fadeInUp}>
+          <Card className="glass-effect">
+            <CardHeader>
+              <TypographyH3>Feature Cards</TypographyH3>
+              <CardDescription>
+                Highlight key features and capabilities with elegant cards
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <FeatureGrid
+                features={[
+                  {
+                    title: "Responsive Design",
+                    description: "Fully responsive layouts that work perfectly on all devices and screen sizes.",
+                    icon: "palette",
+                    variant: "glass"
+                  },
+                  {
+                    title: "Performance Optimized",
+                    description: "Built with performance in mind, featuring lazy loading and optimized assets.",
+                    icon: "zap",
+                    variant: "gradient"
+                  },
+                  {
+                    title: "Modern Stack",
+                    description: "Using the latest technologies and best practices for maintainable code.",
+                    icon: "code",
+                    variant: "default"
+                  }
+                ]}
+                columns={3}
+                interactive
+              />
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        {/* Contact Form */}
+        <AnimatedSection animation={fadeInUp}>
+          <Card className="glass-effect">
+            <CardHeader>
+              <TypographyH3>Contact Form</TypographyH3>
+              <CardDescription>
+                Professional contact form with validation and status feedback
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="max-w-2xl mx-auto">
+                <ContactForm
+                  variant="minimal"
+                  title="Get In Touch"
+                  description="Let's discuss your next project"
+                  onSubmit={async (data) => {
+                    console.log('Form submitted:', data)
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 2000))
+                  }}
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        {/* Testimonials */}
+        <AnimatedSection animation={fadeInUp}>
+          <Card className="glass-effect">
+            <CardHeader>
+              <TypographyH3>Testimonials</TypographyH3>
+              <CardDescription>
+                Client testimonials and feedback cards
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6">
+                <TestimonialCard
+                  quote="Exceptional work! The attention to detail and professional approach made our project a huge success."
+                  author={{
+                    name: "Sarah Johnson",
+                    role: "Product Manager",
+                    company: "TechCorp",
+                    avatar: undefined
+                  }}
+                  rating={5}
+                  variant="featured"
+                />
+                <TestimonialCard
+                  quote="Outstanding technical skills and great communication throughout the entire development process."
+                  author={{
+                    name: "Michael Chen",
+                    role: "CTO",
+                    company: "StartupXYZ"
+                  }}
+                  rating={5}
+                  variant="glass"
+                />
               </div>
             </CardContent>
           </Card>

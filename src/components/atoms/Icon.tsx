@@ -262,7 +262,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 IconButton.displayName = "IconButton"
 
 // Social Icon component for social media links
-export interface SocialIconProps extends IconButtonProps {
+export interface SocialIconProps extends Omit<IconButtonProps, 'name'> {
   href?: string
   platform: "github" | "linkedin" | "mail"
 }

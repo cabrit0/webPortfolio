@@ -147,14 +147,14 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ### 4.2. Molecules
 
-- [ ] Cartão de Projeto
-  - [ ] Imagem
-  - [ ] Nome
-  - [ ] Stack (tags)
-  - [ ] Botões
-- [ ] Formulário de Contacto
-  - [ ] Campos estilizados com bordas suaves
-  - [ ] Validação básica (formato email, campos obrigatórios)
+- [x] Cartão de Projeto
+  - [x] Imagem
+  - [x] Nome
+  - [x] Stack (tags)
+  - [x] Botões
+- [x] Formulário de Contacto
+  - [x] Campos estilizados com bordas suaves
+  - [x] Validação básica (formato email, campos obrigatórios)
 
 ### 4.3. Sections
 
