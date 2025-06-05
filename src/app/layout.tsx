@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import SmoothScrollProvider from '@/components/providers/SmoothScrollProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +23,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={inter.className}>
-        {children}
+        <SmoothScrollProvider
+          showProgress={true}
+          showScrollToTop={true}
+          progressPosition="top"
+        >
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   )

@@ -25,7 +25,7 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [ ] Instalar React Router (se Vite) ou usar App Router (se Next.js)
 - [x] Instalar Framer Motion para animações suaves
 - [x] Instalar GSAP para animações profissionais avançadas
-- [ ] Instalar Lenis para smooth scrolling ultra-suave
+- [x] Instalar Lenis para smooth scrolling ultra-suave
 - [ ] Instalar Three.js + React Three Fiber para elementos 3D
 - [ ] Instalar React Hook Form + Zod para formulários robustos
 

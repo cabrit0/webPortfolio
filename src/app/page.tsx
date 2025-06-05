@@ -119,6 +119,115 @@ export default function Home() {
             </Card>
           </AnimatedSection>
         </ParallaxSection>
+
+        {/* Additional sections for smooth scrolling demo */}
+        <div className="mt-32 space-y-32">
+          {/* About Section */}
+          <ParallaxSection speed={0.4} className="max-w-4xl mx-auto">
+            <AnimatedSection animation={fadeInUp}>
+              <Card className="bg-card/20 backdrop-blur-md border-border/30">
+                <CardHeader>
+                  <CardTitle className="text-3xl text-center">
+                    <GlitchText
+                      text="About Me"
+                      triggerOnHover={true}
+                      autoGlitch={false}
+                      className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                    />
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center space-y-4">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Passionate developer with expertise in AI, multimedia technologies, and modern web development.
+                    Creating exceptional digital experiences with cutting-edge animations and interactions.
+                  </p>
+                  <div className="flex justify-center">
+                    <MagneticButton variant="outline" magneticStrength={0.3}>
+                      Learn More
+                    </MagneticButton>
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          </ParallaxSection>
+
+          {/* Skills Section */}
+          <ParallaxSection speed={0.6} className="max-w-4xl mx-auto">
+            <AnimatedSection animation={fadeInUp}>
+              <Card className="bg-card/20 backdrop-blur-md border-border/30">
+                <CardHeader>
+                  <CardTitle className="text-3xl text-center">
+                    <GlitchText
+                      text="Skills & Expertise"
+                      triggerOnHover={true}
+                      autoGlitch={false}
+                      className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+                    />
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {[
+                      "React & Next.js", "TypeScript", "Node.js",
+                      "Python & AI", "Database Design", "Cloud Computing",
+                      "UI/UX Design", "DevOps", "Mobile Development"
+                    ].map((skill, index) => (
+                      <AnimatedSection key={skill} animation={staggerItem} delay={index * 0.1}>
+                        <div className="p-4 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-border/30 text-center">
+                          <span className="text-sm font-medium">{skill}</span>
+                        </div>
+                      </AnimatedSection>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          </ParallaxSection>
+
+          {/* Contact Section */}
+          <ParallaxSection speed={0.8} className="max-w-4xl mx-auto mb-32">
+            <AnimatedSection animation={fadeInUp}>
+              <Card className="bg-card/20 backdrop-blur-md border-border/30">
+                <CardHeader>
+                  <CardTitle className="text-3xl text-center">
+                    <GlitchText
+                      text="Get In Touch"
+                      triggerOnHover={true}
+                      autoGlitch={false}
+                      className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent"
+                    />
+                  </CardTitle>
+                  <CardDescription className="text-center text-lg">
+                    Ready to create something amazing together?
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center space-y-6">
+                  <p className="text-muted-foreground">
+                    Let&apos;s discuss your next project and bring your ideas to life with cutting-edge technology.
+                  </p>
+                  <div className="flex gap-4 justify-center">
+                    <MagneticButton
+                      variant="default"
+                      size="lg"
+                      magneticStrength={0.4}
+                      className="bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700"
+                    >
+                      Send Message
+                    </MagneticButton>
+                    <MagneticButton
+                      variant="outline"
+                      size="lg"
+                      magneticStrength={0.4}
+                      className="border-cyan-400/50 text-cyan-200 hover:bg-cyan-500/10"
+                    >
+                      Download CV
+                    </MagneticButton>
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          </ParallaxSection>
+        </div>
       </div>
     </main>
   )
