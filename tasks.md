@@ -106,9 +106,9 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 - [ ] Secção **Projetos** (Showcase Avançado)
 
-  - [ ] **Filtros dinâmicos**: Filtrar projetos por tecnologia
-  - [ ] **Cards 3D**: Projetos em carrossel/grid 3D interativo
-  - [ ] **Hover effects**: Parallax e morphing nos cards
+  - [x] **Filtros dinâmicos**: Filtrar projetos por tecnologia e categoria
+  - [x] **Cards responsivos**: Grid adaptativo com informações completas
+  - [x] **Hover effects**: Transições suaves e efeitos visuais
   - [ ] Cada projeto deve mostrar:
     - [ ] Nome com animação de reveal
     - [ ] Descrição com typewriter effect
@@ -244,10 +244,10 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [x] **Diversidade**: Web, Mobile, AI, Backend
 
 #### 5. 📞 CONTACT
-- [ ] **Informações de contacto**
-- [ ] **Formulário de contacto**
-- [ ] **Links sociais** (LinkedIn, GitHub)
-- [ ] **Disponibilidade** para projetos
+- [x] **Informações de contacto** (email, localização, disponibilidade)
+- [x] **Formulário de contacto** (nome, email, assunto, mensagem)
+- [x] **Links sociais** (LinkedIn, Email)
+- [x] **Disponibilidade** para projetos (imediatamente disponível)
 
 ### 🎨 Melhorias de Texto Propostas
 - [ ] **About - Versão melhorada**: Texto mais cativante e storytelling

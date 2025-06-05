@@ -11,11 +11,23 @@ import ParallaxSection from "@/components/animations/ParallaxSection"
 import { fadeInUp, fadeInDown, staggerContainer, staggerItem } from "@/lib/animations"
 import { Header } from "@/components/organisms"
 import { personalInfo, projects, technologies } from "@/data/profile"
+import { ProjectFilter, useProjectFilter } from "@/components/molecules/ProjectFilter"
 
 export default function Home() {
   const handleCtaClick = () => {
     console.log('Download CV clicked')
   }
+
+  // Project filtering
+  const {
+    categories,
+    technologies: allTechnologies,
+    selectedCategory,
+    selectedTechnology,
+    filteredProjects,
+    setSelectedCategory,
+    setSelectedTechnology
+  } = useProjectFilter(projects)
 
   return (
     <div className="min-h-screen">
@@ -189,41 +201,103 @@ export default function Home() {
 
           {/* Projects Section */}
           <section id="projects">
-            <ParallaxSection speed={0.6} className="max-w-4xl mx-auto">
+            <ParallaxSection speed={0.6} className="max-w-6xl mx-auto">
               <AnimatedSection animation={fadeInUp}>
                 <Card className="bg-card/20 backdrop-blur-md border-border/30">
                   <CardHeader>
                     <CardTitle className="text-3xl text-center">
                       <GlitchText
-                        text="Featured Projects"
+                        text="Projetos"
                         triggerOnHover={true}
                         autoGlitch={false}
                         className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
                       />
                     </CardTitle>
+                    <CardDescription className="text-center text-lg mt-4">
+                      Explore os meus projetos por categoria ou tecnologia
+                    </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {projects.filter(p => p.featured).slice(0, 4).map((project, index) => (
+                  <CardContent className="space-y-8">
+                    {/* Project Filters */}
+                    <ProjectFilter
+                      categories={categories}
+                      technologies={allTechnologies}
+                      selectedCategory={selectedCategory}
+                      selectedTechnology={selectedTechnology}
+                      onCategoryChange={setSelectedCategory}
+                      onTechnologyChange={setSelectedTechnology}
+                    />
+
+                    {/* Projects Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {filteredProjects.map((project, index) => (
                         <AnimatedSection key={project.title} animation={staggerItem} delay={index * 0.1}>
-                          <div className="p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-border/30 hover:border-brand-primary/30 transition-all duration-300">
-                            <h4 className="text-lg font-semibold mb-2 text-foreground">{project.title}</h4>
-                            <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{project.description}</p>
-                            <div className="flex flex-wrap gap-2">
-                              {project.technologies.slice(0, 3).map((tech) => (
-                                <Badge key={tech} variant="outline" className="text-xs">
-                                  {tech}
+                          <div className="p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-border/30 hover:border-brand-primary/30 transition-all duration-300 h-full flex flex-col">
+                            <div className="flex-1">
+                              <div className="flex items-start justify-between mb-3">
+                                <h4 className="text-lg font-semibold text-foreground line-clamp-2">{project.title}</h4>
+                                <Badge
+                                  variant="outline"
+                                  className={`ml-2 text-xs capitalize ${
+                                    project.category === 'ai' ? 'border-orange-500/50 text-orange-400' :
+                                    project.category === 'mobile' ? 'border-blue-500/50 text-blue-400' :
+                                    'border-green-500/50 text-green-400'
+                                  }`}
+                                >
+                                  {project.category}
                                 </Badge>
-                              ))}
-                              {project.technologies.length > 3 && (
-                                <Badge variant="outline" className="text-xs opacity-60">
-                                  +{project.technologies.length - 3}
-                                </Badge>
+                              </div>
+                              <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="flex flex-wrap gap-1">
+                                {project.technologies.slice(0, 4).map((tech) => (
+                                  <Badge key={tech} variant="outline" className="text-xs">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                                {project.technologies.length > 4 && (
+                                  <Badge variant="outline" className="text-xs opacity-60">
+                                    +{project.technologies.length - 4}
+                                  </Badge>
+                                )}
+                              </div>
+                              {project.featured && (
+                                <div className="flex items-center gap-1">
+                                  <span className="text-yellow-400 text-sm">⭐</span>
+                                  <span className="text-xs text-muted-foreground">Projeto em destaque</span>
+                                </div>
                               )}
                             </div>
                           </div>
                         </AnimatedSection>
                       ))}
+                    </div>
+
+                    {/* No results message */}
+                    {filteredProjects.length === 0 && (
+                      <div className="text-center py-12">
+                        <p className="text-muted-foreground">
+                          Nenhum projeto encontrado com os filtros selecionados.
+                        </p>
+                        <button
+                          onClick={() => {
+                            setSelectedCategory("all")
+                            setSelectedTechnology("all")
+                          }}
+                          className="mt-2 text-brand-primary hover:text-brand-primary/80 transition-colors"
+                        >
+                          Limpar filtros
+                        </button>
+                      </div>
+                    )}
+
+                    {/* Project count */}
+                    <div className="text-center text-sm text-muted-foreground">
+                      {filteredProjects.length === projects.length
+                        ? `${projects.length} projetos`
+                        : `${filteredProjects.length} de ${projects.length} projetos`
+                      }
                     </div>
                   </CardContent>
                 </Card>
@@ -233,13 +307,13 @@ export default function Home() {
 
           {/* Contact Section */}
           <section id="contact">
-            <ParallaxSection speed={0.8} className="max-w-4xl mx-auto mb-32">
+            <ParallaxSection speed={0.8} className="max-w-6xl mx-auto mb-32">
               <AnimatedSection animation={fadeInUp}>
                 <Card className="bg-card/20 backdrop-blur-md border-border/30">
                   <CardHeader>
                     <CardTitle className="text-3xl text-center">
                       <GlitchText
-                        text="Get In Touch"
+                        text="Vamos Trabalhar Juntos"
                         triggerOnHover={true}
                         autoGlitch={false}
                         className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent"
@@ -249,8 +323,8 @@ export default function Home() {
                       Pronto para criar algo incrível juntos?
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="text-center space-y-6">
-                    <div className="space-y-2">
+                  <CardContent className="space-y-8">
+                    <div className="text-center space-y-2">
                       <p className="text-muted-foreground">
                         Procuro oportunidades na área da programação para pôr em prática o conhecimento adquirido.
                       </p>
@@ -258,19 +332,127 @@ export default function Home() {
                         Disponível imediatamente para oportunidades full-time • <span className="text-brand-primary">{personalInfo.location}</span>
                       </p>
                     </div>
-                    <div className="flex gap-4 justify-center">
-                      <MagneticButton
-                        variant="default"
-                        size="lg"
-                        magneticStrength={0.4}
-                        className="bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700"
-                      >
-                        Send Message
-                      </MagneticButton>
+
+                    {/* Contact Grid */}
+                    <div className="grid lg:grid-cols-2 gap-8">
+                      {/* Contact Info */}
+                      <div className="space-y-6">
+                        <h3 className="text-xl font-semibold">Informações de Contacto</h3>
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-3 p-3 rounded-lg bg-brand-primary/5 hover:bg-brand-primary/10 transition-colors">
+                            <div className="w-10 h-10 bg-brand-primary/20 rounded-lg flex items-center justify-center">
+                              <span className="text-brand-primary text-lg">✉</span>
+                            </div>
+                            <div>
+                              <p className="font-medium">Email</p>
+                              <p className="text-muted-foreground">{personalInfo.email}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3 p-3 rounded-lg bg-brand-secondary/5 hover:bg-brand-secondary/10 transition-colors">
+                            <div className="w-10 h-10 bg-brand-secondary/20 rounded-lg flex items-center justify-center">
+                              <span className="text-brand-secondary text-lg">📍</span>
+                            </div>
+                            <div>
+                              <p className="font-medium">Localização</p>
+                              <p className="text-muted-foreground">{personalInfo.location}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3 p-3 rounded-lg bg-brand-accent/5 hover:bg-brand-accent/10 transition-colors">
+                            <div className="w-10 h-10 bg-brand-accent/20 rounded-lg flex items-center justify-center">
+                              <span className="text-brand-accent text-lg">💼</span>
+                            </div>
+                            <div>
+                              <p className="font-medium">Disponibilidade</p>
+                              <p className="text-muted-foreground">Imediatamente disponível</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-3">
+                          <h4 className="font-medium">Redes Sociais</h4>
+                          <div className="flex gap-3">
+                            <a
+                              href="https://linkedin.com/in/cabrit0/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-blue-500/10 hover:bg-blue-500/20 rounded-lg flex items-center justify-center transition-colors group"
+                            >
+                              <span className="text-blue-500 group-hover:scale-110 transition-transform">💼</span>
+                            </a>
+                            <a
+                              href={`mailto:${personalInfo.email}`}
+                              className="w-10 h-10 bg-green-500/10 hover:bg-green-500/20 rounded-lg flex items-center justify-center transition-colors group"
+                            >
+                              <span className="text-green-500 group-hover:scale-110 transition-transform">✉</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Contact Form */}
+                      <div className="space-y-6">
+                        <h3 className="text-xl font-semibold">Enviar Mensagem</h3>
+                        <form className="space-y-4">
+                          <div className="grid grid-cols-2 gap-4">
+                            <div>
+                              <label htmlFor="name" className="block text-sm font-medium mb-2">Nome</label>
+                              <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 transition-all"
+                                placeholder="O seu nome"
+                              />
+                            </div>
+                            <div>
+                              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                              <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 transition-all"
+                                placeholder="seu@email.com"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <label htmlFor="subject" className="block text-sm font-medium mb-2">Assunto</label>
+                            <input
+                              type="text"
+                              id="subject"
+                              name="subject"
+                              className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 transition-all"
+                              placeholder="Assunto da mensagem"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="message" className="block text-sm font-medium mb-2">Mensagem</label>
+                            <textarea
+                              id="message"
+                              name="message"
+                              rows={4}
+                              className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 resize-none transition-all"
+                              placeholder="A sua mensagem..."
+                            />
+                          </div>
+                          <MagneticButton
+                            type="submit"
+                            variant="default"
+                            size="lg"
+                            magneticStrength={0.4}
+                            className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700"
+                          >
+                            Enviar Mensagem
+                          </MagneticButton>
+                        </form>
+                      </div>
+                    </div>
+
+                    <div className="text-center pt-6 border-t border-border/30">
                       <MagneticButton
                         variant="outline"
                         size="lg"
-                        magneticStrength={0.4}
+                        magneticStrength={0.3}
                         className="border-cyan-400/50 text-cyan-200 hover:bg-cyan-500/10"
                       >
                         Download CV
