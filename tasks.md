@@ -139,11 +139,11 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ### 4.1. Atoms
 
-- [ ] Botão (estilos: primário, secundário, ghost)
-- [ ] Título (H1–H3, com tamanhos e pesos distintos)
-- [ ] Parágrafo (texto base com espaçamento)
-- [ ] Ícone (com suporte a diferentes ícones SVG)
-- [ ] Tag (representação de tecnologias: React, MongoDB, etc.)
+- [x] Botão (estilos: primário, secundário, ghost)
+- [x] Título (H1–H3, com tamanhos e pesos distintos)
+- [x] Parágrafo (texto base com espaçamento)
+- [x] Ícone (com suporte a diferentes ícones SVG)
+- [x] Tag (representação de tecnologias: React, MongoDB, etc.)
 
 ### 4.2. Molecules
 
