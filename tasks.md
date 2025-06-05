@@ -59,9 +59,9 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
   - [x] **Accent**: Cyber Green (#00FF88) ou Hot Pink (#FF0080)
   - [x] **Neutral**: Warm Grays com tints coloridos
 - [x] Tipografia moderna e variável:
-  - [x] **Headings**: Inter Variable ou Satoshi
-  - [x] **Body**: Inter ou System UI stack
-  - [x] **Code**: JetBrains Mono ou Fira Code
+  - [x] **Headings**: Geist Sans (moderna e cativante)
+  - [x] **Body**: Geist Sans (otimizada para web)
+  - [x] **Code**: Geist Mono (consistente com o design)
 - [x] Design system com tokens CSS customizados
 - [x] **Glassmorphism**: Cards com efeito vidro translúcido
 - [ ] **Gradient Meshes**: Fundos com gradientes complexos animados
@@ -84,16 +84,16 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ### 3.1. Página Home `/`
 
-- [ ] Secção **Hero** (Ultra-Moderna)
+- [x] Secção **Hero** (Ultra-Moderna)
 
-  - [ ] Nome e título profissional (ex.: "João Cabrito — Developer & AI Enthusiast")
-  - [ ] **Typewriter effect**: Frase de impacto com animação de escrita
-  - [ ] **3D Avatar**: Modelo 3D interativo ou avatar animado
-  - [ ] **Floating elements**: Elementos 3D flutuantes no background
-  - [ ] **Particle cursor trail**: Rastro de partículas seguindo o cursor
-  - [ ] Botões com **glassmorphism** e micro-animações
-  - [ ] **Scroll indicator**: Indicador animado para scroll down
-  - [ ] **GSAP timeline**: Animação orquestrada de entrada
+  - [x] Nome e título profissional (ex.: "João Cabrito — Developer & AI Enthusiast")
+  - [x] **Typewriter effect**: Frase de impacto com animação de escrita
+  - [x] **Floating elements**: Partículas flutuantes melhoradas no background
+  - [x] **Gradient effects**: Gradientes modernos e mesh overlays
+  - [x] Botões com **glassmorphism** e micro-animações magnéticas
+  - [x] **Typography moderna**: Geist font com letter-spacing otimizado
+  - [x] **Enhanced animations**: Animações cinematográficas melhoradas
+  - [x] **Visual hierarchy**: Hierarquia tipográfica mais cativante
 
 - [ ] Secção **Sobre Mim** (Interativa)
 
@@ -168,13 +168,29 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ## 🔀 5. Navegação
 
-- [ ] Implementar navegação entre secções com React Router (scroll suave com âncoras ou rotas simples)
-- [ ] Menu fixo no topo com os links:
-  - [ ] Home
-  - [ ] Sobre Mim
-  - [ ] Projetos
-  - [ ] Contacto
-- [ ] Responsividade total do menu (versão mobile com hamburguer)
+- [x] Implementar navegação entre secções com scroll suave (âncoras)
+- [x] **Header limpo** apenas com logo e botão Menu
+- [x] **Drawer/Gaveta moderna** contém APENAS os links de navegação:
+  - [x] Home
+  - [x] About (Sobre Mim)
+  - [x] Projects (Projetos)
+  - [x] Contact (Contacto)
+- [x] **Gaveta ocupa 85% da largura e 100% da altura** (85vw x 100vh)
+- [x] **Links muito grandes e espaçados** (text-4xl/5xl, py-8, space-y-8)
+- [x] **Mantra pessoal**: "Com calma e com alma"
+- [x] **Frase de Agostinho da Silva**: "O importante não é aquilo que fazemos da nossa vida, mas aquilo que a nossa vida faz de nós."
+- [x] **Botão Menu** disponível em desktop e mobile
+- [x] **Drawer desliza da direita** com animação suave
+- [x] **Animação glitch na transição** da gaveta (abertura/fechamento)
+- [x] **Botão "Voltar"** bem posicionado com ícone e hover effects
+- [x] **Animação no botão antes de fechar** (scale + translate)
+- [x] **Gaveta fecha mais devagar** (0.6s) do que abre (0.3s)
+- [x] **Sequência de animações**: botão → glitch → fechar
+- [x] **Glassmorphism** effect no header e drawer
+- [x] **Enhanced glitch effects** com skew, blur, brightness e box-shadow
+- [x] **Smooth slide animation** com spring physics
+- [x] **Staggered item animation** no drawer
+- [x] **Overlay com backdrop blur** quando drawer está aberto
 
 ---
 

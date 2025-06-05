@@ -4,6 +4,7 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { NavigationMenu, useNavigation, type NavigationItem } from "@/components/molecules"
+import DrawerMenu from "@/components/molecules/DrawerMenu"
 import { Button, Icon } from "@/components/atoms"
 
 export interface HeaderProps {
@@ -40,6 +41,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
   }, ref) => {
     const [isScrolled, setIsScrolled] = React.useState(false)
     const [theme, setTheme] = React.useState<'light' | 'dark'>('dark')
+    const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
     // Handle scroll effect
     React.useEffect(() => {
@@ -76,6 +78,9 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
         }
       }
     }
+
+    const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen)
+    const closeDrawer = () => setIsDrawerOpen(false)
 
     return (
       <motion.header
@@ -125,58 +130,11 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
               )}
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
-              {activeNavigationItems.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: index * 0.1,
-                    ease: "easeOut" 
-                  }}
-                >
-                  <Button
-                    variant={item.active ? "primary" : "ghost"}
-                    size="sm"
-                    className={cn(
-                      "relative px-4 py-2 transition-all duration-300",
-                      item.active && "text-white",
-                      !item.active && "hover:text-brand-primary"
-                    )}
-                    leftIcon={item.icon ? <Icon name={item.icon as any} size="sm" /> : undefined}
-                    onClick={() => {
-                      if (item.external) {
-                        window.open(item.href, '_blank')
-                      } else if (item.href.startsWith('#')) {
-                        const element = document.querySelector(item.href)
-                        element?.scrollIntoView({ behavior: 'smooth' })
-                      }
-                    }}
-                  >
-                    {item.label}
-                    {item.external && (
-                      <Icon name="external" size="xs" className="ml-1 opacity-60" />
-                    )}
-                    
-                    {/* Active indicator */}
-                    {item.active && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-primary to-brand-accent"
-                        layoutId="activeTab"
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      />
-                    )}
-                  </Button>
-                </motion.div>
-              ))}
-            </nav>
+            {/* Navigation removed - now only in drawer */}
 
             {/* Right Side Actions */}
             <div className="flex items-center gap-3">
-              
+
               {/* Theme Toggle */}
               {showThemeToggle && (
                 <motion.div
@@ -190,9 +148,9 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                     onClick={handleThemeToggle}
                     className="hidden md:flex"
                   >
-                    <Icon 
-                      name={theme === 'light' ? 'moon' : 'sun'} 
-                      size="sm" 
+                    <Icon
+                      name={theme === 'light' ? 'moon' : 'sun'}
+                      size="sm"
                     />
                   </Button>
                 </motion.div>
@@ -218,16 +176,22 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                 </motion.div>
               )}
 
-              {/* Mobile Navigation */}
-              <div className="md:hidden">
-                <NavigationMenu
-                  items={activeNavigationItems}
-                  logo=""
-                  variant={variant}
-                  position="static"
-                  className="relative"
-                />
-              </div>
+              {/* Menu Button (Desktop & Mobile) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.7 }}
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleDrawer}
+                  className="p-2 hover:bg-brand-primary/10 transition-colors group"
+                >
+                  <Icon name="menu" size="md" className="group-hover:scale-110 transition-transform" />
+                  <span className="hidden md:inline ml-2 font-medium">Menu</span>
+                </Button>
+              </motion.div>
 
             </div>
 
@@ -241,6 +205,14 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
             scaleX: isScrolled ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
+        />
+
+        {/* Drawer Menu */}
+        <DrawerMenu
+          isOpen={isDrawerOpen}
+          onClose={closeDrawer}
+          items={activeNavigationItems}
+          side="right"
         />
       </motion.header>
     )

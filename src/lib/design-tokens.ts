@@ -38,12 +38,12 @@ export const designTokens = {
     }
   },
 
-  // Professional Typography Scale
+  // Professional Typography Scale - Updated with Geist
   typography: {
     fontFamilies: {
-      sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-      mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
-      display: ['Cal Sans', 'Inter', 'system-ui', 'sans-serif'],
+      sans: ['var(--font-geist-sans)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      mono: ['var(--font-geist-mono)', 'JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+      display: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
     },
     
     fontSizes: {

@@ -52,12 +52,15 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-optical-sizing: auto;
   }
 
-  /* Professional Typography */
+  /* Professional Typography with Geist */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
     font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
+    font-optical-sizing: auto;
+    letter-spacing: -0.025em;
   }
 
   /* Smooth focus transitions */
@@ -70,6 +73,32 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Geist-specific typography utilities */
+  .text-geist-tight {
+    letter-spacing: -0.05em;
+    font-optical-sizing: auto;
+  }
+
+  .text-geist-display {
+    letter-spacing: -0.03em;
+    font-optical-sizing: auto;
+    font-weight: 600;
+  }
+
+  .text-geist-mono {
+    @apply font-mono;
+    font-feature-settings: 'liga' 0, 'calt' 1;
+  }
+
+  /* Enhanced visual effects */
+  .tracking-tighter {
+    letter-spacing: -0.075em;
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
   }
 }
 
@@ -142,7 +171,10 @@
   }
 
   .glow-effect-lg {
-    box-shadow: var(--shadow-glow-lg);
+    box-shadow:
+      0 0 30px rgba(59, 130, 246, 0.4),
+      0 0 60px rgba(59, 130, 246, 0.2),
+      0 10px 40px rgba(0, 0, 0, 0.3);
   }
 
   .professional-shadow {

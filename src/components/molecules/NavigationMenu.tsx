@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button, Icon, IconButton, type IconName } from "@/components/atoms"
 import { GradientText } from "@/components/ui/typography"
+import GlitchText from "@/components/animations/GlitchText"
 
 export interface NavigationItem {
   label: string
@@ -108,16 +109,19 @@ const NavigationMenu = React.forwardRef<HTMLElement, NavigationMenuProps>(
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+            {/* Logo with Glitch Effect */}
             <motion.div
               className="flex-shrink-0"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
               {typeof logo === 'string' ? (
-                <GradientText className="text-xl font-bold">
-                  {logo}
-                </GradientText>
+                <GlitchText
+                  text={logo}
+                  triggerOnHover={true}
+                  autoGlitch={false}
+                  className="text-xl font-bold bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent"
+                />
               ) : (
                 logo
               )}
@@ -181,40 +185,79 @@ const NavigationMenu = React.forwardRef<HTMLElement, NavigationMenuProps>(
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation with Glitch Animation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border shadow-2xl"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border shadow-2xl overflow-hidden"
+              initial={{
+                opacity: 0,
+                height: 0,
+                skewX: 5,
+                filter: "blur(2px)"
+              }}
+              animate={{
+                opacity: 1,
+                height: "auto",
+                skewX: 0,
+                filter: "blur(0px)"
+              }}
+              exit={{
+                opacity: 0,
+                height: 0,
+                skewX: -5,
+                filter: "blur(2px)"
+              }}
+              transition={{
+                duration: 0.4,
+                ease: "easeInOut",
+                filter: { duration: 0.2 },
+                skewX: { duration: 0.3 }
+              }}
             >
               <div className="container mx-auto px-4 py-4 space-y-2">
                 {items.map((item, index) => (
                   <motion.div
                     key={item.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      duration: 0.3, 
+                    initial={{
+                      opacity: 0,
+                      x: -20,
+                      textShadow: "2px 0 #ff0000, -2px 0 #00ffff"
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                      textShadow: "none"
+                    }}
+                    exit={{
+                      opacity: 0,
+                      x: -20,
+                      textShadow: "2px 0 #ff0000, -2px 0 #00ffff"
+                    }}
+                    transition={{
+                      duration: 0.3,
                       delay: index * 0.1,
-                      ease: "easeOut" 
+                      ease: "easeOut",
+                      textShadow: { duration: 0.1 }
                     }}
                   >
                     <Button
                       variant={item.active ? "primary" : "ghost"}
                       size="default"
                       className={cn(
-                        "w-full justify-start px-4 py-3",
-                        item.active && "text-white",
-                        !item.active && "hover:text-brand-primary"
+                        "w-full justify-start px-4 py-3 transition-all duration-300",
+                        item.active && "text-white glow-effect",
+                        !item.active && "hover:text-brand-primary hover:bg-brand-primary/10"
                       )}
                       leftIcon={item.icon ? <Icon name={item.icon} size="sm" /> : undefined}
                       onClick={() => handleItemClick(item)}
                     >
-                      {item.label}
+                      <GlitchText
+                        text={item.label}
+                        triggerOnHover={true}
+                        autoGlitch={false}
+                        className="font-medium"
+                      />
                       {item.external && (
                         <Icon name="external" size="xs" className="ml-auto opacity-60" />
                       )}
