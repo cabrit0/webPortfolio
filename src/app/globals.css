@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Professional Dark Theme - Inspired by top portfolios */
+    /* Default Dark Theme - "Professional Dark" - Refined */
     --background: 222.2 84% 4.9%;           /* Deep Navy - Professional base */
     --foreground: 210 40% 98%;              /* Pure White - High contrast text */
     --card: 222.2 84% 6.9%;                 /* Slightly lighter navy for cards */
@@ -44,6 +44,8 @@
     --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
     --shadow-glow-lg: 0 0 40px rgba(59, 130, 246, 0.2);
   }
+
+
 
   * {
     @apply border-border;

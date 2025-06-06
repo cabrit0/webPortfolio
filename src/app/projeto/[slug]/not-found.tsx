@@ -70,7 +70,7 @@ export default function ProjectNotFound() {
                 variant="outline"
                 size="lg"
                 leftIcon={<Icon name="arrowLeft" size="sm" />}
-                className="min-w-[200px]"
+                className="min-w-[200px] hover:text-brand-primary hover:border-brand-primary/50"
               >
                 Voltar ao Início
               </Button>

@@ -211,7 +211,7 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <Button
                           variant="outline"
-                          className="justify-start"
+                          className="justify-start hover:text-brand-primary hover:border-brand-primary/50"
                           leftIcon={<Icon name="download" size="sm" />}
                           onClick={() => {
                             // Download CV logic
@@ -222,7 +222,7 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(
                         </Button>
                         <Button
                           variant="outline"
-                          className="justify-start"
+                          className="justify-start hover:text-brand-primary hover:border-brand-primary/50"
                           leftIcon={<Icon name="briefcase" size="sm" />}
                           onClick={() => {
                             const element = document.querySelector('#projects')
@@ -296,6 +296,7 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(
                 <Button
                   variant="outline"
                   size="lg"
+                  className="hover:text-brand-primary hover:border-brand-primary/50"
                   leftIcon={<Icon name="message" size="sm" />}
                   onClick={() => {
                     const element = document.querySelector('#contact form')

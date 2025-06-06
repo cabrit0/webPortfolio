@@ -59,25 +59,25 @@ export function calculateDevelopmentPreferences(): DevelopmentPreference[] {
     {
       category: 'frontend',
       percentage: totalPoints > 0 ? Math.round((categoryCounts.frontend / totalPoints) * 100) : 0,
-      color: 'text-green-400',
+      color: 'text-blue-400',
       label: 'Frontend'
     },
     {
       category: 'backend',
       percentage: totalPoints > 0 ? Math.round((categoryCounts.backend / totalPoints) * 100) : 0,
-      color: 'text-orange-400',
+      color: 'text-purple-400',
       label: 'Backend'
     },
     {
       category: 'mobile',
       percentage: totalPoints > 0 ? Math.round((categoryCounts.mobile / totalPoints) * 100) : 0,
-      color: 'text-cyan-400',
+      color: 'text-green-400',
       label: 'Mobile'
     },
     {
       category: 'ai',
       percentage: totalPoints > 0 ? Math.round((categoryCounts.ai / totalPoints) * 100) : 0,
-      color: 'text-blue-400',
+      color: 'text-orange-400',
       label: 'IA'
     }
   ]

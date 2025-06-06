@@ -230,7 +230,7 @@ const FooterSection = React.forwardRef<HTMLElement, FooterSectionProps>(
           {/* Bottom Section */}
           <AnimatedSection animation={fadeInUp} delay={0.6}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              
+
               {/* Copyright */}
               <TypographyP className="text-neutral-500 text-sm">
                 {copyright}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Icon } from "@/components/atoms"
 import { SectionHeader } from "./SectionHeader"
-import { fadeInUp } from "@/lib/animation-variants"
+import { fadeInUp } from "@/lib/animations"
 
 interface ProjectSectionProps {
   title: string

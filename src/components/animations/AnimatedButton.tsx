@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button, ButtonProps } from "@/components/ui/button"
+import { Button, ButtonProps } from "@/components/atoms/Button"
 import { ReactNode } from "react"
 
 interface AnimatedButtonProps extends ButtonProps {

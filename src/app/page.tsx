@@ -9,16 +9,17 @@ import TypewriterText from "@/components/animations/TypewriterText"
 import MagneticButton from "@/components/animations/MagneticButton"
 import GlitchText from "@/components/animations/GlitchText"
 import ParallaxSection from "@/components/animations/ParallaxSection"
-import { fadeInUp, fadeInDown, staggerContainer, staggerItem } from "@/lib/animations"
+import { fadeInUp, staggerItem } from "@/lib/animations"
 import { Header } from "@/components/organisms"
 import { SocialIcon } from "@/components/atoms"
-import { personalInfo, projects, technologies } from "@/data/profile"
+import { personalInfo, projects } from "@/data/profile"
 import { ProjectFilter, useProjectFilter } from "@/components/molecules/ProjectFilter"
 import { AdvancedDownloadCV } from "@/components/molecules/DownloadCV"
 import { getProjectUrl } from "@/lib/project-utils"
 import { getCategoryStyle } from "@/lib/category-styles"
 import Footer from "@/components/organisms/Footer"
 import Link from "next/link"
+
 
 export default function Home() {
   const handleCtaClick = () => {
@@ -41,7 +42,6 @@ export default function Home() {
       <Header
         variant="glass"
         position="fixed"
-        showThemeToggle={true}
         showCTA={true}
         currentPath="/"
         onCtaClick={handleCtaClick}
@@ -100,7 +100,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center mb-16 sm:mb-20">
             <MagneticButton
-              variant="default"
+              variant="primary"
               size="lg"
               magneticStrength={0.5}
               className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary/90 hover:to-brand-secondary/90 glow-effect-lg transition-all duration-500 rounded-2xl shadow-2xl"
@@ -531,7 +531,7 @@ export default function Home() {
                           </div>
                           <MagneticButton
                             type="submit"
-                            variant="default"
+                            variant="primary"
                             size="lg"
                             magneticStrength={0.4}
                             className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700"

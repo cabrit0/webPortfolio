@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { getNavigationWithActive, labels, type NavigationItem } from "@/config/navigation"
 import DrawerMenu from "@/components/molecules/DrawerMenu"
-import { ThemeToggle } from "@/components/molecules/ThemeToggle"
+
 import { Button, Icon } from "@/components/atoms"
 
 export interface HeaderProps {
@@ -13,7 +13,7 @@ export interface HeaderProps {
   currentPath?: string // Para determinar item ativo automaticamente
   variant?: 'default' | 'glass' | 'minimal'
   position?: 'fixed' | 'sticky' | 'static'
-  showThemeToggle?: boolean
+
   showCTA?: boolean
   ctaLabel?: string
   ctaHref?: string
@@ -27,7 +27,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     currentPath = "/",
     variant = 'glass',
     position = 'fixed',
-    showThemeToggle = false,
+
     showCTA = true,
     ctaLabel = labels.cta.downloadCV,
     ctaHref,
@@ -36,7 +36,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     ...props
   }, ref) => {
     const [isScrolled, setIsScrolled] = React.useState(false)
-    const [theme, setTheme] = React.useState<'light' | 'dark'>('dark')
+
     const [isDrawerOpen, setIsDrawerOpen] = React.useState(false)
 
     // Handle scroll effect
@@ -52,12 +52,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
     // Get navigation items with active states from centralized config
     const activeNavigationItems = getNavigationWithActive(currentPath)
 
-    const handleThemeToggle = () => {
-      const newTheme = theme === 'light' ? 'dark' : 'light'
-      setTheme(newTheme)
-      // Here you would implement actual theme switching logic
-      document.documentElement.classList.toggle('dark', newTheme === 'dark')
-    }
+
 
     const handleCtaClick = () => {
       if (onCtaClick) {
@@ -121,18 +116,6 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
             {/* Right Side Actions */}
             <div className="flex items-center gap-3">
 
-              {/* Theme Toggle */}
-              {showThemeToggle && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.5 }}
-                  className="hidden md:block"
-                >
-                  <ThemeToggle size="sm" variant="ghost" />
-                </motion.div>
-              )}
-
               {/* CTA Button */}
               {showCTA && (
                 <motion.div
@@ -147,7 +130,8 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                     leftIcon={<Icon name="download" size="sm" />}
                     className="glow-effect"
                   >
-                    {ctaLabel}
+                    <span className="hidden sm:inline">{ctaLabel}</span>
+                    <span className="sm:hidden">CV</span>
                   </Button>
                 </motion.div>
               )}
@@ -165,7 +149,8 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   className="p-2 hover:bg-brand-primary/10 transition-colors group"
                 >
                   <Icon name="menu" size="default" className="group-hover:scale-110 transition-transform" />
-                  <span className="ml-2 font-medium">{labels.navigation.menu}</span>
+                  <span className="ml-2 font-medium hidden sm:inline">{labels.navigation.menu}</span>
+                  <span className="ml-2 font-medium sm:hidden">Menu</span>
                 </Button>
               </motion.div>
 
@@ -200,17 +185,14 @@ Header.displayName = "Header"
 export const HeaderVariants = {
   minimal: {
     variant: "minimal" as const,
-    showThemeToggle: false,
     showCTA: false,
   },
   professional: {
     variant: "glass" as const,
-    showThemeToggle: true,
     showCTA: true,
   },
   creative: {
     variant: "glass" as const,
-    showThemeToggle: false,
     showCTA: true,
   }
 }

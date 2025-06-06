@@ -9,7 +9,7 @@ import { ProjectActionButtons } from "@/components/molecules/ProjectActionButton
 import { SectionHeader } from "@/components/molecules/SectionHeader"
 import { ProjectSection } from "@/components/molecules/ProjectSection"
 import { findProjectBySlug } from "@/lib/project-utils"
-import { fadeInUp, staggerContainer } from "@/lib/animation-variants"
+import { fadeInUp, staggerContainer } from "@/lib/animations"
 import Image from "next/image"
 
 interface ProjectPageProps {

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/atoms/Button"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 
@@ -30,14 +30,14 @@ export const ProjectFilter = React.forwardRef<
         <h3 className="text-lg font-semibold">Filtrar por Categoria</h3>
         <div className="flex flex-wrap justify-center gap-3">
           <Button
-            variant={selectedCategory === "all" ? "default" : "outline"}
+            variant={selectedCategory === "all" ? "primary" : "outline"}
             size="sm"
             onClick={() => onCategoryChange("all")}
             className={cn(
               "transition-all duration-300 rounded-full px-6",
               selectedCategory === "all"
                 ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/25"
-                : "hover:bg-brand-primary/10 hover:border-brand-primary/50"
+                : "hover:bg-brand-primary/10 hover:border-brand-primary/50 hover:text-brand-primary"
             )}
           >
             Todos os Projetos
@@ -45,14 +45,14 @@ export const ProjectFilter = React.forwardRef<
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? "default" : "outline"}
+              variant={selectedCategory === category ? "primary" : "outline"}
               size="sm"
               onClick={() => onCategoryChange(category)}
               className={cn(
                 "transition-all duration-300 capitalize rounded-full px-6",
                 selectedCategory === category
                   ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/25"
-                  : "hover:bg-brand-primary/10 hover:border-brand-primary/50"
+                  : "hover:bg-brand-primary/10 hover:border-brand-primary/50 hover:text-brand-primary"
               )}
             >
               {category === 'web' ? 'Web' :

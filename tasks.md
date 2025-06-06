@@ -442,3 +442,60 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - **Error Tracking**: Sentry (opcional)
 - **CMS**: Sanity ou Contentful (se conteúdo dinâmico)
 - **Database**: Supabase ou PlanetScale (se necessário)
+
+---
+
+## 🧹 16. Limpeza e Otimização do Projeto
+
+### 16.1. Análise e Identificação
+- [x] Analisar projeto para identificar duplicações e código morto
+- [x] Identificar diretórios vazios desnecessários
+- [x] Encontrar componentes duplicados
+- [x] Localizar ficheiros placeholder redundantes
+
+### 16.2. Tarefas de Limpeza
+- [x] Remover diretórios vazios:
+  - [x] `src/app/components-demo/` (vazio)
+  - [x] `src/app/font-test/` (vazio)
+  - [x] `src/app/portfolio-demo/` (vazio)
+  - [x] `src/components/3d/` (vazio)
+  - [x] `src/components/sections/` (vazio)
+  - [x] `src/stores/` (vazio)
+  - [x] `src/styles/` (vazio)
+- [x] Consolidar componentes duplicados:
+  - [x] Unificar `src/components/ui/button.tsx` e `src/components/atoms/Button.tsx`
+  - [x] Manter o componente mais avançado (atoms/Button.tsx)
+  - [x] Atualizar todos os imports para usar o componente consolidado
+- [x] Unificar ficheiros de animação:
+  - [x] Consolidar `src/lib/animations.ts` e `src/lib/animation-variants.ts`
+  - [x] Eliminar duplicações de variantes de animação
+  - [x] Atualizar imports para usar ficheiro principal
+- [x] Remover ficheiros desnecessários:
+  - [x] `public/cv/README.md` (placeholder)
+  - [x] `public/cv/` (diretório vazio)
+- [x] Verificar e limpar exports não utilizados nos ficheiros index.ts
+- [x] Corrigir variants de botão incompatíveis ("default" → "primary")
+- [x] Limpar imports não utilizados (fadeInDown, staggerContainer, technologies)
+- [x] Testar funcionalidade após cada limpeza
+
+### 16.3. Verificação Final
+- [x] Confirmar que todas as funcionalidades continuam a funcionar
+- [x] Verificar que não há imports quebrados
+- [x] Testar navegação e componentes principais
+- [x] Executar build para verificar se não há erros
+
+### 16.4. Resultados da Limpeza
+**Ficheiros/Diretórios Removidos:**
+- 7 diretórios vazios removidos
+- `src/components/ui/button.tsx` (duplicado)
+- `src/lib/animation-variants.ts` (duplicado)
+- `public/cv/README.md` (placeholder)
+- `public/cv/` (diretório vazio)
+
+**Consolidações Realizadas:**
+- Todos os componentes agora usam `@/components/atoms/Button`
+- Todas as animações agora usam `@/lib/animations`
+- Variants de botão padronizados ("default" → "primary")
+- Imports limpos e otimizados
+
+**Build Status:** ✅ **Sucesso** - Projeto compila sem erros

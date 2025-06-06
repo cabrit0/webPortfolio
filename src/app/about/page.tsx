@@ -79,7 +79,7 @@ export default function AboutPage() {
       <Header
         variant="glass"
         position="fixed"
-        showThemeToggle={true}
+
         showCTA={true}
         currentPath="/about"
         onCtaClick={handleCtaClick}

@@ -41,7 +41,7 @@ export function ProjectActionButtons({ liveUrl, githubUrl, className = "" }: Pro
         className={`min-w-[200px] h-12 font-medium transition-all duration-300 ${
           !githubUrl
             ? 'opacity-50 cursor-not-allowed border-neutral-600 text-neutral-500'
-            : 'hover:scale-105 hover:shadow-lg'
+            : 'hover:scale-105 hover:shadow-lg hover:text-brand-primary hover:border-brand-primary/50'
         }`}
         title={!githubUrl ? "Código não disponível" : "Ver código no GitHub"}
       >
@@ -54,7 +54,7 @@ export function ProjectActionButtons({ liveUrl, githubUrl, className = "" }: Pro
         size="lg"
         leftIcon={<Icon name="briefcase" size="sm" />}
         onClick={() => router.push('/#projetos')}
-        className="min-w-[200px] h-12 font-medium hover:scale-105 transition-all duration-300 hover:bg-brand-primary/10"
+        className="min-w-[200px] h-12 font-medium hover:scale-105 transition-all duration-300 hover:bg-brand-primary/10 hover:text-brand-primary"
       >
         Ver Outros Projetos
       </Button>

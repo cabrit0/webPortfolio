@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, ReactNode } from "react"
 import { gsap } from "gsap"
-import { Button, ButtonProps } from "@/components/ui/button"
+import { Button, ButtonProps } from "@/components/atoms/Button"
 import { cn } from "@/lib/utils"
 
 interface MagneticButtonProps extends ButtonProps {

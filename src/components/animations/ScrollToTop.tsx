@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronUp } from "lucide-react"
 import { useSmoothScroll, useScrollPosition } from "@/hooks/useSmoothScroll"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/atoms/Button"
 import { cn } from "@/lib/utils"
 
 interface ScrollToTopProps {

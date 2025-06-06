@@ -2,13 +2,13 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/atoms/Button"
 import { cn } from "@/lib/utils"
 import { personalInfo } from "@/data/profile"
 
 interface DownloadCVProps {
-  variant?: "default" | "outline" | "ghost"
-  size?: "sm" | "default" | "lg"
+  variant?: "primary" | "secondary" | "accent" | "outline" | "ghost" | "success" | "danger" | "glass"
+  size?: "sm" | "default" | "lg" | "xl" | "icon"
   className?: string
   showIcon?: boolean
   children?: React.ReactNode
@@ -66,6 +66,7 @@ export function DownloadCV({
       className={cn(
         "relative overflow-hidden transition-all duration-300",
         "hover:scale-105 active:scale-95",
+        variant === "outline" && "hover:text-brand-primary hover:border-brand-primary/50",
         isDownloading && "cursor-not-allowed opacity-70",
         className
       )}

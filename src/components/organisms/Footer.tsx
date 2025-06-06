@@ -84,7 +84,7 @@ export function Footer({ className }: FooterProps) {
             <DownloadCV
               variant="outline"
               size="sm"
-              className="border-brand-primary/30 hover:border-brand-primary/60 hover:bg-brand-primary/5"
+              className="border-brand-primary/30 hover:border-brand-primary/60 hover:bg-brand-primary/5 hover:text-brand-primary"
             >
               Download CV
             </DownloadCV>
