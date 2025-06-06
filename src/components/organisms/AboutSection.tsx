@@ -177,26 +177,26 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
             </div>
           </AnimatedSection>
 
-          {/* Tech Stack Visualization */}
+          {/* Stack Tecnológico & Competências */}
           <AnimatedSection animation={fadeInUp} className="mb-20">
             <div className="text-center mb-12">
               <GlitchText
-                text="O Meu Stack Tecnológico"
+                text="Stack Tecnológico & Competências"
                 triggerOnHover={true}
                 autoGlitch={false}
                 className="text-4xl font-bold bg-gradient-to-r from-brand-secondary to-brand-accent bg-clip-text text-transparent mb-4"
               />
               <TypographyP className="text-neutral-400 max-w-2xl mx-auto">
-                Uma visão abrangente das tecnologias que uso para criar soluções completas
+                Tecnologias e competências organizadas por área de especialização
               </TypographyP>
             </div>
 
 
 
-            {/* Tech Stack Layers */}
-            <div className="max-w-5xl mx-auto space-y-8">
+            {/* Competências organizadas por categoria */}
+            <div className="max-w-6xl mx-auto space-y-8">
 
-              {/* Frontend Layer */}
+              {/* Linguagens de Programação */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -204,9 +204,62 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative"
               >
+                <Card className="glass-effect border-l-4 border-l-blue-500 hover:border-l-blue-400 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                        <Icon name="code" size="lg" className="text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-blue-400">Linguagens de Programação</h4>
+                        <p className="text-sm text-muted-foreground">Fundação técnica sólida</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { name: 'JavaScript', experience: '3+ anos', context: 'Desenvolvimento web e mobile' },
+                        { name: 'Java', experience: '3 anos', context: 'Programação académica e sistemas' },
+                        { name: 'Python', experience: '1+ ano', context: 'IA, automação e backend' },
+                        { name: 'Dart', experience: '1 ano', context: 'Desenvolvimento Flutter' },
+                        { name: 'C', experience: '1 ano', context: 'Sistemas e game development' },
+                        { name: 'PHP', experience: '1+ ano', context: 'Desenvolvimento web backend' }
+                      ].map((skill, index) => (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-4 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
+                        >
+                          <div className="flex items-start justify-between mb-2">
+                            <span className="font-medium text-foreground">{skill.name}</span>
+                            <Badge variant="outline" className="text-xs text-blue-400 border-blue-400/30">
+                              {skill.experience}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.context}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Frontend Development */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                className="relative"
+              >
                 <Card className="glass-effect border-l-4 border-l-green-500 hover:border-l-green-400 transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
                         <Icon name="palette" size="lg" className="text-white" />
                       </div>
@@ -215,18 +268,30 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                         <p className="text-sm text-muted-foreground">Interface de utilizador e experiência</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {['React', 'JavaScript', 'HTML/CSS', 'TailwindCSS'].map((tech, index) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { name: 'React', experience: '1+ ano', context: 'SPAs e aplicações complexas' },
+                        { name: 'HTML/CSS', experience: '3+ anos', context: 'Websites responsivos' },
+                        { name: 'TailwindCSS', experience: '2+ anos', context: 'Design systems modernos' }
+                      ].map((skill, index) => (
                         <motion.div
-                          key={tech}
+                          key={skill.name}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05 }}
-                          className="bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-lg p-3 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300"
+                          whileHover={{ scale: 1.02 }}
+                          className="bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-lg p-4 border border-green-500/20 hover:border-green-400/40 transition-all duration-300"
                         >
-                          <span className="text-sm font-medium text-foreground">{tech}</span>
+                          <div className="flex items-start justify-between mb-2">
+                            <span className="font-medium text-foreground">{skill.name}</span>
+                            <Badge variant="outline" className="text-xs text-green-400 border-green-400/30">
+                              {skill.experience}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.context}
+                          </p>
                         </motion.div>
                       ))}
                     </div>
@@ -234,45 +299,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                 </Card>
               </motion.div>
 
-              {/* Backend Layer */}
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="relative"
-              >
-                <Card className="glass-effect border-l-4 border-l-orange-500 hover:border-l-orange-400 transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                        <Icon name="code" size="lg" className="text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-semibold text-orange-400">Backend & APIs</h4>
-                        <p className="text-sm text-muted-foreground">Servidor e lógica de negócio</p>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {['Node.js', 'Express.js', 'Python', 'Java', 'PHP'].map((tech, index) => (
-                        <motion.div
-                          key={tech}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.3, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05 }}
-                          className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg p-3 text-center border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300"
-                        >
-                          <span className="text-sm font-medium text-foreground">{tech}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              {/* Database Layer */}
+              {/* Backend & Mobile */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -280,9 +307,59 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                 className="relative"
               >
+                <Card className="glass-effect border-l-4 border-l-orange-500 hover:border-l-orange-400 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                        <Icon name="code" size="lg" className="text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-orange-400">Backend & Mobile</h4>
+                        <p className="text-sm text-muted-foreground">Servidor e aplicações móveis</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { name: 'Node.js', experience: '1+ ano', context: 'APIs e serviços web' },
+                        { name: 'Express.js', experience: '1+ ano', context: 'Servidores web robustos' },
+                        { name: 'Flutter', experience: '1 ano', context: 'Apps móveis cross-platform' }
+                      ].map((skill, index) => (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300"
+                        >
+                          <div className="flex items-start justify-between mb-2">
+                            <span className="font-medium text-foreground">{skill.name}</span>
+                            <Badge variant="outline" className="text-xs text-orange-400 border-orange-400/30">
+                              {skill.experience}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.context}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Bases de Dados */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                className="relative"
+              >
                 <Card className="glass-effect border-l-4 border-l-purple-500 hover:border-l-purple-400 transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                         <Icon name="database" size="lg" className="text-white" />
                       </div>
@@ -291,18 +368,31 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                         <p className="text-sm text-muted-foreground">Armazenamento e gestão de dados</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {['MongoDB', 'MySQL', 'SQL', 'SQLite'].map((tech, index) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                      {[
+                        { name: 'MongoDB', experience: '2+ anos', context: 'Dados não-relacionais' },
+                        { name: 'MySQL', experience: '2+ anos', context: 'Sistemas relacionais' },
+                        { name: 'SQL', experience: '2+ anos', context: 'Consultas e otimização' },
+                        { name: 'SQLite', experience: '1+ ano', context: 'Aplicações móveis' }
+                      ].map((skill, index) => (
                         <motion.div
-                          key={tech}
+                          key={skill.name}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05 }}
-                          className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-3 text-center border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
+                          whileHover={{ scale: 1.02 }}
+                          className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
                         >
-                          <span className="text-sm font-medium text-foreground">{tech}</span>
+                          <div className="flex items-start justify-between mb-2">
+                            <span className="font-medium text-foreground">{skill.name}</span>
+                            <Badge variant="outline" className="text-xs text-purple-400 border-purple-400/30">
+                              {skill.experience}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.context}
+                          </p>
                         </motion.div>
                       ))}
                     </div>
@@ -310,37 +400,98 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                 </Card>
               </motion.div>
 
-              {/* Mobile & AI Layer */}
+              {/* IA & Machine Learning */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
                 className="relative"
               >
-                <Card className="glass-effect border-l-4 border-l-blue-500 hover:border-l-blue-400 transition-all duration-300">
+                <Card className="glass-effect border-l-4 border-l-yellow-500 hover:border-l-yellow-400 transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
                         <Icon name="zap" size="lg" className="text-white" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-semibold text-blue-400">Mobile & IA</h4>
-                        <p className="text-sm text-muted-foreground">Aplicações móveis e inteligência artificial</p>
+                        <h4 className="text-xl font-semibold text-yellow-400">IA & Machine Learning</h4>
+                        <p className="text-sm text-muted-foreground">Inteligência artificial e visão computacional</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {['Flutter', 'Dart', 'PyTorch', 'YOLO', 'OpenCV', 'Unity'].map((tech, index) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { name: 'PyTorch', experience: '1+ ano', context: 'Projeto final de licenciatura' },
+                        { name: 'YOLO', experience: '1+ ano', context: 'Reconhecimento visual' },
+                        { name: 'OpenCV', experience: '1+ ano', context: 'Processamento de imagem' }
+                      ].map((skill, index) => (
                         <motion.div
-                          key={tech}
+                          key={skill.name}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05 }}
-                          className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg p-3 text-center border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300"
+                          whileHover={{ scale: 1.02 }}
+                          className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-lg p-4 border border-yellow-500/20 hover:border-yellow-400/40 transition-all duration-300"
                         >
-                          <span className="text-sm font-medium text-foreground">{tech}</span>
+                          <div className="flex items-start justify-between mb-2">
+                            <span className="font-medium text-foreground">{skill.name}</span>
+                            <Badge variant="outline" className="text-xs text-yellow-400 border-yellow-400/30">
+                              {skill.experience}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.context}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Ferramentas & Outros */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                className="relative"
+              >
+                <Card className="glass-effect border-l-4 border-l-gray-500 hover:border-l-gray-400 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-gray-500 to-slate-500 rounded-lg flex items-center justify-center">
+                        <Icon name="briefcase" size="lg" className="text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-400">Ferramentas & Outros</h4>
+                        <p className="text-sm text-muted-foreground">Desenvolvimento e controlo de versões</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {[
+                        { name: 'Unity', experience: '6 meses', context: 'Estágio game development' },
+                        { name: 'Git', experience: '3+ anos', context: 'Controlo de versões' }
+                      ].map((skill, index) => (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="bg-gradient-to-r from-gray-500/10 to-slate-500/10 rounded-lg p-4 border border-gray-500/20 hover:border-gray-400/40 transition-all duration-300"
+                        >
+                          <div className="flex items-start justify-between mb-2">
+                            <span className="font-medium text-foreground">{skill.name}</span>
+                            <Badge variant="outline" className="text-xs text-gray-400 border-gray-400/30">
+                              {skill.experience}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            {skill.context}
+                          </p>
                         </motion.div>
                       ))}
                     </div>
@@ -386,142 +537,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
             </motion.div>
           </AnimatedSection>
 
-          {/* Skills & Expertise Section */}
-          <AnimatedSection animation={fadeInUp} className="mb-20">
-            <div className="text-center mb-12">
-              <GlitchText
-                text="Competências & Experiência"
-                triggerOnHover={true}
-                autoGlitch={false}
-                className="text-4xl font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-4"
-              />
-              <TypographyP className="text-neutral-400 max-w-2xl mx-auto">
-                As minhas competências técnicas organizadas por categoria
-              </TypographyP>
-            </div>
 
-            {/* Skills organized by category with experience context */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  category: 'Linguagens de Programação',
-                  skills: [
-                    { name: 'JavaScript', experience: '3+ anos', context: 'Desenvolvimento web e mobile' },
-                    { name: 'Java', experience: '3 anos', context: 'Programação académica e sistemas' },
-                    { name: 'Python', experience: '1+ ano', context: 'IA, automação e backend' },
-                    { name: 'Dart', experience: '1 ano', context: 'Desenvolvimento Flutter' },
-                    { name: 'C', experience: '1 ano', context: 'Sistemas e game development' },
-                    { name: 'PHP', experience: '1+ ano', context: 'Desenvolvimento web backend' }
-                  ],
-                  icon: 'code',
-                  color: 'from-blue-500 to-purple-500'
-                },
-                {
-                  category: 'Frontend Development',
-                  skills: [
-                    { name: 'React', experience: '1+ ano', context: 'SPAs e aplicações complexas' },
-                    { name: 'HTML/CSS', experience: '3+ anos', context: 'Websites responsivos' },
-                    { name: 'TailwindCSS', experience: '2+ anos', context: 'Design systems modernos' }
-                  ],
-                  icon: 'palette',
-                  color: 'from-green-500 to-teal-500'
-                },
-                {
-                  category: 'Backend & Mobile',
-                  skills: [
-                    { name: 'Node.js', experience: '1+ ano', context: 'APIs e serviços web' },
-                    { name: 'Express.js', experience: '1+ ano', context: 'Servidores web robustos' },
-                    { name: 'Flutter', experience: '1 ano', context: 'Apps móveis cross-platform' }
-                  ],
-                  icon: 'code',
-                  color: 'from-orange-500 to-red-500'
-                },
-                {
-                  category: 'Bases de Dados',
-                  skills: [
-                    { name: 'MongoDB', experience: '2+ anos', context: 'Dados não-relacionais' },
-                    { name: 'MySQL', experience: '2+ anos', context: 'Sistemas relacionais' },
-                    { name: 'SQL', experience: '2+ anos', context: 'Consultas e otimização' },
-                    { name: 'SQLite', experience: '1+ ano', context: 'Aplicações móveis' }
-                  ],
-                  icon: 'database',
-                  color: 'from-purple-500 to-pink-500'
-                },
-                {
-                  category: 'IA & Machine Learning',
-                  skills: [
-                    { name: 'PyTorch', experience: '1+ ano', context: 'Projeto final de licenciatura' },
-                    { name: 'YOLO', experience: '1+ ano', context: 'Reconhecimento visual' },
-                    { name: 'OpenCV', experience: '1+ ano', context: 'Processamento de imagem' }
-                  ],
-                  icon: 'zap',
-                  color: 'from-yellow-500 to-orange-500'
-                },
-                {
-                  category: 'Ferramentas & Outros',
-                  skills: [
-                    { name: 'Unity', experience: '6 meses', context: 'Estágio game development' },
-                    { name: 'Git', experience: '3+ anos', context: 'Controlo de versões' }
-                  ],
-                  icon: 'briefcase',
-                  color: 'from-gray-500 to-slate-500'
-                }
-              ].map((categoryData, categoryIndex) => (
-                <motion.div
-                  key={categoryData.category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: categoryIndex * 0.1,
-                    ease: "easeOut"
-                  }}
-                  whileHover={{ y: -5 }}
-                  className="group"
-                >
-                  <Card className="glass-effect border-border/30 hover:border-brand-primary/50 transition-all duration-300 h-full overflow-hidden">
-                    <CardHeader className="pb-4">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${categoryData.color} p-2 flex items-center justify-center`}>
-                          <Icon name={categoryData.icon as any} size="sm" className="text-white" />
-                        </div>
-                        <CardTitle className="text-lg group-hover:text-brand-primary transition-colors duration-300">
-                          {categoryData.category}
-                        </CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      {categoryData.skills.map((skill, skillIndex) => (
-                        <motion.div
-                          key={skill.name}
-                          className="relative p-3 rounded-lg bg-gradient-to-r from-background/50 to-background/30 hover:from-brand-primary/5 hover:to-brand-accent/5 transition-all duration-300"
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.3,
-                            delay: categoryIndex * 0.1 + skillIndex * 0.05,
-                            ease: "easeOut"
-                          }}
-                        >
-                          <div className="flex items-start justify-between mb-1">
-                            <span className="font-medium text-foreground text-sm">{skill.name}</span>
-                            <Badge variant="outline" className="text-xs text-brand-primary border-brand-primary/30">
-                              {skill.experience}
-                            </Badge>
-                          </div>
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            {skill.context}
-                          </p>
-                        </motion.div>
-                      ))}
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
 
           {/* What I Do Section */}
           <AnimatedSection animation={fadeInUp} className="mb-20">
