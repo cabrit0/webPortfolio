@@ -91,9 +91,13 @@ ProjectFilter.displayName = "ProjectFilter"
 export const useProjectFilter = (projects: any[]) => {
   const [selectedCategory, setSelectedCategory] = React.useState("all")
 
-  // Extract unique categories
+  // Extract unique categories with specific order
   const categories = React.useMemo(() => {
-    return Array.from(new Set(projects.map(p => p.category)))
+    const uniqueCategories = Array.from(new Set(projects.map(p => p.category)))
+    // Define desired order: web before ai
+    const categoryOrder = ['web', 'ai', 'mobile']
+    return categoryOrder.filter(cat => uniqueCategories.includes(cat))
+      .concat(uniqueCategories.filter(cat => !categoryOrder.includes(cat)))
   }, [projects])
 
   // Filter projects based on selected category

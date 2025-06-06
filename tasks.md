@@ -686,3 +686,204 @@ const iconRegistry = {
 - [x] Semântica melhorada (server > code para backend)
 
 **Status:** ✅ **Concluído** - Ícone Backend Development corrigido e melhorado
+
+---
+
+## 🎓 21. Integração Dissimulada da Informação Académica
+
+### 21.1. Estratégia de Integração
+- [x] Análise da informação académica oficial da universidade
+- [x] Planeamento de integração subtil e profissional
+- [x] Evitar secções dedicadas ou linguagem académica óbvia
+- [x] Focar em linguagem de mercado e competências profissionais
+
+### 21.2. Locais de Integração Implementados
+
+#### **📄 Página About - Bio e Serviços**
+- [x] **Bio Pessoal**: Atualizada com especialização em "engenharia de software, sistemas inteligentes e desenvolvimento multimédia"
+- [x] **Serviços Oferecidos**:
+  - Frontend → "Design de interfaces pessoa-máquina e sistemas interativos"
+  - Backend → "Arquitetura de sistemas e sistemas de informação escaláveis"
+  - AI → "Sistemas inteligentes e apoio à decisão com análise de dados"
+
+#### **📄 Página Experiência - Competências Técnicas**
+- [x] **Descrição Principal**: "Formação especializada em engenharia de software e sistemas inteligentes"
+- [x] **Stack Tecnológico**: Linguagem profissional com referências académicas subtis
+- [x] **Linguagens de Programação**: "Algoritmia e programação orientada por objetos"
+- [x] **Frontend**: "Design de interfaces pessoa-máquina e sistemas interativos"
+- [x] **Backend & Mobile**: "Arquitetura de sistemas e desenvolvimento móvel"
+- [x] **Bases de Dados**: "Sistemas de informação e arquitetura de dados"
+- [x] **Sistemas Inteligentes**: "Inteligência artificial e apoio à decisão"
+- [x] **Ferramentas**: "Desenvolvimento e engenharia de software"
+
+#### **📄 Formação Académica - ESTCB Expandida**
+- [x] **Interface Atualizada**: Adicionados campos `description` e `specializations`
+- [x] **Descrição do Curso**: "Formação especializada em desenvolvimento de aplicações de software e sistemas de informação"
+- [x] **Perfis de Formação**: 4 badges com especializations:
+  - "Programação e Engenharia de Software"
+  - "Sistemas Inteligentes e Apoio à Decisão"
+  - "Bases de Dados e Sistemas de Informação"
+  - "Multimédia e Conteúdos Internet"
+
+#### **📄 Descrições de Projetos - Linguagem Profissional**
+- [x] **YOLO Project**: "Sistema inteligente... aplicando técnicas de análise inteligente de dados visuais"
+- [x] **Website Feira**: "Aplicando princípios de design de interfaces pessoa-máquina"
+- [x] **Fitness4U**: "Implementando arquitetura de bases de dados e padrões de engenharia de software"
+- [x] **Flutter App**: "Desenvolvida para dispositivos móveis... implementando base de dados local"
+- [x] **Travel System**: "Sistema de informação empresarial... arquitetura de bases de dados relacionais"
+
+### 21.3. Contextos Técnicos Atualizados
+- [x] **JavaScript**: "Desenvolvimento web e aplicações móveis"
+- [x] **Java**: "Programação orientada por objetos e sistemas"
+- [x] **Python**: "Sistemas inteligentes e análise de dados"
+- [x] **Dart**: "Desenvolvimento para dispositivos móveis"
+- [x] **C**: "Programação de sistemas e arquitetura"
+- [x] **PHP**: "Desenvolvimento web e sistemas de informação"
+- [x] **React**: "Aplicações web modernas e componentes reutilizáveis"
+- [x] **HTML/CSS**: "Linguagens web e design responsivo"
+- [x] **TailwindCSS**: "Frameworks CSS e design systems"
+- [x] **Node.js**: "Arquitetura de sistemas e APIs REST"
+- [x] **Express.js**: "Desenvolvimento de serviços web escaláveis"
+- [x] **Flutter**: "Aplicações móveis cross-platform nativas"
+- [x] **MongoDB**: "Bases de dados não-relacionais e NoSQL"
+- [x] **MySQL**: "Sistemas relacionais e modelação de dados"
+- [x] **SQL**: "Linguagens de organização de dados"
+- [x] **SQLite**: "Bases de dados embebidas para mobile"
+- [x] **PyTorch**: "Sistemas inteligentes e redes neurais"
+- [x] **YOLO**: "Análise inteligente de dados visuais"
+- [x] **OpenCV**: "Processamento e codificação multimédia"
+- [x] **Unity**: "Desenvolvimento de aplicações multimédia"
+- [x] **Git**: "Controlo de versões e engenharia de software"
+
+### 21.4. Mapeamento Académico → Profissional
+```
+Unidades Curriculares → Competências Profissionais:
+├── Algoritmia e Programação → "Algoritmia e programação orientada por objetos"
+├── Interfaces Pessoa-Máquina → "Design de interfaces pessoa-máquina"
+├── Programação para Dispositivos Móveis → "Desenvolvimento para dispositivos móveis"
+├── Linguagens Web → "Linguagens web e design responsivo"
+├── Arquitetura de Sistemas → "Arquitetura de sistemas e APIs REST"
+├── Bases de Dados → "Sistemas de informação e arquitetura de dados"
+├── Inteligência Artificial → "Sistemas inteligentes e apoio à decisão"
+├── Análise Inteligente de Dados → "Análise inteligente de dados visuais"
+├── Engenharia de Software → "Padrões de engenharia de software"
+├── Sistemas de Informação → "Sistemas de informação empresarial"
+├── Multimédia → "Desenvolvimento de aplicações multimédia"
+└── Codificação de Sinais → "Processamento e codificação multimédia"
+```
+
+### 21.5. Verificação e Resultados
+- [x] Build passa sem erros (0 warnings)
+- [x] Linguagem profissional e de mercado mantida
+- [x] Referências académicas integradas subtilmente
+- [x] Credibilidade técnica aumentada
+- [x] SEO melhorado com palavras-chave relevantes
+- [x] Design visual consistente preservado
+- [x] Performance mantida (235 kB First Load JS)
+
+**Status:** ✅ **Concluído** - Informação académica integrada de forma dissimulada e profissional
+
+---
+
+## 🎨 22. Ajustes de Design e Layout Mobile
+
+### 22.1. Alterações na Ordem dos Filtros de Projetos
+- [x] **Problema**: Ordem dos botões "Inteligência Artificial" e "Web" na secção filtrar por categoria
+- [x] **Solução**: Modificado hook `useProjectFilter` para definir ordem específica
+- [x] **Implementação**: Web aparece antes de AI nos filtros de categoria
+
+### 22.2. Limpeza do Footer
+- [x] **Problema**: Texto "Vamos Conectar" desnecessário no footer
+- [x] **Solução**: Removido título, mantido apenas o parágrafo informativo
+- [x] **Resultado**: Footer mais limpo com "Encontra-me nas redes sociais ou entra em contacto diretamente"
+
+### 22.3. Otimização do Menu Móvel (Drawer)
+- [x] **Problema**: Texto muito grande e layout inadequado para dispositivos móveis
+- [x] **Soluções Implementadas**:
+
+#### **📱 Ajustes de Tamanho de Texto**
+- [x] **Links do Menu**: `text-xl md:text-2xl` → `text-lg` (mais pequeno)
+- [x] **Botão Voltar**: `text-lg` → `text-sm` (mais compacto)
+- [x] **Mantra**: `text-2xl` → `text-lg` (mais adequado)
+- [x] **Citação**: `text-lg` → `text-sm` (mais legível)
+- [x] **Autor**: `text-sm` → `text-xs` (mais discreto)
+- [x] **Copyright**: `text-sm` → `text-xs` (mais compacto)
+
+#### **📐 Ajustes de Layout e Espaçamento**
+- [x] **Padding Geral**: Reduzido de `p-8` para `p-6` (mais eficiente)
+- [x] **Navegação**: `px-12 py-8` → `px-8 py-6` (melhor aproveitamento)
+- [x] **Espaçamento Items**: `space-y-8` → `space-y-6` (mais compacto)
+- [x] **Botões**: `px-8 py-6` → `px-6 py-4` (mais adequado)
+- [x] **Botão Voltar**: `px-6 py-3` → `px-4 py-2` (mais discreto)
+
+#### **🔧 Melhorias Técnicas**
+- [x] **Largura Máxima**: Adicionado `max-w-sm` para limitar largura
+- [x] **Scroll**: `overflow-hidden` → `overflow-y-auto` (conteúdo sempre visível)
+- [x] **Ícones**: Reduzidos de `xl/lg` para `lg/default` (proporcionais)
+- [x] **Hover Effects**: Reduzido `translate-x-6` → `translate-x-4` (mais sutil)
+
+### 22.4. Código Implementado
+
+#### **🔄 Ordem dos Filtros**
+```tsx
+// ProjectFilter.tsx - Hook atualizado
+const categories = React.useMemo(() => {
+  const uniqueCategories = Array.from(new Set(projects.map(p => p.category)))
+  // Define desired order: web before ai
+  const categoryOrder = ['web', 'ai', 'mobile']
+  return categoryOrder.filter(cat => uniqueCategories.includes(cat))
+    .concat(uniqueCategories.filter(cat => !categoryOrder.includes(cat)))
+}, [projects])
+```
+
+#### **🧹 Footer Limpo**
+```tsx
+// Footer.tsx - Secção social simplificada
+<div className="text-center">
+  <p className="text-sm text-muted-foreground mb-4">
+    Encontra-me nas redes sociais ou entra em contacto diretamente
+  </p>
+  {/* Social icons */}
+</div>
+```
+
+#### **📱 Menu Móvel Otimizado**
+```tsx
+// DrawerMenu.tsx - Layout responsivo
+<motion.div className={cn(
+  "fixed top-0 h-screen w-[85vw] max-w-sm bg-background/95 backdrop-blur-xl
+   border-l border-border/50 shadow-2xl z-50 overflow-y-auto"
+)}>
+  {/* Back button - compacto */}
+  <Button size="default" className="px-4 py-2 text-sm" />
+
+  {/* Navigation - texto menor */}
+  <nav className="px-8 py-6">
+    <Button className="px-6 py-4 text-lg" />
+  </nav>
+
+  {/* Quotes - texto reduzido */}
+  <div className="p-6 space-y-4">
+    <p className="text-lg">Mantra</p>
+    <p className="text-sm max-w-xs">Citação</p>
+    <p className="text-xs">Autor</p>
+  </div>
+</motion.div>
+```
+
+### 22.5. Resultados e Benefícios
+- [x] **UX Mobile Melhorada**: Texto legível e layout otimizado
+- [x] **Conteúdo Sempre Visível**: Scroll automático quando necessário
+- [x] **Design Mais Limpo**: Footer simplificado e profissional
+- [x] **Ordem Lógica**: Filtros organizados por relevância
+- [x] **Performance Mantida**: 243 kB First Load JS (estável)
+- [x] **Responsividade**: Layout adapta-se melhor a ecrãs pequenos
+
+### 22.6. Verificação de Qualidade
+- [x] **Build Status**: ✅ Sucesso (0 erros)
+- [x] **Mobile Layout**: ✅ Otimizado para dispositivos pequenos
+- [x] **Legibilidade**: ✅ Texto adequado para mobile
+- [x] **Navegação**: ✅ Menu funcional e acessível
+- [x] **Design Consistency**: ✅ Visual mantido em todas as resoluções
+
+**Status:** ✅ **Concluído** - Design e layout mobile otimizados com sucesso

@@ -204,7 +204,7 @@ export default function DrawerMenu({
           <motion.div
             ref={drawerRef}
             className={cn(
-              "fixed top-0 h-screen w-[85vw] bg-background/95 backdrop-blur-xl border-l border-border/50 shadow-2xl z-50 overflow-hidden",
+              "fixed top-0 h-screen w-[85vw] max-w-sm bg-background/95 backdrop-blur-xl border-l border-border/50 shadow-2xl z-50 overflow-y-auto",
               side === "left" && "left-0 border-l-0 border-r",
               side === "right" && "right-0",
               className
@@ -220,7 +220,7 @@ export default function DrawerMenu({
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col">
               {/* Back button */}
-              <div className="flex justify-start p-8">
+              <div className="flex justify-start p-6">
                 <motion.div
                   whileHover={{ scale: 1.05, x: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -228,12 +228,12 @@ export default function DrawerMenu({
                 >
                   <Button
                     variant="ghost"
-                    size="lg"
+                    size="default"
                     onClick={handleCloseWithAnimation}
-                    className="back-button group px-6 py-3 hover:bg-brand-primary/10 transition-all duration-300 rounded-xl border border-border/30 hover:border-brand-primary/50 hover:shadow-lg"
-                    leftIcon={<Icon name="arrowLeft" size="default" className="group-hover:-translate-x-1 transition-transform duration-300" />}
+                    className="back-button group px-4 py-2 hover:bg-brand-primary/10 transition-all duration-300 rounded-lg border border-border/30 hover:border-brand-primary/50 hover:shadow-lg"
+                    leftIcon={<Icon name="arrowLeft" size="sm" className="group-hover:-translate-x-1 transition-transform duration-300" />}
                   >
-                    <span className="text-lg font-medium group-hover:text-brand-primary transition-colors duration-300">
+                    <span className="text-sm font-medium group-hover:text-brand-primary transition-colors duration-300">
                       {labels.navigation.back}
                     </span>
                   </Button>
@@ -241,8 +241,8 @@ export default function DrawerMenu({
               </div>
 
               {/* Navigation Items */}
-              <nav className="flex-1 px-12 py-8 flex flex-col justify-center">
-                <div className="space-y-8">
+              <nav className="flex-1 px-8 py-6 flex flex-col justify-center">
+                <div className="space-y-6">
                   {items.map((item, index) => (
                     <motion.div
                       key={item.label}
@@ -256,11 +256,11 @@ export default function DrawerMenu({
                         variant={item.active ? "primary" : "ghost"}
                         size="lg"
                         className={cn(
-                          "w-full justify-start px-8 py-6 text-xl md:text-2xl font-light transition-all duration-300 group rounded-2xl",
+                          "w-full justify-start px-6 py-4 text-lg font-light transition-all duration-300 group rounded-xl",
                           item.active && "text-white glow-effect shadow-lg bg-brand-primary/20",
-                          !item.active && "hover:text-brand-primary hover:bg-brand-primary/10 hover:translate-x-6 hover:shadow-lg"
+                          !item.active && "hover:text-brand-primary hover:bg-brand-primary/10 hover:translate-x-4 hover:shadow-lg"
                         )}
-                        leftIcon={item.icon ? <Icon name={item.icon} size="xl" /> : undefined}
+                        leftIcon={item.icon ? <Icon name={item.icon} size="lg" /> : undefined}
                         onClick={() => handleItemClick(item)}
                       >
                         <GlitchText
@@ -270,7 +270,7 @@ export default function DrawerMenu({
                           className="font-light tracking-wide"
                         />
                         {item.external && (
-                          <Icon name="external" size="lg" className="ml-auto opacity-60" />
+                          <Icon name="external" size="default" className="ml-auto opacity-60" />
                         )}
                       </Button>
                     </motion.div>
@@ -279,19 +279,19 @@ export default function DrawerMenu({
               </nav>
 
               {/* Mantra e Frase */}
-              <div className="p-8 border-t border-border/30 space-y-6">
+              <div className="p-6 border-t border-border/30 space-y-4">
                 <div className="text-center">
-                  <p className="text-2xl font-medium text-brand-accent mb-2 italic">
+                  <p className="text-lg font-medium text-brand-accent mb-3 italic">
                     &ldquo;Com calma e com alma&rdquo;
                   </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-md mx-auto">
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
                     &ldquo;O importante não é aquilo que fazemos da nossa vida, mas aquilo que a nossa vida faz de nós.&rdquo;
                   </p>
-                  <p className="text-sm text-muted-foreground/70 mt-2">
+                  <p className="text-xs text-muted-foreground/70 mt-2">
                     — Agostinho da Silva
                   </p>
                 </div>
-                <div className="text-center text-sm text-muted-foreground border-t border-border/20 pt-4">
+                <div className="text-center text-xs text-muted-foreground border-t border-border/20 pt-3">
                   <p>© 2025 João Cabrito</p>
                   <p className="mt-1">Software Engineer</p>
                 </div>

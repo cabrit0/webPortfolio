@@ -58,18 +58,18 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
     ],
     features = [
       {
-        title: "Frontend Development",
-        description: "Creating responsive, interactive user interfaces with modern frameworks and libraries.",
+        title: "Desenvolvimento Frontend",
+        description: "Criação de interfaces pessoa-máquina modernas e responsivas, com especialização em design de sistemas interativos e experiência de utilizador otimizada.",
         icon: "palette"
       },
       {
-        title: "Backend Development",
-        description: "Building scalable APIs and server-side applications with robust architecture.",
+        title: "Arquitetura de Sistemas",
+        description: "Desenvolvimento de sistemas de informação escaláveis e APIs robustas, com foco em padrões de software e arquitetura de dados eficiente.",
         icon: "server"
       },
       {
-        title: "AI Integration",
-        description: "Implementing AI-powered features and machine learning solutions in web applications.",
+        title: "Sistemas Inteligentes",
+        description: "Implementação de soluções de inteligência artificial e apoio à decisão, com experiência em análise inteligente de dados e reconhecimento visual.",
         icon: "zap"
       }
     ],

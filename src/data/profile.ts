@@ -35,6 +35,8 @@ export interface Education {
   period: string
   location: string
   status: 'completed' | 'in-progress'
+  description?: string
+  specializations?: string[]
 }
 
 export interface Project {
@@ -153,7 +155,14 @@ export const education: Education[] = [
     degree: "Licenciatura em Informática e Multimédia",
     period: "2021 - 2025 (Finalista)",
     location: "Castelo Branco",
-    status: 'in-progress'
+    status: 'in-progress',
+    description: "Formação especializada em desenvolvimento de aplicações de software e sistemas de informação, com ênfase em conteúdos multimédia e tecnologias modernas.",
+    specializations: [
+      "Programação e Engenharia de Software",
+      "Sistemas Inteligentes e Apoio à Decisão",
+      "Bases de Dados e Sistemas de Informação",
+      "Multimédia e Conteúdos Internet"
+    ]
   },
   {
     institution: "IEFP Castelo Branco",
@@ -168,8 +177,8 @@ export const education: Education[] = [
 export const projects: Project[] = [
   {
     title: "Software Reconhecimento Visual para Componentes de Cablagem Automóvel",
-    description: "Projeto de final de licenciatura focado no desenvolvimento de um software inteligente de reconhecimento visual, capaz de identificar e classificar componentes de cablagem elétrica automóvel.",
-    longDescription: "Este projeto representa o culminar da minha licenciatura, onde desenvolvi um sistema avançado de reconhecimento visual utilizando machine learning e algoritmos de computação visual. A solução visa otimizar processos de inspeção e qualidade na indústria automóvel, reduzindo erros humanos e aumentando significativamente a eficiência produtiva. O sistema é capaz de identificar e classificar diferentes tipos de componentes de cablagem com alta precisão.",
+    description: "Sistema inteligente de reconhecimento visual para identificação e classificação automática de componentes de cablagem elétrica automóvel, aplicando técnicas avançadas de análise inteligente de dados visuais.",
+    longDescription: "Sistema avançado de reconhecimento visual desenvolvido com foco em sistemas inteligentes e apoio à decisão para a indústria automóvel. Utiliza algoritmos de machine learning e técnicas de processamento de sinais multimédia para identificar e classificar componentes de cablagem com alta precisão. A solução integra fundamentos de inteligência artificial com aplicações práticas, otimizando processos de inspeção e controlo de qualidade industrial.",
     technologies: ["YOLO", "PyTorch", "Python", "OpenCV", "LabelIMG"],
     category: 'ai',
     featured: true,
@@ -198,8 +207,8 @@ export const projects: Project[] = [
   },
   {
     title: "Website da Feira de Emprego Universitária",
-    description: "Desenvolvimento do website oficial da feira de emprego da universidade, um evento crucial para a ligação entre estudantes e o mercado de trabalho.",
-    longDescription: "Website oficial desenvolvido para a feira de emprego da universidade ESTCB. O projeto oferece uma plataforma completa e intuitiva para consulta de empresas participantes, agenda detalhada do evento e sistema de inscrição em sessões de networking. Implementado com design responsivo e otimizado para proporcionar uma experiência de utilizador fluida e acessível em todos os dispositivos.",
+    description: "Plataforma web desenvolvida para evento académico de ligação universidade-empresa, aplicando princípios de design de interfaces pessoa-máquina e arquitetura de sistemas web modernos.",
+    longDescription: "Plataforma web completa desenvolvida aplicando conhecimentos de linguagens web e design de sistemas interativos. O projeto implementa uma arquitetura de informação eficiente para consulta de empresas participantes, agenda interativa e sistema de inscrições. Desenvolvido com foco na experiência do utilizador e acessibilidade, seguindo padrões modernos de desenvolvimento web e design responsivo.",
     technologies: ["HTML", "Tailwind", "JavaScript"],
     category: 'web',
     featured: true,
@@ -229,8 +238,8 @@ export const projects: Project[] = [
   },
   {
     title: "Fitness4U",
-    description: "Aplicação completa para gestão de treinos e acompanhamento fitness com sistema de autenticação robusto e interface moderna.",
-    longDescription: "Fitness4U é uma aplicação web completa desenvolvida para ginásios e utilizadores individuais. O sistema inclui autenticação e autorização seguras, permitindo que cada utilizador crie planos de treino personalizados a partir de uma base de dados com mais de 1000 exercícios diferentes. A aplicação integra um calendário dinâmico que renderiza treinos marcados, cálculo de BMI e sugestões inteligentes de exercícios baseadas no perfil do utilizador.",
+    description: "Sistema de informação completo para gestão fitness, implementando arquitetura de bases de dados robusta e padrões de engenharia de software para autenticação e gestão de utilizadores.",
+    longDescription: "Sistema de informação web desenvolvido aplicando princípios de engenharia de software e arquitetura de bases de dados. Implementa autenticação segura, gestão de utilizadores e estrutura de dados otimizada para mais de 1000 exercícios. A aplicação integra funcionalidades de análise de dados para sugestões personalizadas e calendário dinâmico, demonstrando competências em desenvolvimento full-stack e sistemas de informação.",
     technologies: ["React", "Tailwind", "Node.js", "Express.js", "MongoDB", "Redux"],
     category: 'web',
     featured: true,
@@ -301,8 +310,8 @@ export const projects: Project[] = [
   },
   {
     title: "Gestor de Gastos Financeiros",
-    description: "Aplicação móvel desenvolvida em Flutter para gestão pessoal de finanças. Permite aos utilizadores registar despesas e receitas, categorizar gastos, visualizar relatórios detalhados e acompanhar o orçamento mensal.",
-    longDescription: "Aplicação móvel completa desenvolvida em Flutter para gestão pessoal de finanças. O app permite aos utilizadores registar despesas e receitas de forma intuitiva, categorizar gastos por tipo, visualizar relatórios detalhados com gráficos interativos e acompanhar o orçamento mensal. Interface moderna e responsiva com análise de padrões de consumo para um controlo financeiro eficaz.",
+    description: "Aplicação móvel desenvolvida para dispositivos móveis utilizando Flutter, implementando base de dados local e análise de dados para gestão financeira pessoal com interface nativa otimizada.",
+    longDescription: "Aplicação móvel nativa desenvolvida aplicando conhecimentos de programação para dispositivos móveis e gestão de bases de dados. Implementa SQLite para armazenamento local, análise de padrões de dados financeiros e interface responsiva. O projeto demonstra competências em desenvolvimento mobile, arquitetura de dados e design de sistemas interativos para plataformas móveis.",
     technologies: ["Flutter", "Dart", "SQLite", "Charts"],
     category: 'mobile',
     featured: true,
@@ -334,7 +343,7 @@ export const projects: Project[] = [
   },
   {
     title: "Sistema de Gestão de Bilhetes e Viagens",
-    description: "Aplicação web completa para gestão de bilhetes, viagens, rotas e clientes. Sistema desenvolvido para empresas de transporte com funcionalidades de reserva de bilhetes, gestão de rotas, controlo de clientes e relatórios administrativos. Interface responsiva com painel administrativo para gestão completa do sistema.",
+    description: "Sistema de informação empresarial para gestão de transportes, implementando arquitetura de bases de dados relacionais e padrões de desenvolvimento web para gestão completa de bilhetes, rotas e clientes.",
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     category: 'web',
     featured: true,

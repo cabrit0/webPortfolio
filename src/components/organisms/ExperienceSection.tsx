@@ -32,7 +32,7 @@ export interface ExperienceSectionProps {
 const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
   ({ 
     title = "Experiência & Competências",
-    description = "Percurso técnico e profissional com foco em tecnologias modernas e desenvolvimento de soluções inovadoras.",
+    description = "Formação especializada em engenharia de software e sistemas inteligentes, com experiência prática em desenvolvimento multimédia, arquitetura de sistemas de informação e análise de dados.",
     skills = [],
     technologies = [],
     className,
@@ -80,7 +80,7 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                 className="text-4xl font-bold bg-gradient-to-r from-brand-secondary to-brand-accent bg-clip-text text-transparent mb-4"
               />
               <TypographyP className="text-neutral-400 max-w-2xl mx-auto">
-                Tecnologias e competências organizadas por área de especialização
+                Competências técnicas desenvolvidas através de formação multidisciplinar em engenharia de software, sistemas de informação e desenvolvimento multimédia
               </TypographyP>
             </div>
 
@@ -103,17 +103,17 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                       </div>
                       <div>
                         <h4 className="text-xl font-semibold text-blue-400">Linguagens de Programação</h4>
-                        <p className="text-sm text-muted-foreground">Fundação técnica sólida</p>
+                        <p className="text-sm text-muted-foreground">Algoritmia e programação orientada por objetos</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { name: 'JavaScript', experience: '3+ anos', context: 'Desenvolvimento web e mobile' },
-                        { name: 'Java', experience: '3 anos', context: 'Programação académica e sistemas' },
-                        { name: 'Python', experience: '1+ ano', context: 'IA, automação e backend' },
-                        { name: 'Dart', experience: '1 ano', context: 'Desenvolvimento Flutter' },
-                        { name: 'C', experience: '1 ano', context: 'Sistemas e game development' },
-                        { name: 'PHP', experience: '1+ ano', context: 'Desenvolvimento web backend' }
+                        { name: 'JavaScript', experience: '3+ anos', context: 'Desenvolvimento web e aplicações móveis' },
+                        { name: 'Java', experience: '3 anos', context: 'Programação orientada por objetos e sistemas' },
+                        { name: 'Python', experience: '1+ ano', context: 'Sistemas inteligentes e análise de dados' },
+                        { name: 'Dart', experience: '1 ano', context: 'Desenvolvimento para dispositivos móveis' },
+                        { name: 'C', experience: '1 ano', context: 'Programação de sistemas e arquitetura' },
+                        { name: 'PHP', experience: '1+ ano', context: 'Desenvolvimento web e sistemas de informação' }
                       ].map((skill, index) => (
                         <motion.div
                           key={skill.name}
@@ -156,14 +156,14 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                       </div>
                       <div>
                         <h4 className="text-xl font-semibold text-green-400">Frontend Development</h4>
-                        <p className="text-sm text-muted-foreground">Interface de utilizador e experiência</p>
+                        <p className="text-sm text-muted-foreground">Design de interfaces pessoa-máquina e sistemas interativos</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { name: 'React', experience: '1+ ano', context: 'SPAs e aplicações complexas' },
-                        { name: 'HTML/CSS', experience: '3+ anos', context: 'Websites responsivos' },
-                        { name: 'TailwindCSS', experience: '2+ anos', context: 'Design systems modernos' }
+                        { name: 'React', experience: '1+ ano', context: 'Aplicações web modernas e componentes reutilizáveis' },
+                        { name: 'HTML/CSS', experience: '3+ anos', context: 'Linguagens web e design responsivo' },
+                        { name: 'TailwindCSS', experience: '2+ anos', context: 'Frameworks CSS e design systems' }
                       ].map((skill, index) => (
                         <motion.div
                           key={skill.name}
@@ -206,14 +206,14 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                       </div>
                       <div>
                         <h4 className="text-xl font-semibold text-orange-400">Backend & Mobile</h4>
-                        <p className="text-sm text-muted-foreground">Servidor e aplicações móveis</p>
+                        <p className="text-sm text-muted-foreground">Arquitetura de sistemas e desenvolvimento móvel</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { name: 'Node.js', experience: '1+ ano', context: 'APIs e serviços web' },
-                        { name: 'Express.js', experience: '1+ ano', context: 'Servidores web robustos' },
-                        { name: 'Flutter', experience: '1 ano', context: 'Apps móveis cross-platform' }
+                        { name: 'Node.js', experience: '1+ ano', context: 'Arquitetura de sistemas e APIs REST' },
+                        { name: 'Express.js', experience: '1+ ano', context: 'Desenvolvimento de serviços web escaláveis' },
+                        { name: 'Flutter', experience: '1 ano', context: 'Aplicações móveis cross-platform nativas' }
                       ].map((skill, index) => (
                         <motion.div
                           key={skill.name}
@@ -256,15 +256,15 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                       </div>
                       <div>
                         <h4 className="text-xl font-semibold text-purple-400">Bases de Dados</h4>
-                        <p className="text-sm text-muted-foreground">Armazenamento e gestão de dados</p>
+                        <p className="text-sm text-muted-foreground">Sistemas de informação e arquitetura de dados</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                       {[
-                        { name: 'MongoDB', experience: '2+ anos', context: 'Dados não-relacionais' },
-                        { name: 'MySQL', experience: '2+ anos', context: 'Sistemas relacionais' },
-                        { name: 'SQL', experience: '2+ anos', context: 'Consultas e otimização' },
-                        { name: 'SQLite', experience: '1+ ano', context: 'Aplicações móveis' }
+                        { name: 'MongoDB', experience: '2+ anos', context: 'Bases de dados não-relacionais e NoSQL' },
+                        { name: 'MySQL', experience: '2+ anos', context: 'Sistemas relacionais e modelação de dados' },
+                        { name: 'SQL', experience: '2+ anos', context: 'Linguagens de organização de dados' },
+                        { name: 'SQLite', experience: '1+ ano', context: 'Bases de dados embebidas para mobile' }
                       ].map((skill, index) => (
                         <motion.div
                           key={skill.name}
@@ -306,15 +306,15 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                         <Icon name="zap" size="lg" className="text-white" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-semibold text-yellow-400">IA & Machine Learning</h4>
-                        <p className="text-sm text-muted-foreground">Inteligência artificial e visão computacional</p>
+                        <h4 className="text-xl font-semibold text-yellow-400">Sistemas Inteligentes</h4>
+                        <p className="text-sm text-muted-foreground">Inteligência artificial e apoio à decisão</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {[
-                        { name: 'PyTorch', experience: '1+ ano', context: 'Projeto final de licenciatura' },
-                        { name: 'YOLO', experience: '1+ ano', context: 'Reconhecimento visual' },
-                        { name: 'OpenCV', experience: '1+ ano', context: 'Processamento de imagem' }
+                        { name: 'PyTorch', experience: '1+ ano', context: 'Sistemas inteligentes e redes neurais' },
+                        { name: 'YOLO', experience: '1+ ano', context: 'Análise inteligente de dados visuais' },
+                        { name: 'OpenCV', experience: '1+ ano', context: 'Processamento e codificação multimédia' }
                       ].map((skill, index) => (
                         <motion.div
                           key={skill.name}
@@ -356,14 +356,14 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                         <Icon name="briefcase" size="lg" className="text-white" />
                       </div>
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-400">Ferramentas & Outros</h4>
-                        <p className="text-sm text-muted-foreground">Desenvolvimento e controlo de versões</p>
+                        <h4 className="text-xl font-semibold text-gray-400">Ferramentas & Tecnologias</h4>
+                        <p className="text-sm text-muted-foreground">Desenvolvimento e engenharia de software</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[
-                        { name: 'Unity', experience: '6 meses', context: 'Estágio game development' },
-                        { name: 'Git', experience: '3+ anos', context: 'Controlo de versões' }
+                        { name: 'Unity', experience: '6 meses', context: 'Desenvolvimento de aplicações multimédia' },
+                        { name: 'Git', experience: '3+ anos', context: 'Controlo de versões e engenharia de software' }
                       ].map((skill, index) => (
                         <motion.div
                           key={skill.name}
@@ -509,6 +509,21 @@ const ExperienceSection = React.forwardRef<HTMLElement, ExperienceSectionProps>(
                         </div>
                         <p className="text-brand-secondary font-medium mb-1">{edu.institution}</p>
                         <p className="text-sm text-muted-foreground mb-2">{edu.location}</p>
+                        {edu.description && (
+                          <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{edu.description}</p>
+                        )}
+                        {edu.specializations && (
+                          <div className="mb-3">
+                            <p className="text-xs text-muted-foreground mb-2">Perfis de Formação:</p>
+                            <div className="flex flex-wrap gap-1">
+                              {edu.specializations.map((spec) => (
+                                <Badge key={spec} variant="outline" className="text-xs text-brand-secondary border-brand-secondary/30">
+                                  {spec}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                         <Badge
                           variant={edu.status === 'completed' ? 'default' : 'outline'}
                           className="text-xs"

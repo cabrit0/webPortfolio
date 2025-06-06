@@ -61,9 +61,6 @@ export function Footer({ className }: FooterProps) {
 
           {/* Center Section - Social Links */}
           <div className="text-center">
-            <h3 className="text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-2">
-              Vamos Conectar
-            </h3>
             <p className="text-sm text-muted-foreground mb-4">
               Encontra-me nas redes sociais ou entra em contacto diretamente
             </p>
