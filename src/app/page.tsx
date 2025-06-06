@@ -237,7 +237,7 @@ export default function Home() {
                     <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-brand-primary/10 to-brand-accent/10 rounded-full border border-brand-primary/20">
                       <span className="text-brand-primary text-xl">🌟</span>
                       <div className="text-center">
-                        <span className="text-sm font-semibold text-foreground italic">"Só é útil o conhecimento que nos torna melhores"</span>
+                        <span className="text-sm font-semibold text-foreground italic">&ldquo;Só é útil o conhecimento que nos torna melhores&rdquo;</span>
                         <div className="text-xs text-muted-foreground mt-1 font-medium">— Sócrates</div>
                       </div>
                       <span className="text-brand-accent text-xl">⚡</span>
