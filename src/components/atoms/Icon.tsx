@@ -8,6 +8,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Phone,
   ExternalLink,
   Download,
   ArrowRight,
@@ -50,6 +51,7 @@ const iconRegistry = {
   github: Github,
   linkedin: Linkedin,
   mail: Mail,
+  phone: Phone,
   
   // Navigation
   home: Home,

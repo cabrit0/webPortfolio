@@ -1,11 +1,4 @@
-import Lenis from "lenis"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-// Register GSAP plugins
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger)
-}
+import Lenis from "@studio-freight/lenis"
 
 export class SmoothScrollManager {
   private lenis: Lenis | null = null
@@ -25,19 +18,6 @@ export class SmoothScrollManager {
       touchMultiplier: 2,
       infinite: false,
     })
-
-    // Connect Lenis with GSAP ScrollTrigger
-    this.lenis.on('scroll', ScrollTrigger.update)
-
-    // Add Lenis to GSAP ticker for perfect sync
-    gsap.ticker.add((time) => {
-      if (this.lenis) {
-        this.lenis.raf(time * 1000)
-      }
-    })
-
-    // Ensure ScrollTrigger uses Lenis scroll
-    gsap.ticker.lagSmoothing(0)
 
     // Start the animation loop
     this.raf()
@@ -95,7 +75,7 @@ export class SmoothScrollManager {
       cancelAnimationFrame(this.rafId)
       this.rafId = null
     }
-    gsap.ticker.remove(this.raf)
+    // No GSAP cleanup needed in simplified version
   }
 
   // Get current scroll progress (0-1)

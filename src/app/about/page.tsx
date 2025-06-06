@@ -2,6 +2,7 @@
 
 import { AboutSection } from "@/components/organisms"
 import { Header } from "@/components/organisms"
+import Footer from "@/components/organisms/Footer"
 import { personalInfo, skills, experience, education, technologies } from "@/data/profile"
 
 export default function AboutPage() {
@@ -24,42 +25,42 @@ export default function AboutPage() {
   const features = [
     {
       title: "Desenvolvimento Web",
-      description: "Criação de aplicações web modernas com React, JavaScript, HTML/CSS e frameworks como TailwindCSS.",
+      description: "Criação de aplicações web modernas com React, JavaScript, HTML/CSS e frameworks como TailwindCSS. Experiência em desenvolvimento full-stack com foco na experiência do utilizador.",
       icon: "code"
     },
     {
       title: "Desenvolvimento Mobile",
-      description: "Aplicações móveis cross-platform com Flutter e Dart, incluindo gestores financeiros e sistemas de controlo.",
+      description: "Aplicações móveis cross-platform com Flutter e Dart, incluindo gestores financeiros e sistemas de controlo. Experiência em desenvolvimento nativo para Android e iOS.",
       icon: "smartphone"
     },
     {
       title: "Inteligência Artificial",
-      description: "Desenvolvimento de soluções de reconhecimento visual com PyTorch, YOLO e OpenCV.",
+      description: "Desenvolvimento de soluções de reconhecimento visual com PyTorch, YOLO e OpenCV. Projeto de final de licenciatura focado em IA para a indústria automóvel.",
       icon: "zap"
     },
     {
-      title: "Backend Development",
-      description: "APIs e sistemas backend com Node.js, Express.js, Python e PHP para gestão de dados complexos.",
-      icon: "code"
+      title: "Desenvolvimento Backend",
+      description: "APIs e sistemas backend robustos com Node.js, Express.js, Python e PHP para gestão de dados complexos e arquiteturas escaláveis.",
+      icon: "server"
     },
     {
       title: "Bases de Dados",
-      description: "Gestão de dados com MongoDB, MySQL, SQLite e SQL para aplicações web e mobile.",
+      description: "Gestão eficiente de dados com MongoDB, MySQL, SQLite e SQL. Experiência em modelação de dados e otimização de consultas para aplicações web e mobile.",
       icon: "database"
     },
     {
-      title: "Game Development",
-      description: "Desenvolvimento de jogos e aplicações interativas com Unity e C.",
+      title: "Desenvolvimento de Jogos",
+      description: "Desenvolvimento de jogos e aplicações interativas com Unity e C. Experiência adquirida durante estágio na Horus Gaming Entertainment.",
       icon: "gamepad"
     }
   ]
 
   // Stats based on real experience
   const stats = [
-    { label: "Projetos", value: "9+", icon: "briefcase" },
-    { label: "Tecnologias", value: "17+", icon: "code" },
-    { label: "Finalista", value: "2025", icon: "star" },
-    { label: "Trabalhador-Estudante", value: "2+ anos", icon: "building" }
+    { label: "Projetos Realizados", value: "9+", icon: "briefcase" },
+    { label: "Tecnologias Usadas", value: "17+", icon: "code" },
+    { label: "Ano de Finalização", value: "2025", icon: "star" },
+    { label: "Experiência Profissional", value: "1 ano", icon: "building" }
   ]
 
   // All technologies for display
@@ -78,15 +79,9 @@ export default function AboutPage() {
       <Header
         variant="glass"
         position="fixed"
-        showThemeToggle={false}
+        showThemeToggle={true}
         showCTA={true}
-        ctaLabel="Download CV"
-        navigationItems={[
-          { label: "Home", href: "/", icon: "home" },
-          { label: "About", href: "/about", icon: "user", active: true },
-          { label: "Projects", href: "#projects", icon: "briefcase" },
-          { label: "Contact", href: "#contact", icon: "mail" }
-        ]}
+        currentPath="/about"
         onCtaClick={handleCtaClick}
       />
 
@@ -101,6 +96,9 @@ export default function AboutPage() {
         stats={stats}
         className="pt-20"
       />
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

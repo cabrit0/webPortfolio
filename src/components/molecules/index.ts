@@ -1,6 +1,12 @@
 // Professional Molecules - Complex components built from atoms
 // These components combine multiple atoms to create sophisticated UI elements
 
+// Modal components
+export {
+  Modal,
+  type ModalProps
+} from "./Modal"
+
 // Project components
 export { 
   ProjectCard, 
@@ -46,11 +52,17 @@ export {
 } from "./FeatureCard"
 
 // Testimonial components
-export { 
-  TestimonialCard, 
-  TestimonialGrid, 
+export {
+  TestimonialCard,
+  TestimonialGrid,
   TestimonialCarousel,
   type TestimonialCardProps,
   type TestimonialGridProps,
-  type TestimonialCarouselProps 
+  type TestimonialCarouselProps
 } from "./TestimonialCard"
+
+// Reusable project components (SOLID refactoring)
+export { ProjectActionButtons } from "./ProjectActionButtons"
+export { ProjectHeader } from "./ProjectHeader"
+export { ProjectSection } from "./ProjectSection"
+export { SectionHeader } from "./SectionHeader"

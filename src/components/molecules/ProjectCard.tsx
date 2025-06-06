@@ -11,11 +11,16 @@ import Image from "next/image"
 export interface ProjectCardProps {
   title: string
   description: string
+  longDescription?: string
   image?: string
   technologies: string[]
   liveUrl?: string
   githubUrl?: string
   featured?: boolean
+  category?: string
+  features?: string[]
+  challenges?: string[]
+  learnings?: string[]
   className?: string
   onCardClick?: () => void
 }

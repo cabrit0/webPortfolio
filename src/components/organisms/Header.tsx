@@ -3,13 +3,14 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { NavigationMenu, useNavigation, type NavigationItem } from "@/components/molecules"
+import { getNavigationWithActive, labels, type NavigationItem } from "@/config/navigation"
 import DrawerMenu from "@/components/molecules/DrawerMenu"
+import { ThemeToggle } from "@/components/molecules/ThemeToggle"
 import { Button, Icon } from "@/components/atoms"
 
 export interface HeaderProps {
   logo?: string | React.ReactNode
-  navigationItems?: NavigationItem[]
+  currentPath?: string // Para determinar item ativo automaticamente
   variant?: 'default' | 'glass' | 'minimal'
   position?: 'fixed' | 'sticky' | 'static'
   showThemeToggle?: boolean
@@ -21,23 +22,18 @@ export interface HeaderProps {
 }
 
 const Header = React.forwardRef<HTMLElement, HeaderProps>(
-  ({ 
+  ({
     logo = "João Cabrito",
-    navigationItems = [
-      { label: "Home", href: "#home", icon: "home" },
-      { label: "About", href: "#about", icon: "user" },
-      { label: "Projects", href: "#projects", icon: "briefcase" },
-      { label: "Contact", href: "#contact", icon: "mail" }
-    ],
+    currentPath = "/",
     variant = 'glass',
     position = 'fixed',
     showThemeToggle = false,
     showCTA = true,
-    ctaLabel = "Download CV",
+    ctaLabel = labels.cta.downloadCV,
     ctaHref,
     onCtaClick,
     className,
-    ...props 
+    ...props
   }, ref) => {
     const [isScrolled, setIsScrolled] = React.useState(false)
     const [theme, setTheme] = React.useState<'light' | 'dark'>('dark')
@@ -53,8 +49,8 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
       return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    // Use navigation hook for active states
-    const { navigationItems: activeNavigationItems } = useNavigation(navigationItems)
+    // Get navigation items with active states from centralized config
+    const activeNavigationItems = getNavigationWithActive(currentPath)
 
     const handleThemeToggle = () => {
       const newTheme = theme === 'light' ? 'dark' : 'light'
@@ -115,20 +111,10 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             
-            {/* Logo */}
-            <motion.div
-              className="flex-shrink-0"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              {typeof logo === 'string' ? (
-                <div className="text-xl font-bold bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent bg-clip-text text-transparent">
-                  {logo}
-                </div>
-              ) : (
-                logo
-              )}
-            </motion.div>
+            {/* Logo - Removed to avoid repetition with Hero */}
+            <div className="flex-shrink-0">
+              {/* Empty space for balance */}
+            </div>
 
             {/* Navigation removed - now only in drawer */}
 
@@ -141,18 +127,9 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.5 }}
+                  className="hidden md:block"
                 >
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={handleThemeToggle}
-                    className="hidden md:flex"
-                  >
-                    <Icon
-                      name={theme === 'light' ? 'moon' : 'sun'}
-                      size="sm"
-                    />
-                  </Button>
+                  <ThemeToggle size="sm" variant="ghost" />
                 </motion.div>
               )}
 
@@ -189,7 +166,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   className="p-2 hover:bg-brand-primary/10 transition-colors group"
                 >
                   <Icon name="menu" size="default" className="group-hover:scale-110 transition-transform" />
-                  <span className="hidden md:inline ml-2 font-medium">Menu</span>
+                  <span className="hidden md:inline ml-2 font-medium">{labels.navigation.menu}</span>
                 </Button>
               </motion.div>
 

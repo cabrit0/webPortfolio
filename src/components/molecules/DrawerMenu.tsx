@@ -4,21 +4,14 @@ import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { gsap } from "gsap"
 import { cn } from "@/lib/utils"
-import { Button, Icon, IconButton, type IconName } from "@/components/atoms"
+import { Button, Icon, IconButton } from "@/components/atoms"
+import { labels, type NavigationItem } from "@/config/navigation"
 import GlitchText from "@/components/animations/GlitchText"
-
-interface DrawerMenuItem {
-  label: string
-  href: string
-  icon?: IconName
-  active?: boolean
-  external?: boolean
-}
 
 interface DrawerMenuProps {
   isOpen: boolean
   onClose: () => void
-  items: DrawerMenuItem[]
+  items: NavigationItem[]
   logo?: string | React.ReactNode
   className?: string
   side?: "left" | "right"
@@ -97,16 +90,21 @@ export default function DrawerMenu({
     }
   }, [isOpen, createGlitchEffect])
 
-  const handleItemClick = (item: DrawerMenuItem) => {
-    if (item.href.startsWith('#')) {
-      // Smooth scroll to section
+  const handleItemClick = (item: NavigationItem) => {
+    if (item.external) {
+      // External links
+      window.open(item.href, '_blank')
+    } else if (item.href.startsWith('#')) {
+      // Smooth scroll to section on same page
       const element = document.querySelector(item.href)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
       }
-    } else if (item.external) {
-      window.open(item.href, '_blank')
+    } else if (item.href.includes('#')) {
+      // Links to sections on other pages (e.g., /#projects)
+      window.location.href = item.href
     } else {
+      // Regular page navigation
       window.location.href = item.href
     }
     handleCloseWithAnimation()
@@ -236,7 +234,7 @@ export default function DrawerMenu({
                     leftIcon={<Icon name="arrowLeft" size="default" className="group-hover:-translate-x-1 transition-transform duration-300" />}
                   >
                     <span className="text-lg font-medium group-hover:text-brand-primary transition-colors duration-300">
-                      Voltar
+                      {labels.navigation.back}
                     </span>
                   </Button>
                 </motion.div>
@@ -294,8 +292,8 @@ export default function DrawerMenu({
                   </p>
                 </div>
                 <div className="text-center text-sm text-muted-foreground border-t border-border/20 pt-4">
-                  <p>© 2025 João Filipe Campos Cabrito</p>
-                  <p className="mt-1">Frontend Developer</p>
+                  <p>© 2025 João Cabrito</p>
+                  <p className="mt-1">Software Engineer</p>
                 </div>
               </div>
             </div>

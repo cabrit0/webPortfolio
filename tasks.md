@@ -206,8 +206,9 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 ### 🏗️ Estrutura das Secções Definida
 
 #### 1. 🏠 HOME/HERO *(Já implementada)*
-- [x] **Status**: Completa
-- [x] **Conteúdo**: Nome, título, call-to-actions
+- [x] **Status**: Completa e otimizada
+- [x] **Conteúdo**: Nome (apenas "João Cabrito"), título, call-to-actions
+- [x] **Header limpo**: Removida repetição do nome para evitar redundância
 
 #### 2. 👨‍💻 ABOUT
 - [x] **Intro pessoal** melhorada (mais cativante que o CV)
@@ -217,11 +218,17 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [x] **Mantra**: "Com calma e com alma"
 
 #### 3. 💼 EXPERIENCE & SKILLS
+- [x] **Secção Tecnologias redesenhada** com layout moderno e cores bem escolhidas
+  - [x] Grid 3x3 com 9 tecnologias incluindo Java
+  - [x] Java adicionado: ☕ Backend robusto (vermelho-laranja)
+  - [x] Ícones e descrições para cada tech
+  - [x] Efeitos hover e glow personalizados
+  - [x] Cores realistas: JavaScript (amarelo), Java (vermelho-laranja), Python (azul), etc.
 - [x] **Skills técnicas** (com níveis visuais)
   - [x] Frontend: React, JavaScript, HTML/CSS, Tailwind
   - [x] Backend: Node.js, Express.js, Python, PHP
   - [x] Mobile: Flutter, Dart
-  - [x] Database: MongoDB, SQL
+  - [x] Database: MongoDB, SQL, MySQL, SQLite
   - [x] AI/ML: PyTorch, YOLO, OpenCV
   - [x] Tools: Git, Unity, C#
 - [x] **Experiência profissional** (Dinefer, MobileTec, Horus Gaming)
@@ -239,8 +246,10 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
   - [x] **Gestor de Gastos Financeiros** (Flutter, Dart, SQLite)
   - [x] **Sistema de Gestão de Bilhetes e Viagens** (PHP, MySQL, HTML, CSS)
   - [x] Personal Portfolio (HTML, CSS, Bootstrap, Sass)
-- [x] **Cards interativos** com demos/links
-- [x] **Destaque**: Projeto de AI (reconhecimento visual)
+- [x] **Filtros simplificados**: Apenas por categoria (Web, Mobile, AI)
+- [x] **Cards interativos** com informação completa
+- [x] **Tecnologias completas**: Todas as tecnologias sempre visíveis
+- [x] **Interface limpa**: Removidos filtros de tecnologia e "projeto em destaque"
 - [x] **Diversidade**: Web, Mobile, AI, Backend
 
 #### 5. 📞 CONTACT
@@ -248,6 +257,15 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - [x] **Formulário de contacto** (nome, email, assunto, mensagem)
 - [x] **Links sociais** (LinkedIn, Email)
 - [x] **Disponibilidade** para projetos (imediatamente disponível)
+
+#### 6. 🦶 FOOTER
+- [x] **Footer limpo e profissional** com layout otimizado
+- [x] **Informações essenciais**: Nome, localização, email
+- [x] **Redes sociais centralizadas**: LinkedIn, GitHub, Email
+- [x] **Download CV** integrado no footer
+- [x] **Made with ❤️ by cabrit0** personalizado
+- [x] **Design responsivo** com layout flexível
+- [x] **Removidas redundâncias**: Navegação, tecnologias e theme toggle
 
 ### 🎨 Melhorias de Texto Propostas
 - [ ] **About - Versão melhorada**: Texto mais cativante e storytelling
@@ -259,12 +277,15 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ## 🎥 7. Animações e Interações Avançadas
 
+- [x] **Lenis**: Smooth scrolling ultra-suave implementado
+- [x] **Framer Motion**: Animações de página e componentes
+- [x] **Scroll Progress**: Barra de progresso de scroll
+- [x] **Scroll to Top**: Botão animado para voltar ao topo
+- [x] **Magnetic buttons**: Botões que atraem o cursor
+- [x] **Parallax moderno**: Efeitos de profundidade subtis
+- [x] **Theme transitions**: Transições suaves entre temas
 - [ ] **GSAP ScrollTrigger**: Animações complexas baseadas no scroll
-- [ ] **Framer Motion**: Animações de página e componentes
-- [ ] **Lenis**: Smooth scrolling ultra-suave
 - [ ] **Cursor personalizado**: Cursor que reage aos elementos
-- [ ] **Magnetic buttons**: Botões que atraem o cursor
-- [ ] **Parallax moderno**: Efeitos de profundidade subtis
 - [ ] **Morphing shapes**: Formas que se transformam
 - [ ] **Loading animations**: Skeleton loaders e progress indicators
 - [ ] **Micro-interações**: Feedback em cada ação do utilizador
@@ -275,12 +296,18 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ## 📱 8. Responsividade
 
-- [ ] Garantir que o layout funciona em:
-  - [ ] Mobile (vertical)
-  - [ ] Tablet
-  - [ ] Desktop
-- [ ] Reorganizar secções empilhadas em mobile
-- [ ] Ajustar tamanho de fontes e imagens consoante breakpoints
+- [x] **Mobile-first otimizado**:
+  - [x] Hero section responsivo (text-4xl → text-9xl)
+  - [x] Tecnologias grid adaptativo (2→3→4 colunas)
+  - [x] Projetos grid responsivo (1→2→3 colunas)
+  - [x] Contacto form mobile-friendly
+  - [x] Padding e spacing otimizados
+- [x] Garantir que o layout funciona em:
+  - [x] Mobile (vertical) - Totalmente otimizado
+  - [x] Tablet - Grid adaptativo
+  - [x] Desktop - Layout completo
+- [x] Reorganizar secções empilhadas em mobile
+- [x] Ajustar tamanho de fontes e imagens consoante breakpoints
 
 ---
 
@@ -329,10 +356,11 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 
 ### 12.1. Funcionalidades Core
 
+- [x] **Theme switcher**: Transição cinematográfica dark/light/system
+- [x] **Scroll progress bar**: Barra de progresso animada
+- [x] **Download CV**: Componente funcional com animações
+- [x] **Smooth scrolling**: Lenis integrado com GSAP
 - [ ] **Command Palette** (Cmd+K): Navegação rápida estilo VS Code
-- [ ] **Theme switcher**: Transição cinematográfica dark/light
-- [ ] **Scroll progress bar**: Barra de progresso animada
-- [ ] **Download CV**: PDF gerado dinamicamente
 - [ ] **PWA**: Progressive Web App com offline support
 
 ### 12.2. Funcionalidades Showcase

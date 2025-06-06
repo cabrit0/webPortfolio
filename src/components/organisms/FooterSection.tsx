@@ -81,7 +81,7 @@ const FooterSection = React.forwardRef<HTMLElement, FooterSectionProps>(
     ],
     showTechnologies = true,
     showBackToTop = true,
-    copyright = "© 2025 João Filipe Campos Cabrito. All rights reserved.",
+    copyright = "© 2025 João Cabrito. All rights reserved.",
     className,
     ...props 
   }, ref) => {
@@ -137,22 +137,22 @@ const FooterSection = React.forwardRef<HTMLElement, FooterSectionProps>(
                   {description}
                 </TypographyP>
 
-                {/* Social Links */}
+                {/* Social Links with Official Icons */}
                 <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.filter(social => ['linkedin', 'github', 'mail'].includes(social.platform)).map((social, index) => (
                     <motion.div
                       key={social.platform}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ 
-                        duration: 0.3, 
+                      transition={{
+                        duration: 0.3,
                         delay: index * 0.1,
-                        ease: "easeOut" 
+                        ease: "easeOut"
                       }}
                     >
                       <SocialIcon
-                        platform={social.platform}
+                        platform={social.platform as "github" | "linkedin" | "mail"}
                         href={social.href}
                       />
                     </motion.div>

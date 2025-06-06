@@ -170,31 +170,32 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(
                   </CardContent>
                 </Card>
 
-                {/* Social Links */}
+                {/* Social Links with Original Icons */}
                 <Card className="glass-effect">
                   <CardHeader>
-                    <CardTitle className="text-xl">Connect With Me</CardTitle>
+                    <CardTitle className="text-xl">Conecta Comigo</CardTitle>
                     <CardDescription>
-                      Follow my work and connect on social platforms
+                      Segue o meu trabalho e conecta nas redes sociais
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex justify-center lg:justify-start gap-6">
-                      {socialLinks.map((social, index) => (
+                      {socialLinks.filter(social => ['linkedin', 'github', 'mail'].includes(social.platform)).map((social, index) => (
                         <motion.div
                           key={social.platform}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          transition={{ 
-                            duration: 0.3, 
+                          transition={{
+                            duration: 0.3,
                             delay: index * 0.1,
-                            ease: "easeOut" 
+                            ease: "easeOut"
                           }}
                         >
                           <SocialIcon
-                            platform={social.platform}
+                            platform={social.platform as "github" | "linkedin" | "mail"}
                             href={social.href}
+                            size="xl"
                           />
                         </motion.div>
                       ))}
