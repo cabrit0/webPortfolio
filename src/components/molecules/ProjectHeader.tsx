@@ -23,7 +23,7 @@ export function ProjectHeader({ category, featured }: ProjectHeaderProps) {
             variant="ghost"
             size="lg"
             onClick={() => router.back()}
-            leftIcon={<Icon name="arrowLeft" size="md" />}
+            leftIcon={<Icon name="arrowLeft" size="default" />}
             className="hover:bg-brand-primary/15 hover:text-brand-primary transition-all duration-300 font-medium px-6 py-3"
           >
             Voltar
