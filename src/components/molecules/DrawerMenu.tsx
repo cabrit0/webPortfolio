@@ -256,7 +256,7 @@ export default function DrawerMenu({
                         variant={item.active ? "primary" : "ghost"}
                         size="lg"
                         className={cn(
-                          "w-full justify-start px-8 py-8 text-4xl md:text-5xl font-light transition-all duration-300 group rounded-2xl",
+                          "w-full justify-start px-8 py-6 text-xl md:text-2xl font-light transition-all duration-300 group rounded-2xl",
                           item.active && "text-white glow-effect shadow-lg bg-brand-primary/20",
                           !item.active && "hover:text-brand-primary hover:bg-brand-primary/10 hover:translate-x-6 hover:shadow-lg"
                         )}
