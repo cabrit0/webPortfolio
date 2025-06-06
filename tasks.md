@@ -499,3 +499,190 @@ Desenvolver um webportfolio moderno, visualmente impactante e tecnicamente impre
 - Imports limpos e otimizados
 
 **Build Status:** ✅ **Sucesso** - Projeto compila sem erros
+
+---
+
+## 🎯 17. Divisão da Página "Sobre Mim"
+
+### 17.1. Planeamento e Análise
+- [x] Analisar conteúdo atual da página About (muito densa)
+- [x] Planear divisão estratégica do conteúdo
+- [x] Definir estrutura de navegação com nova página
+
+### 17.2. Implementação da Nova Página "Experiência"
+- [x] Atualizar configuração de navegação (`src/config/navigation.ts`)
+- [x] Criar componente `ExperienceSection` (`src/components/organisms/ExperienceSection.tsx`)
+- [x] Criar página `/experiencia` (`src/app/experiencia/page.tsx`)
+- [x] Adicionar export no index dos organisms
+- [x] Implementar secções técnicas:
+  - [x] Stack tecnológico com TechStack component
+  - [x] Competências por categoria (Frontend, Backend, Mobile/AI, Database/Tools)
+  - [x] Preferências de desenvolvimento com percentagens dinâmicas
+  - [x] Timeline de experiência profissional
+  - [x] Timeline de formação académica
+
+### 17.3. Redistribuição de Conteúdo
+- [x] Remover secções técnicas da página About
+- [x] Manter na página About:
+  - [x] Bio pessoal + Avatar + Stats
+  - [x] O que faço (serviços)
+  - [x] Competências sociais
+  - [x] Mentorias & Rev Up
+  - [x] Call-to-action para página Experiência
+- [x] Mover para página Experiência:
+  - [x] Stack tecnológico completo com competências detalhadas
+  - [x] Linguagens de programação com experiência
+  - [x] Frontend, Backend, Mobile, Database, IA, Ferramentas
+  - [x] Preferências de desenvolvimento com percentagens
+  - [x] Timeline de experiência profissional
+  - [x] Timeline de formação académica
+
+### 17.4. Estrutura Final
+**Página "Sobre Mim"** (mais pessoal):
+- Bio + Avatar + Stats básicas
+- O que faço (serviços especializados)
+- Competências sociais (soft skills)
+- Mentorias & ensino (Rev Up)
+
+**Página "Experiência"** (mais técnica):
+- Stack tecnológico completo
+- Competências técnicas detalhadas
+- Preferências de desenvolvimento
+- Timeline profissional e académica
+
+### 17.5. Verificação e Testes
+- [x] Build passa sem erros
+- [x] Nova página `/experiencia` funcional
+- [x] Navegação atualizada com novo link
+- [x] Design consistente com resto do projeto
+- [x] Testar navegação entre páginas
+- [x] Verificar responsividade
+- [x] Confirmar aspeto visual mantido
+- [x] Conteúdo redistribuído corretamente
+- [x] Call-to-action funcional entre páginas
+
+**Status:** ✅ **Concluído** - Divisão estratégica do conteúdo implementada com sucesso
+
+---
+
+## 🧹 18. Limpeza de Secções Duplicadas na Página Experiência
+
+### 18.1. Problema Identificado
+- [x] Página Experiência tinha secções duplicadas após redistribuição
+- [x] Secção "Competências & Experiência" duplicada
+- [x] Secção "Preferências de Desenvolvimento" duplicada
+
+### 18.2. Solução Implementada
+- [x] Mantida secção "Stack Tecnológico & Competências" (primeira)
+- [x] Mantida secção "Preferências de Desenvolvimento" (primeira)
+- [x] Removida secção "Competências & Experiência" duplicada
+- [x] Removida secção "Preferências de Desenvolvimento" duplicada
+- [x] Mantida secção "Experiência & Formação" (timeline)
+
+### 18.3. Estrutura Final da Página Experiência
+1. ✅ **Stack Tecnológico & Competências** (detalhado por categorias)
+2. ✅ **Preferências de Desenvolvimento** (percentagens dinâmicas)
+3. ✅ **Experiência & Formação** (timeline profissional e académica)
+
+### 18.4. Verificação
+- [x] Build passa sem erros
+- [x] Página funcional sem duplicações
+- [x] Design consistente mantido
+- [x] Performance otimizada (234 kB First Load JS)
+
+**Status:** ✅ **Concluído** - Secções duplicadas removidas com sucesso
+
+---
+
+## ✨ 19. Implementação de Animação Magnetic no Botão CTA
+
+### 19.1. Objetivo
+- [x] Adicionar animação magnetic ao botão "Ver Experiência Completa" na página About
+- [x] Melhorar interatividade e apelo visual do call-to-action principal
+
+### 19.2. Implementação
+- [x] Substituir Button normal por MagneticButton component
+- [x] Configurar magneticStrength para 0.4 (valor otimizado)
+- [x] Manter todas as propriedades visuais existentes (gradiente, glow, ícone)
+- [x] Limpar imports não utilizados
+
+### 19.3. Funcionalidades da Animação Magnetic
+- [x] **Hover Scale**: Botão aumenta para 1.05x ao hover
+- [x] **Magnetic Follow**: Botão segue o cursor com força magnética
+- [x] **Text Animation**: Texto interno tem movimento independente
+- [x] **Elastic Return**: Retorno suave com efeito elástico ao sair do hover
+- [x] **Shimmer Effect**: Mantém efeito shimmer original do botão
+
+### 19.4. Configuração Técnica
+```tsx
+<MagneticButton
+  variant="primary"
+  size="lg"
+  magneticStrength={0.4}
+  leftIcon={<Icon name="briefcase" size="lg" />}
+  onClick={() => window.location.href = '/experiencia'}
+  className="bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-primary/90 hover:to-brand-accent/90 glow-effect shadow-lg"
+>
+  Ver Experiência Completa
+</MagneticButton>
+```
+
+### 19.5. Verificação
+- [x] Build passa sem erros
+- [x] Animação magnetic funcional
+- [x] Design visual mantido
+- [x] Performance otimizada
+- [x] Interatividade melhorada
+
+**Status:** ✅ **Concluído** - Animação magnetic implementada com sucesso
+
+---
+
+## 🔧 20. Correção do Ícone Backend Development
+
+### 20.1. Problema Identificado
+- [x] Ícone do "Backend Development" não aparecia na secção "O que faço" da página About
+- [x] Ícone "code" pode ter conflito ou não estar a renderizar corretamente
+
+### 20.2. Investigação e Solução
+- [x] Verificar disponibilidade do ícone "code" no registro (✅ existe)
+- [x] Testar com ícone "database" temporariamente (funcionou)
+- [x] Adicionar ícone "server" ao registro de ícones (mais apropriado para backend)
+- [x] Implementar ícone "server" para Backend Development
+
+### 20.3. Implementação Técnica
+- [x] **Import**: Adicionar `Server` ao import do Lucide React
+- [x] **Registry**: Adicionar `server: Server` ao iconRegistry
+- [x] **Feature**: Alterar ícone de "code" para "server" no Backend Development
+- [x] **Semântica**: Ícone "server" é mais apropriado para backend que "code"
+
+### 20.4. Código Implementado
+```tsx
+// Icon.tsx - Import
+import { Server } from "lucide-react"
+
+// Icon.tsx - Registry
+const iconRegistry = {
+  // Tech
+  code: Code,
+  palette: Palette,
+  zap: Zap,
+  database: Database,
+  server: Server, // ✅ Novo ícone
+}
+
+// AboutSection.tsx - Feature
+{
+  title: "Backend Development",
+  description: "Building scalable APIs and server-side applications with robust architecture.",
+  icon: "server" // ✅ Ícone corrigido
+}
+```
+
+### 20.5. Verificação
+- [x] Build passa sem erros
+- [x] Ícone "server" renderiza corretamente
+- [x] Design visual consistente mantido
+- [x] Semântica melhorada (server > code para backend)
+
+**Status:** ✅ **Concluído** - Ícone Backend Development corrigido e melhorado

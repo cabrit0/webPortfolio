@@ -9,11 +9,17 @@ export {
 } from "./HeroSection"
 
 // About section
-export { 
+export {
   AboutSection,
   type AboutSectionProps,
-  type Skill 
+  type Skill
 } from "./AboutSection"
+
+// Experience section
+export {
+  ExperienceSection,
+  type ExperienceSectionProps
+} from "./ExperienceSection"
 
 // Projects section
 export { 

@@ -30,15 +30,22 @@ export const navigationConfig: NavigationConfig = {
       description: "Página principal"
     },
     {
-      id: "about", 
+      id: "about",
       label: "Sobre Mim",
       href: "/about",
       icon: "user",
-      description: "Informações pessoais e profissionais"
+      description: "Informações pessoais e serviços"
+    },
+    {
+      id: "experience",
+      label: "Experiência",
+      href: "/experiencia",
+      icon: "star",
+      description: "Competências técnicas e percurso profissional"
     },
     {
       id: "projects",
-      label: "Projetos", 
+      label: "Projetos",
       href: "/#projects",
       icon: "briefcase",
       description: "Portfolio de projetos desenvolvidos"
@@ -46,7 +53,7 @@ export const navigationConfig: NavigationConfig = {
     {
       id: "contact",
       label: "Contacto",
-      href: "/#contact", 
+      href: "/#contact",
       icon: "mail",
       description: "Informações de contacto"
     }

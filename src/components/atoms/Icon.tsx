@@ -41,6 +41,7 @@ import {
   Building,
   Smartphone,
   Database,
+  Server,
   Gamepad2,
   type LucideIcon
 } from "lucide-react"
@@ -89,6 +90,7 @@ const iconRegistry = {
   palette: Palette,
   zap: Zap,
   database: Database,
+  server: Server,
 
   // Engagement
   star: Star,
