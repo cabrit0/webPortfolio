@@ -42,7 +42,7 @@ export interface AboutSectionProps {
 const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
   ({ 
     title = "About Me",
-    description = "I'm a passionate developer with expertise in modern web technologies, AI integration, and creating exceptional user experiences. With a strong background in both frontend and backend development, I bring ideas to life through clean, efficient code.",
+    description = "Sou um desenvolvedor apaixonado especializado em engenharia de software, sistemas inteligentes e desenvolvimento multimédia. Com formação multidisciplinar em programação, bases de dados e sistemas de informação, crio soluções inovadoras que combinam tecnologias modernas com design centrado no utilizador.",
     avatar,
     skills = [
       { name: "React/Next.js", level: 95, category: 'frontend' },
