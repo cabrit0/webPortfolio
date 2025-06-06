@@ -806,70 +806,7 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
             </div>
           </AnimatedSection>
 
-          {/* Social Links Section */}
-          <AnimatedSection animation={fadeInUp} className="mt-20">
-            <div className="text-center mb-12">
-              <GlitchText
-                text="Vamos Conectar"
-                triggerOnHover={true}
-                autoGlitch={false}
-                className="text-4xl font-bold bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent mb-4"
-              />
-              <TypographyP className="text-neutral-400 max-w-2xl mx-auto">
-                Encontra-me nas redes sociais ou entra em contacto diretamente
-              </TypographyP>
-            </div>
 
-            <div className="flex justify-center gap-6">
-              {socialLinks.filter(social => ['linkedin', 'github', 'mail'].includes(social.platform)).map((link, index) => (
-                <motion.div
-                  key={link.platform}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: "easeOut"
-                  }}
-                >
-                  <Card className="glass-effect border-border/30 hover:border-brand-primary/50 transition-all duration-300 overflow-hidden group">
-                    <CardContent className="p-6 text-center relative">
-                      {/* Background gradient effect */}
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                          background: `linear-gradient(135deg, ${link.color}10, ${link.color}05)`
-                        }}
-                      ></div>
-
-                      {/* Social Icon Component */}
-                      <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
-                        <SocialIcon
-                          platform={link.platform as "github" | "linkedin" | "mail"}
-                          href={link.href}
-                          size="2xl"
-                        />
-                      </div>
-
-                      {/* Label */}
-                      <div className="relative z-10">
-                        <p className="text-foreground font-medium group-hover:text-brand-primary transition-colors duration-300">
-                          {link.label}
-                        </p>
-                      </div>
-
-                      {/* Decorative glow */}
-                      <div
-                        className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"
-                        style={{ backgroundColor: link.color }}
-                      ></div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
 
         </div>
       </section>

@@ -139,7 +139,6 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.6 }}
-                  className="hidden md:block"
                 >
                   <Button
                     variant="primary"
@@ -166,7 +165,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   className="p-2 hover:bg-brand-primary/10 transition-colors group"
                 >
                   <Icon name="menu" size="default" className="group-hover:scale-110 transition-transform" />
-                  <span className="hidden md:inline ml-2 font-medium">{labels.navigation.menu}</span>
+                  <span className="ml-2 font-medium">{labels.navigation.menu}</span>
                 </Button>
               </motion.div>
 

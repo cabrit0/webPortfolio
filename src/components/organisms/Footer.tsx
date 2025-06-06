@@ -22,16 +22,16 @@ export function Footer({ className }: FooterProps) {
       color: "hover:text-blue-400"
     },
     {
-      name: "Email",
-      url: `mailto:${personalInfo.email}`,
-      platform: "mail" as const,
-      color: "hover:text-green-400"
-    },
-    {
       name: "GitHub",
       url: "https://github.com/cabrit0",
       platform: "github" as const,
       color: "hover:text-purple-400"
+    },
+    {
+      name: "Email",
+      url: `mailto:${personalInfo.email}`,
+      platform: "mail" as const,
+      color: "hover:text-green-400"
     }
   ]
 
@@ -60,15 +60,23 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           {/* Center Section - Social Links */}
-          <div className="flex gap-4">
-            {socialLinks.map((social) => (
-              <SocialIcon
-                key={social.name}
-                platform={social.platform}
-                href={social.url}
-                size="default"
-              />
-            ))}
+          <div className="text-center">
+            <h3 className="text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-2">
+              Vamos Conectar
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Encontra-me nas redes sociais ou entra em contacto diretamente
+            </p>
+            <div className="flex gap-4 justify-center">
+              {socialLinks.map((social) => (
+                <SocialIcon
+                  key={social.name}
+                  platform={social.platform}
+                  href={social.url}
+                  size="default"
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right Section - Download CV */}
