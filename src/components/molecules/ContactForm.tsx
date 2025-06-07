@@ -47,19 +47,19 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
       const newErrors: Partial<ContactFormData> = {}
 
       if (!formData.name.trim()) {
-        newErrors.name = "Name is required"
+        newErrors.name = "Nome é obrigatório"
       }
 
       if (!formData.email.trim()) {
-        newErrors.email = "Email is required"
+        newErrors.email = "Email é obrigatório"
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = "Please enter a valid email address"
+        newErrors.email = "Por favor insere um email válido"
       }
 
       if (!formData.message.trim()) {
-        newErrors.message = "Message is required"
+        newErrors.message = "Mensagem é obrigatória"
       } else if (formData.message.trim().length < 10) {
-        newErrors.message = "Message must be at least 10 characters long"
+        newErrors.message = "Mensagem deve ter pelo menos 10 caracteres"
       }
 
       setErrors(newErrors)
@@ -78,17 +78,39 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
-      
+
       if (!validateForm()) return
 
       setIsSubmitting(true)
       setSubmitStatus('idle')
 
       try {
-        await onSubmit?.(formData)
+        // Use custom onSubmit if provided, otherwise use our API
+        if (onSubmit) {
+          await onSubmit(formData)
+        } else {
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              message: formData.message
+            })
+          })
+
+          if (!response.ok) {
+            const errorData = await response.json()
+            throw new Error(errorData.error || 'Erro ao enviar mensagem')
+          }
+        }
+
         setSubmitStatus('success')
         setFormData({ name: "", email: "", subject: "", message: "" })
       } catch (error) {
+        console.error('Erro ao enviar formulário:', error)
         setSubmitStatus('error')
       } finally {
         setIsSubmitting(false)
@@ -168,10 +190,10 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
               >
                 <div className="flex items-center gap-2 text-brand-success">
                   <Icon name="check" size="sm" />
-                  <span className="font-medium">Message sent successfully!</span>
+                  <span className="font-medium">Mensagem enviada com sucesso!</span>
                 </div>
                 <p className="text-sm text-brand-success/80 mt-1">
-                  Thank you for reaching out. I&apos;ll get back to you soon.
+                  Obrigado pelo contacto. Vou responder em breve.
                 </p>
               </motion.div>
             )}
@@ -184,10 +206,10 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
               >
                 <div className="flex items-center gap-2 text-brand-danger">
                   <Icon name="x" size="sm" />
-                  <span className="font-medium">Failed to send message</span>
+                  <span className="font-medium">Erro ao enviar mensagem</span>
                 </div>
                 <p className="text-sm text-brand-danger/80 mt-1">
-                  Something went wrong. Please try again or contact me directly.
+                  Algo correu mal. Tenta novamente ou contacta-me diretamente.
                 </p>
               </motion.div>
             )}
@@ -203,20 +225,20 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
               loading={isSubmitting}
               leftIcon={!isSubmitting ? <Icon name="mail" size="sm" /> : undefined}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
             </Button>
 
             {/* Alternative Contact Methods */}
             <div className="text-center space-y-2">
               <p className="text-sm text-muted-foreground">
-                Or reach out directly
+                Ou contacta-me diretamente
               </p>
               <div className="flex justify-center gap-4">
                 <Button
                   variant="ghost"
                   size="sm"
                   leftIcon={<Icon name="mail" size="sm" />}
-                  onClick={() => window.open('mailto:joao@example.com')}
+                  onClick={() => window.open('mailto:cabrit0o.dev@gmail.com')}
                 >
                   Email
                 </Button>

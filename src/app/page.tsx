@@ -14,7 +14,7 @@ import { Header } from "@/components/organisms"
 import { SocialIcon } from "@/components/atoms"
 import { personalInfo, projects } from "@/data/profile"
 import { ProjectFilter, useProjectFilter } from "@/components/molecules/ProjectFilter"
-import { AdvancedDownloadCV } from "@/components/molecules/DownloadCV"
+import { ContactForm } from "@/components/molecules/ContactForm"
 import { getProjectUrl } from "@/lib/project-utils"
 import { getCategoryStyle } from "@/lib/category-styles"
 import Footer from "@/components/organisms/Footer"
@@ -466,90 +466,20 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div className="space-y-3">
-                          <h4 className="font-medium">Redes Sociais</h4>
-                          <div className="flex gap-3">
-                            <SocialIcon
-                              platform="linkedin"
-                              href="https://linkedin.com/in/cabrit0/"
-                              size="default"
-                            />
-                            <SocialIcon
-                              platform="github"
-                              href="https://github.com/cabrit0"
-                              size="default"
-                            />
-                            <SocialIcon
-                              platform="mail"
-                              href={`mailto:${personalInfo.email}`}
-                              size="default"
-                            />
-                          </div>
-                        </div>
+
                       </div>
 
                       {/* Contact Form */}
-                      <div className="space-y-6">
-                        <h3 className="text-xl font-semibold">Enviar Mensagem</h3>
-                        <form className="space-y-4">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                              <label htmlFor="name" className="block text-sm font-medium mb-2">Nome</label>
-                              <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 transition-all"
-                                placeholder="O seu nome"
-                              />
-                            </div>
-                            <div>
-                              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                              <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 transition-all"
-                                placeholder="seu@email.com"
-                              />
-                            </div>
-                          </div>
-                          <div>
-                            <label htmlFor="subject" className="block text-sm font-medium mb-2">Assunto</label>
-                            <input
-                              type="text"
-                              id="subject"
-                              name="subject"
-                              className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 transition-all"
-                              placeholder="Assunto da mensagem"
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="message" className="block text-sm font-medium mb-2">Mensagem</label>
-                            <textarea
-                              id="message"
-                              name="message"
-                              rows={4}
-                              className="w-full px-3 py-2 bg-background/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary/50 resize-none transition-all"
-                              placeholder="A sua mensagem..."
-                            />
-                          </div>
-                          <MagneticButton
-                            type="submit"
-                            variant="primary"
-                            size="lg"
-                            magneticStrength={0.4}
-                            className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700"
-                          >
-                            Enviar Mensagem
-                          </MagneticButton>
-                        </form>
-                      </div>
+                      <ContactForm
+                        variant="minimal"
+                        title="Enviar Mensagem"
+                        description="Preenche o formulário e vou responder o mais brevemente possível."
+                        showSubject={false}
+                        className="border-0 bg-transparent p-0"
+                      />
                     </div>
 
-                    <div className="text-center pt-6 border-t border-border/30">
-                      <AdvancedDownloadCV />
-                    </div>
+
                   </CardContent>
                 </Card>
               </AnimatedSection>
