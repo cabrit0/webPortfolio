@@ -279,7 +279,9 @@ export default function Home() {
                     <div className="flex justify-center">
                       <MagneticButton
                         variant="outline"
-                        magneticStrength={0.3}
+                        size="lg"
+                        magneticStrength={0.5}
+                        className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold border-2 border-brand-accent/60 text-brand-accent hover:bg-brand-accent/15 hover:border-brand-accent hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-500 rounded-2xl backdrop-blur-sm"
                         onClick={() => {
                           // Navigate to about page
                           window.location.href = '/about'
@@ -335,7 +337,10 @@ export default function Home() {
                                     variant="outline"
                                     className={`ml-2 text-xs capitalize ${getCategoryStyle(project.category)}`}
                                   >
-                                    {project.category}
+                                    {project.category === 'ai' ? 'AI' :
+                                     project.category === 'web' ? 'Web' :
+                                     project.category === 'mobile' ? 'Mobile' :
+                                     project.category}
                                   </Badge>
                                 </div>
                                 <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{project.description}</p>

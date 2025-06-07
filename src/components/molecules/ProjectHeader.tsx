@@ -38,7 +38,10 @@ export function ProjectHeader({ category, featured }: ProjectHeaderProps) {
                 getCategoryStyle(category)
               )}
             >
-              {category}
+              {category === 'ai' ? 'AI' :
+               category === 'web' ? 'Web' :
+               category === 'mobile' ? 'Mobile' :
+               category}
             </Badge>
 
             {featured && (

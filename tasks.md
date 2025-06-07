@@ -887,3 +887,88 @@ const categories = React.useMemo(() => {
 - [x] **Design Consistency**: ✅ Visual mantido em todas as resoluções
 
 **Status:** ✅ **Concluído** - Design e layout mobile otimizados com sucesso
+
+---
+
+## 🎨 23. Correção da Cor da Tag AI
+
+### 23.1. Problema Identificado
+- [x] **Problema**: Tag "AI" nos projetos muito similar ao logo do Adobe Illustrator
+- [x] **Risco**: Confusão visual com marca registada da Adobe
+- [x] **Solução**: Manter texto "AI" mas alterar cor para evitar associação
+
+### 23.2. Alteração de Cor Implementada
+- [x] **Cor Anterior**: Laranja (`orange-500/50`, `orange-400`, `orange-500/10`)
+- [x] **Cor Nova**: Cyan (`cyan-500/50`, `cyan-400`, `cyan-500/10`)
+- [x] **Justificação**: Cyan é distintivo e não se confunde com Adobe Illustrator
+
+### 23.3. Ficheiros Atualizados
+
+#### **🎨 Category Styles**
+```tsx
+// category-styles.ts - Cores atualizadas
+export const categoryStyles = {
+  web: "border-blue-500/50 text-blue-400 bg-blue-500/10",
+  mobile: "border-green-500/50 text-green-400 bg-green-500/10",
+  ai: "border-cyan-500/50 text-cyan-400 bg-cyan-500/10", // ✅ Alterado
+  system: "border-purple-500/50 text-purple-400 bg-purple-500/10"
+}
+```
+
+#### **🔧 Category Utils**
+```tsx
+// category-utils.ts - Configuração atualizada
+ai: {
+  label: "AI",
+  color: "text-cyan-400",        // ✅ Alterado de orange para cyan
+  bgColor: "bg-cyan-500/10",     // ✅ Alterado de orange para cyan
+  borderColor: "border-cyan-500/50", // ✅ Alterado de orange para cyan
+  icon: "🤖",
+  description: "Inteligência artificial e machine learning"
+}
+```
+
+#### **📊 Development Preferences**
+```tsx
+// development-preferences.ts - Cor atualizada
+{
+  category: 'ai',
+  percentage: totalPoints > 0 ? Math.round((categoryCounts.ai / totalPoints) * 100) : 0,
+  color: 'text-cyan-400', // ✅ Alterado de orange para cyan
+  label: 'AI'
+}
+```
+
+### 23.4. Locais Onde a Cor é Aplicada
+- [x] **Filtros de Projetos**: Botão "AI" na secção filtrar por categoria
+- [x] **Project Headers**: Badge da categoria nos detalhes do projeto
+- [x] **Project Cards**: Tags de categoria nos cartões de projeto
+- [x] **Development Preferences**: Gráfico de preferências de desenvolvimento
+- [x] **Category Utils**: Sistema centralizado de cores
+
+### 23.5. Comparação Visual
+
+| **Aspecto** | **Antes (Laranja)** | **Depois (Cyan)** |
+|-------------|---------------------|-------------------|
+| **Cor Principal** | `text-orange-400` | `text-cyan-400` |
+| **Background** | `bg-orange-500/10` | `bg-cyan-500/10` |
+| **Border** | `border-orange-500/50` | `border-cyan-500/50` |
+| **Associação** | ❌ Similar ao Adobe Illustrator | ✅ Distintivo e único |
+| **Legibilidade** | ✅ Boa | ✅ Boa |
+| **Contraste** | ✅ Adequado | ✅ Adequado |
+
+### 23.6. Benefícios da Alteração
+- [x] **🎯 Evita Confusão**: Não se confunde com Adobe Illustrator
+- [x] **🎨 Distintivo**: Cor cyan é única no portfolio
+- [x] **⚖️ Legal**: Evita potenciais problemas de marca registada
+- [x] **👁️ Visual**: Mantém boa legibilidade e contraste
+- [x] **🔄 Consistência**: Aplicado em todo o sistema de cores
+
+### 23.7. Verificação de Qualidade
+- [x] **Build Status**: ✅ Sucesso (0 erros)
+- [x] **Cor Aplicada**: ✅ Cyan em todos os componentes
+- [x] **Legibilidade**: ✅ Contraste adequado mantido
+- [x] **Distintividade**: ✅ Não confunde com Adobe Illustrator
+- [x] **Performance**: ✅ Mantida (243 kB First Load JS)
+
+**Status:** ✅ **Concluído** - Cor da tag AI alterada com sucesso para evitar confusão com Adobe Illustrator

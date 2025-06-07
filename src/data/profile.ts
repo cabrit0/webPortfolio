@@ -117,32 +117,32 @@ export const experience: Experience[] = [
   {
     company: "Dinefer, SA",
     position: "Técnico de eletrónica",
-    period: "2023 - Junho 2025",
-    description: "Eletrónica realizada em módulos para teste de cablagem Automóvel. Testes compostos por deteções específicas, Estanqueidade e outras lógicas requeridas por clientes. Trabalhei em regime de trabalhador-estudante, demonstrando capacidade de gestão de tempo e pressão.",
+    period: "2020 - 2025",
+    description: "Eletrónica realizada em módulos para teste de cablagem automóvel. Testes compostos por deteções específicas, estanqueidade e outras lógicas requeridas por clientes. Trabalhei em regime de trabalhador-estudante, demonstrando capacidade de gestão de tempo e pressão.",
     technologies: ["Eletrónica", "Testes Automóveis", "Sistemas de Deteção"],
     type: 'work'
   },
   {
     company: "Dinefer, SA",
     position: "Técnico de pneumática",
-    period: "2022 - 2023",
-    description: "Pneumática realizada em módulos para teste de cablagem Automóvel. Testes compostos por deteções específicas, Estanqueidade e outras.",
+    period: "2017 - 2020",
+    description: "Pneumática realizada em módulos para teste de cablagem automóvel. Testes compostos por deteções específicas, estanqueidade e outras lógicas requeridas por clientes.",
     technologies: ["Pneumática", "Testes Automóveis", "Sistemas de Estanqueidade"],
     type: 'work'
   },
   {
     company: "MobileTec",
     position: "Estágio integrado",
-    period: "Estágio",
-    description: "Reparação de equipamentos eletrônicos, como computadores, smartphones, iPhones e consolas.",
+    period: "2017",
+    description: "Reparação de equipamentos eletrónicos, como computadores, smartphones, iPhones e consolas.",
     technologies: ["Reparação", "Hardware", "Dispositivos Móveis"],
     type: 'internship'
   },
   {
     company: "Horus Gaming Entertainment",
     position: "Estágio integrado",
-    period: "Estágio",
-    description: "Desenvolvimento aplicativos e jogos para Android e iOS usando a linguagem C e o GameEngine Unity. Utilização de ferramentas como Inscape e UnityEngine.",
+    period: "2017",
+    description: "Desenvolvimento de aplicações e jogos para Android e iOS usando a linguagem C e o GameEngine Unity. Utilização de ferramentas como Inkscape e UnityEngine.",
     technologies: ["Unity", "C", "Android", "iOS", "Game Development"],
     type: 'internship'
   }
@@ -153,7 +153,7 @@ export const education: Education[] = [
   {
     institution: "ESTCB - Escola Superior de Tecnologia de Castelo Branco (IPCB)",
     degree: "Licenciatura em Informática e Multimédia",
-    period: "2021 - 2025 (Finalista)",
+    period: "2023 - presente",
     location: "Castelo Branco",
     status: 'in-progress',
     description: "Formação especializada em desenvolvimento de aplicações de software e sistemas de informação, com ênfase em conteúdos multimédia e tecnologias modernas.",
@@ -167,7 +167,7 @@ export const education: Education[] = [
   {
     institution: "IEFP Castelo Branco",
     degree: "Técnico de Informática e Sistemas",
-    period: "Concluído",
+    period: "2016 - 2017",
     location: "Castelo Branco",
     status: 'completed'
   }

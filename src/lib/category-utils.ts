@@ -36,10 +36,10 @@ export const categoryConfigs: Record<string, CategoryConfig> = {
     description: "Aplicações móveis nativas e híbridas"
   },
   ai: {
-    label: "IA & ML",
-    color: "text-orange-400", 
-    bgColor: "bg-orange-500/10",
-    borderColor: "border-orange-500/50",
+    label: "AI",
+    color: "text-cyan-400",
+    bgColor: "bg-cyan-500/10",
+    borderColor: "border-cyan-500/50",
     icon: "🤖",
     description: "Inteligência artificial e machine learning"
   },

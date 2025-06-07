@@ -127,7 +127,7 @@ export function AdvancedDownloadCV({ className }: { className?: string }) {
       <DownloadCV
         variant="outline"
         size="lg"
-        className="border-cyan-400/50 text-cyan-200 hover:bg-cyan-500/10 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-400/20"
+        className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold border-2 border-brand-accent/60 text-brand-accent hover:bg-brand-accent/15 hover:border-brand-accent hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-500 rounded-2xl backdrop-blur-sm"
       >
         <span className="flex items-center gap-2">
           <span>Download CV</span>

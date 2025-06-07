@@ -43,6 +43,7 @@ import {
   Database,
   Server,
   Gamepad2,
+  Maximize,
   type LucideIcon
 } from "lucide-react"
 
@@ -66,6 +67,7 @@ const iconRegistry = {
   search: Search,
   menu: Menu,
   settings: Settings,
+  expand: Maximize,
   
   // Arrows
   arrowRight: ArrowRight,

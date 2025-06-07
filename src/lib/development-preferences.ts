@@ -77,8 +77,8 @@ export function calculateDevelopmentPreferences(): DevelopmentPreference[] {
     {
       category: 'ai',
       percentage: totalPoints > 0 ? Math.round((categoryCounts.ai / totalPoints) * 100) : 0,
-      color: 'text-orange-400',
-      label: 'IA'
+      color: 'text-cyan-400',
+      label: 'AI'
     }
   ]
 

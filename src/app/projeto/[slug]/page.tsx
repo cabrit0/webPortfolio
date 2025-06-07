@@ -8,9 +8,9 @@ import { ProjectHeader } from "@/components/molecules/ProjectHeader"
 import { ProjectActionButtons } from "@/components/molecules/ProjectActionButtons"
 import { SectionHeader } from "@/components/molecules/SectionHeader"
 import { ProjectSection } from "@/components/molecules/ProjectSection"
+import { ProjectGallery } from "@/components/molecules/ProjectGallery"
 import { findProjectBySlug } from "@/lib/project-utils"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
-import Image from "next/image"
 
 interface ProjectPageProps {
   params: Promise<{
@@ -60,20 +60,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             />
           </motion.div>
 
-          {/* Project Image */}
+          {/* Project Gallery */}
           {project.image && (
-            <motion.div variants={fadeInUp} className="relative">
-              <div className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
-            </motion.div>
+            <ProjectGallery
+              images={[project.image]}
+              title={project.title}
+              className="mb-12"
+            />
           )}
 
           {/* Technologies Section */}

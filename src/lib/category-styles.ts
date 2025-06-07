@@ -3,8 +3,8 @@
 
 export const categoryStyles = {
   web: "border-blue-500/50 text-blue-400 bg-blue-500/10",
-  mobile: "border-green-500/50 text-green-400 bg-green-500/10", 
-  ai: "border-orange-500/50 text-orange-400 bg-orange-500/10",
+  mobile: "border-green-500/50 text-green-400 bg-green-500/10",
+  ai: "border-cyan-500/50 text-cyan-400 bg-cyan-500/10",
   system: "border-purple-500/50 text-purple-400 bg-purple-500/10"
 } as const
 

@@ -194,12 +194,12 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                       </TypographyP>
                     </div>
                     <MagneticButton
-                      variant="primary"
+                      variant="outline"
                       size="lg"
-                      magneticStrength={0.4}
+                      magneticStrength={0.5}
                       leftIcon={<Icon name="briefcase" size="lg" />}
                       onClick={() => window.location.href = '/experiencia'}
-                      className="bg-gradient-to-r from-brand-primary to-brand-accent hover:from-brand-primary/90 hover:to-brand-accent/90 glow-effect shadow-lg"
+                      className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold border-2 border-brand-accent/60 text-brand-accent hover:bg-brand-accent/15 hover:border-brand-accent hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-500 rounded-2xl backdrop-blur-sm"
                     >
                       Ver Experiência Completa
                     </MagneticButton>

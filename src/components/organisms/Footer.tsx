@@ -80,8 +80,8 @@ export function Footer({ className }: FooterProps) {
           <div>
             <DownloadCV
               variant="outline"
-              size="sm"
-              className="border-brand-primary/30 hover:border-brand-primary/60 hover:bg-brand-primary/5 hover:text-brand-primary"
+              size="lg"
+              className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold border-2 border-brand-accent/60 text-brand-accent hover:bg-brand-accent/15 hover:border-brand-accent hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-500 rounded-2xl backdrop-blur-sm"
             >
               Download CV
             </DownloadCV>

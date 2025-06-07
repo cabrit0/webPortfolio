@@ -25,7 +25,7 @@ const buttonVariants = cva(
         outline: "border-2 border-brand-primary/50 text-brand-primary hover:bg-brand-primary/10 hover:border-brand-primary hover:shadow-lg hover:shadow-brand-primary/20 hover:scale-[1.02] active:scale-[0.98]",
         
         // Ghost - Subtle hover
-        ghost: "text-foreground hover:bg-accent/10 hover:text-accent-foreground hover:scale-[1.02] active:scale-[0.98]",
+        ghost: "text-foreground hover:bg-brand-primary/10 hover:text-brand-primary hover:scale-[1.02] active:scale-[0.98]",
         
         // Success - Green gradient
         success: "bg-gradient-to-r from-brand-success to-emerald-600 text-white shadow-lg hover:shadow-xl hover:shadow-brand-success/25 hover:scale-[1.02] active:scale-[0.98]",
