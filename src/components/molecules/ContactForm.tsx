@@ -26,8 +26,8 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
   ({ 
     onSubmit,
     className,
-    title = "Get In Touch",
-    description = "Let's discuss your next project or collaboration opportunity.",
+    title = "Vamos Conectar",
+    description = "Vamos discutir o teu próximo projeto ou oportunidade de colaboração.",
     showSubject = true,
     variant = "default",
     ...props 
@@ -137,8 +137,8 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
             {/* Name and Email Row */}
             <div className="grid md:grid-cols-2 gap-4">
               <Input
-                label="Name"
-                placeholder="Your full name"
+                label="Nome"
+                placeholder="O teu nome completo"
                 value={formData.name}
                 onChange={handleInputChange('name')}
                 errorText={errors.name}
@@ -148,7 +148,7 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
               <Input
                 label="Email"
                 type="email"
-                placeholder="your.email@example.com"
+                placeholder="teu.email@exemplo.com"
                 value={formData.email}
                 onChange={handleInputChange('email')}
                 errorText={errors.email}
@@ -160,8 +160,8 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
             {/* Subject (optional) */}
             {showSubject && (
               <Input
-                label="Subject"
-                placeholder="What's this about?"
+                label="Assunto"
+                placeholder="Sobre o que é?"
                 value={formData.subject}
                 onChange={handleInputChange('subject')}
                 errorText={errors.subject}
@@ -172,8 +172,8 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
 
             {/* Message */}
             <Textarea
-              label="Message"
-              placeholder="Tell me about your project, ideas, or just say hello..."
+              label="Mensagem"
+              placeholder="Conta-me sobre o teu projeto, ideias, ou simplesmente diz olá..."
               value={formData.message}
               onChange={handleInputChange('message')}
               errorText={errors.message}

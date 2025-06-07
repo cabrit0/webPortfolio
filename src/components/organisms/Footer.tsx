@@ -95,7 +95,7 @@ export function Footer({ className }: FooterProps) {
               © {currentYear} {personalInfo.name}. Todos os direitos reservados.
             </p>
             <p className="text-xs text-muted-foreground flex items-center justify-center gap-1">
-              Made with <span className="text-red-500 animate-pulse">❤️</span> by{" "}
+              Feito com <span className="text-red-500 animate-pulse">❤️</span> por{" "}
               <span className="font-medium text-brand-primary">cabrit0</span>
             </p>
           </div>

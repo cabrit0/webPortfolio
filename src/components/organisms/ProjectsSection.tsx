@@ -154,7 +154,7 @@ const ProjectsSection = React.forwardRef<HTMLElement, ProjectsSectionProps>(
                 {showSearch && (
                   <div className="w-full lg:w-96">
                     <Input
-                      placeholder="Search projects..."
+                      placeholder="Pesquisar projetos..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       leftIcon={<Icon name="search" size="sm" />}
