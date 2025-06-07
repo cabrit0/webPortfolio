@@ -72,7 +72,7 @@ Tenho uma paixão genuína pela programação e procuro uma mudança de carreira
 É uma vontade, paixão e desejo conseguir encontrar trabalho na área da programação e pôr em prática o que aprendi ao longo desta jornada académica e de autodidatismo.`,
   email: "cabrit0o.dev@gmail.com",
   phone: "(+351) 968 832 178",
-  avatar: "/images/avatar.jpg" // Placeholder
+  avatar: "/images/profile.jpg"
 }
 
 // Technical Skills

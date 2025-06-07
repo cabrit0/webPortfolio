@@ -127,12 +127,12 @@ const AboutSection = React.forwardRef<HTMLElement, AboutSectionProps>(
                 <Avatar
                   src={avatar}
                   fallback="JC"
-                  size="3xl"
+                  size="7xl"
                   border="gradient"
                   interactive
                   className="shadow-2xl shadow-brand-primary/20"
                 />
-                <div className="absolute -inset-4 bg-gradient-to-r from-brand-primary/20 to-brand-accent/20 rounded-full blur-xl -z-10"></div>
+                <div className="absolute -inset-8 bg-gradient-to-r from-brand-primary/30 to-brand-accent/30 rounded-full blur-2xl -z-10"></div>
               </motion.div>
 
               {/* Quick Stats Cards */}

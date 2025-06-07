@@ -26,6 +26,9 @@ const avatarVariants = cva(
         "3xl": "h-24 w-24",
         "4xl": "h-32 w-32",
         "5xl": "h-40 w-40",
+        "6xl": "h-48 w-48",
+        "7xl": "h-56 w-56",
+        "8xl": "h-64 w-64",
       },
       status: {
         none: "",
