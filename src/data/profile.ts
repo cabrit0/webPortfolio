@@ -184,6 +184,13 @@ export const projects: Project[] = [
     category: 'ai',
     featured: true,
     image: "/images/projects/automotive-recognition.jpg",
+    images: [
+      "/images/projects/reconComponentes1.png",
+      "/images/projects/reconComponentes2.png",
+      "/images/projects/reconComponentes3.png",
+      "/images/projects/reconComponentes4.png",
+      "/images/projects/reconComponentes5.png"
+    ],
     githubUrl: "https://github.com/cabrit0/automotive-cable-recognition",
     liveUrl: "https://automotive-recognition-demo.netlify.app",
     features: [
@@ -284,8 +291,9 @@ export const projects: Project[] = [
   },
   {
     title: "Faltas4U",
-    description: "Aplicação desenhada para utilizadores realizarem uma despensa de falta ou Férias. Esta possui sistema de login e roles, assim diferentes layouts e autorizações estão disponíveis consoante a Role (trabalhador, chefia, Recursos Humanos). Acessos diferentes para todos os roles, users independentes e com credenciais devidamente encriptadas.",
-    technologies: ["React", "ChakraUI", "Node.js", "Express.js", "MongoDB"],
+    description: "Sistema completo de gestão de faltas e férias com autenticação baseada em roles, desenvolvido para otimizar processos de recursos humanos e gestão de equipas.",
+    longDescription: "Aplicação web full-stack desenvolvida aplicando princípios de engenharia de software e arquitetura de sistemas de informação. Implementa sistema robusto de autenticação com três níveis de acesso (Trabalhador, Chefia, Recursos Humanos), cada um com interfaces e permissões específicas. A solução integra gestão de utilizadores, aprovação de pedidos, relatórios automáticos e notificações, demonstrando competências em desenvolvimento full-stack e design de sistemas empresariais.",
+    technologies: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     category: 'web',
     featured: true,
     image: "/images/projects/faltas4u.jpg",
@@ -296,22 +304,65 @@ export const projects: Project[] = [
       "/images/projects/ferias4U4.jpg"
     ],
     githubUrl: "https://github.com/cabrit0/FeriasAPP_API",
-    liveUrl: "https://feriasapp.onrender.com/"
+    liveUrl: "https://feriasapp.onrender.com/",
+    features: [
+      "Sistema de autenticação com três níveis de acesso",
+      "Interface adaptativa baseada no role do utilizador",
+      "Gestão completa de pedidos de faltas e férias",
+      "Sistema de aprovação hierárquica",
+      "Relatórios automáticos e dashboard analítico",
+      "Notificações em tempo real",
+      "Encriptação segura de credenciais"
+    ],
+    challenges: [
+      "Implementação de sistema de roles complexo",
+      "Design de interfaces diferenciadas por permissão",
+      "Gestão de estados de aprovação em cascata",
+      "Segurança e encriptação de dados sensíveis"
+    ],
+    learnings: [
+      "Arquitetura de sistemas empresariais",
+      "Gestão avançada de autenticação e autorização",
+      "Design de APIs RESTful escaláveis",
+      "Implementação de workflows de aprovação"
+    ]
   },
   {
     title: "CryptoPartner",
-    description: "A aplicação permite que o usuário veja informações em tempo real sobre criptomoedas, como valores comerciais, entre outros. A utilização de estados/hooks do React tornou a aplicação dinâmica e responsiva.",
-    technologies: ["React", "CSS"],
+    description: "Aplicação web interativa para monitorização de criptomoedas em tempo real, desenvolvida com React e integração de APIs externas para dados financeiros atualizados.",
+    longDescription: "Aplicação frontend desenvolvida aplicando conhecimentos de programação web moderna e integração de APIs. Implementa consumo de dados em tempo real de mercados de criptomoedas, gestão de estado com React Hooks, e interface responsiva para visualização de informações financeiras. O projeto demonstra competências em desenvolvimento frontend, manipulação de dados dinâmicos e design de interfaces para dados financeiros.",
+    technologies: ["React", "CSS", "JavaScript", "API Integration"],
     category: 'web',
     featured: false,
     image: "/images/projects/cryptopartner.jpg",
     githubUrl: "https://github.com/cabrit0/cryptoPartner",
-    liveUrl: "https://crypto-partner.netlify.app/"
+    liveUrl: "https://crypto-partner.netlify.app/",
+    features: [
+      "Monitorização de preços em tempo real",
+      "Interface responsiva e intuitiva",
+      "Integração com APIs de criptomoedas",
+      "Visualização de dados financeiros",
+      "Gestão de estado com React Hooks",
+      "Design adaptativo para diferentes dispositivos"
+    ],
+    challenges: [
+      "Integração eficiente com APIs externas",
+      "Gestão de atualizações em tempo real",
+      "Otimização de performance para dados dinâmicos",
+      "Design responsivo para dados tabulares"
+    ],
+    learnings: [
+      "Consumo e manipulação de APIs REST",
+      "Gestão avançada de estado com React",
+      "Técnicas de otimização de performance",
+      "Design de interfaces para dados financeiros"
+    ]
   },
   {
-    title: "Contact with login system",
-    description: "Projeto criado utilizando JavaScript e MongoDB como banco de dados. A aplicação permite que os usuários façam login, registrem e editem contatos após o login. Este projeto ajudou a compreender o sistema CRUD com a tecnologia MongoDB e Mongoose.",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB"],
+    title: "Sistema de Agenda com Autenticação",
+    description: "Aplicação web full-stack para gestão de contactos com sistema de autenticação segura, implementando operações CRUD completas e arquitetura de base de dados NoSQL.",
+    longDescription: "Sistema de gestão de contactos desenvolvido aplicando fundamentos de engenharia de software e arquitetura de bases de dados. Implementa autenticação de utilizadores, operações CRUD (Create, Read, Update, Delete) completas, e estrutura de dados otimizada com MongoDB. A aplicação demonstra competências em desenvolvimento full-stack, segurança de aplicações web e design de sistemas de informação pessoal.",
+    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB", "Mongoose"],
     category: 'web',
     featured: false,
     image: "/images/projects/contact-system.jpg",
@@ -319,13 +370,34 @@ export const projects: Project[] = [
       "/images/projects/agenda.jpg"
     ],
     githubUrl: "https://github.com/cabrit0/AGENDA",
+    features: [
+      "Sistema de autenticação segura",
+      "Operações CRUD completas para contactos",
+      "Interface intuitiva para gestão de dados",
+      "Validação de dados no frontend e backend",
+      "Estrutura de base de dados otimizada",
+      "Sessões de utilizador persistentes"
+    ],
+    challenges: [
+      "Implementação de autenticação segura",
+      "Design de esquemas de base de dados eficientes",
+      "Validação consistente entre frontend e backend",
+      "Gestão de sessões e estados de utilizador"
+    ],
+    learnings: [
+      "Fundamentos de operações CRUD",
+      "Integração MongoDB com Mongoose",
+      "Princípios de autenticação web",
+      "Arquitetura de aplicações full-stack"
+    ]
   },
   {
     title: "Personal Portfolio",
-    description: "Projeto desenvolvido com o objetivo de exibir meu trabalho na internet de maneira criativa e eficiente.",
-    technologies: ["HTML", "CSS", "Bootstrap", "Sass", "JavaScript"],
+    description: "Portfólio moderno e responsivo desenvolvido com Next.js e TypeScript, apresentando projetos e competências de forma interativa e profissional.",
+    longDescription: "Portfólio web avançado desenvolvido aplicando as mais recentes tecnologias de desenvolvimento frontend. Implementa componentes reutilizáveis, animações fluidas com Framer Motion, design system consistente e otimizações de performance. O projeto demonstra competências em arquitetura de aplicações modernas, design responsivo e experiência do utilizador.",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: 'web',
-    featured: false,
+    featured: true,
     image: "/images/projects/portfolio.jpg",
     images: [
       "/images/projects/webPortfolio1.png",
@@ -335,7 +407,24 @@ export const projects: Project[] = [
       "/images/projects/webPortfolio5.png"
     ],
     githubUrl: "https://github.com/cabrit0/webPortfolio",
-    liveUrl: "https://webportfolio-0prr.onrender.com/"
+    liveUrl: "https://webportfolio-0prr.onrender.com/",
+    features: [
+      "Design system modular com componentes reutilizáveis",
+      "Animações fluidas e interações avançadas",
+      "Galeria de projetos com lightbox responsivo",
+      "Otimização SEO e performance",
+      "Tema dark/light com persistência"
+    ],
+    challenges: [
+      "Implementação de sistema de componentes escalável",
+      "Otimização de animações para diferentes dispositivos",
+      "Gestão de estado complexo para galerias interativas"
+    ],
+    learnings: [
+      "Arquitetura avançada com Next.js 15",
+      "Padrões de design system profissionais",
+      "Otimizações de performance e acessibilidade"
+    ]
   },
   {
     title: "Gestor de Gastos Financeiros",
@@ -377,8 +466,9 @@ export const projects: Project[] = [
   },
   {
     title: "Sistema de Gestão de Bilhetes e Viagens",
-    description: "Sistema de informação empresarial para gestão de transportes, implementando arquitetura de bases de dados relacionais e padrões de desenvolvimento web para gestão completa de bilhetes, rotas e clientes.",
-    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    description: "Sistema de informação empresarial completo para gestão de transportes, implementando arquitetura de bases de dados relacionais e padrões de desenvolvimento web para gestão integrada de bilhetes, rotas e clientes.",
+    longDescription: "Sistema empresarial desenvolvido aplicando princípios de engenharia de software e arquitetura de bases de dados relacionais. Implementa gestão completa de reservas, controlo de rotas, administração de clientes e relatórios financeiros. A solução integra múltiplos módulos empresariais com interface web responsiva, demonstrando competências em desenvolvimento de sistemas de informação complexos e arquitetura de software empresarial.",
+    technologies: ["PHP", "MySQL", "HTML", "CSS"],
     category: 'web',
     featured: true,
     image: "/images/projects/travel-management.jpg",
@@ -390,15 +480,57 @@ export const projects: Project[] = [
       "/images/projects/felixbus5.png"
     ],
     githubUrl: "https://github.com/DevJoseanneGourgel/JoaoCabrito_JoseanneGourgel",
+    features: [
+      "Gestão completa de reservas e bilhetes",
+      "Administração de rotas e horários",
+      "Sistema de gestão de clientes",
+      "Relatórios financeiros e operacionais",
+      "Interface administrativa multi-módulo",
+      "Base de dados relacional otimizada",
+      "Sistema de autenticação e permissões"
+    ],
+    challenges: [
+      "Design de base de dados relacional complexa",
+      "Integração de múltiplos módulos empresariais",
+      "Gestão de transações financeiras",
+      "Otimização de consultas para relatórios"
+    ],
+    learnings: [
+      "Arquitetura de sistemas empresariais",
+      "Design avançado de bases de dados relacionais",
+      "Desenvolvimento web com PHP",
+      "Integração de módulos de negócio complexos"
+    ]
   },
   {
     title: "Gerador de Passwords Seguras",
-    description: "Aplicação web para geração de passwords seguras com diferentes níveis de complexidade, implementando algoritmos de aleatoriedade e critérios de segurança personalizáveis.",
+    description: "Aplicação web frontend para geração de passwords seguras com diferentes níveis de complexidade, implementando algoritmos de aleatoriedade e critérios de segurança personalizáveis.",
+    longDescription: "Aplicação frontend desenvolvida aplicando fundamentos de programação web e princípios de segurança digital. Implementa algoritmos de geração aleatória, validação de critérios de segurança, e interface intuitiva para personalização de passwords. Este projeto inicial demonstra competências em JavaScript vanilla, manipulação do DOM e implementação de lógica de segurança básica.",
     technologies: ["HTML", "CSS", "JavaScript"],
     category: 'web',
     featured: false,
     image: "/images/projects/password-generator.jpg",
     githubUrl: "https://github.com/cabrit0/password-generator",
+    features: [
+      "Geração de passwords com critérios personalizáveis",
+      "Diferentes níveis de complexidade",
+      "Interface simples e intuitiva",
+      "Validação de critérios de segurança",
+      "Algoritmos de aleatoriedade seguros",
+      "Cópia automática para clipboard"
+    ],
+    challenges: [
+      "Implementação de algoritmos de aleatoriedade",
+      "Validação de critérios de segurança",
+      "Design de interface user-friendly",
+      "Manipulação eficiente do DOM"
+    ],
+    learnings: [
+      "Fundamentos de JavaScript vanilla",
+      "Princípios básicos de segurança digital",
+      "Manipulação do DOM e eventos",
+      "Design de interfaces web simples"
+    ]
   }
 ]
 

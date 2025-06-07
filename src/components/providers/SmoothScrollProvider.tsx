@@ -3,7 +3,7 @@
 import { ReactNode, useEffect } from "react"
 import { useSmoothScroll } from "@/hooks/useSmoothScroll"
 import ScrollProgress from "@/components/animations/ScrollProgress"
-import ScrollToTop from "@/components/animations/ScrollToTop"
+import { ScrollToTopAnimated } from "@/components/molecules/ScrollToTopAnimated"
 
 interface SmoothScrollProviderProps {
   children: ReactNode
@@ -40,9 +40,9 @@ export default function SmoothScrollProvider({
         />
       )}
       
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top Animated Button */}
       {showScrollToTop && (
-        <ScrollToTop showAfter={400} />
+        <ScrollToTopAnimated />
       )}
     </>
   )

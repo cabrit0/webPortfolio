@@ -132,8 +132,12 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
                 <Button
                   variant="glass"
                   size="icon"
-                  className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10000] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-2xl"
-                  onClick={closeLightbox}
+                  className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10000] bg-black/90 border-white/40 text-white hover:bg-black/95 transition-colors duration-200 shadow-2xl min-w-[44px] min-h-[44px] touch-manipulation"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    closeLightbox()
+                  }}
                 >
                   <Icon name="x" size="default" />
                 </Button>
@@ -264,14 +268,22 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={closeLightbox}
+              onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                  closeLightbox()
+                }
+              }}
             >
               {/* Close button - Fixed position with mobile optimization */}
               <Button
                 variant="glass"
                 size="icon"
-                className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10000] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-2xl"
-                onClick={closeLightbox}
+                className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10000] bg-black/90 border-white/40 text-white hover:bg-black/95 transition-colors duration-200 shadow-2xl min-w-[44px] min-h-[44px] touch-manipulation"
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  closeLightbox()
+                }}
               >
                 <Icon name="x" size="default" />
               </Button>
@@ -303,8 +315,12 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
                     <Button
                       variant="glass"
                       size="icon"
-                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-[9998] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-xl"
-                      onClick={prevImage}
+                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-[9998] bg-black/90 border-white/40 text-white hover:bg-black/95 transition-colors duration-200 shadow-xl min-w-[44px] min-h-[44px] touch-manipulation"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        prevImage()
+                      }}
                     >
                       <Icon name="chevronLeft" size="default" />
                     </Button>
@@ -312,8 +328,12 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
                     <Button
                       variant="glass"
                       size="icon"
-                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-[9998] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-xl"
-                      onClick={nextImage}
+                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-[9998] bg-black/90 border-white/40 text-white hover:bg-black/95 transition-colors duration-200 shadow-xl min-w-[44px] min-h-[44px] touch-manipulation"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        nextImage()
+                      }}
                     >
                       <Icon name="chevronRight" size="default" />
                     </Button>
@@ -329,17 +349,21 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
 
                 {/* Thumbnail strip */}
                 {images.length > 1 && (
-                  <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[9997] flex gap-1 sm:gap-2 bg-black/80 backdrop-blur-sm rounded-full p-1 sm:p-2 max-w-[90vw] overflow-x-auto">
+                  <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[9997] flex gap-1 sm:gap-2 bg-black/90 backdrop-blur-sm rounded-full p-2 sm:p-3 max-w-[90vw] overflow-x-auto">
                     {images.map((image, index) => (
                       <button
                         key={index}
                         className={cn(
-                          "relative w-8 h-8 sm:w-12 sm:h-12 rounded-lg overflow-hidden transition-all duration-200 flex-shrink-0",
+                          "relative min-w-[40px] min-h-[40px] w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden transition-all duration-200 flex-shrink-0 touch-manipulation",
                           selectedImage === index
                             ? "ring-2 ring-brand-primary scale-110"
                             : "opacity-60 hover:opacity-100"
                         )}
-                        onClick={() => setSelectedImage(index)}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          setSelectedImage(index)
+                        }}
                       >
                         <Image
                           src={image}

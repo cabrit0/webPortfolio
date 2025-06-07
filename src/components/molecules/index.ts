@@ -67,4 +67,7 @@ export { ProjectHeader } from "./ProjectHeader"
 export { ProjectSection } from "./ProjectSection"
 export { SectionHeader } from "./SectionHeader"
 
+// Scroll components
+export { ScrollToTopAnimated } from "./ScrollToTopAnimated"
+
 
