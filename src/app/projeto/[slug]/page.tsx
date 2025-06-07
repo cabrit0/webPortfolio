@@ -61,9 +61,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </motion.div>
 
           {/* Project Gallery */}
-          {project.image && (
+          {(project.images || project.image) && (
             <ProjectGallery
-              images={[project.image]}
+              images={project.images || (project.image ? [project.image] : [])}
               title={project.title}
               className="mb-12"
             />

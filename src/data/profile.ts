@@ -49,6 +49,7 @@ export interface Project {
   githubUrl?: string
   liveUrl?: string
   image?: string
+  images?: string[] // Support for multiple images
   features?: string[]
   challenges?: string[]
   learnings?: string[]
@@ -213,8 +214,15 @@ export const projects: Project[] = [
     category: 'web',
     featured: true,
     image: "/images/projects/job-fair.jpg",
-    githubUrl: "https://github.com/cabrit0/feira-emprego-website",
-    liveUrl: "https://feira-emprego-estcb.netlify.app",
+    images: [
+      "/images/projects/job-fair.jpg",
+      "/images/projects/job-fair2.jpg",
+      "/images/projects/job-fair3.jpg",
+      "/images/projects/job-fair4.jpg",
+      "/images/projects/job-fair5.jpg"
+    ],
+    githubUrl: "https://github.com/cabrit0/site_feiraEmprego_IPCB",
+    liveUrl: "https://cabrit0.github.io/site_feiraEmprego_IPCB/",
     features: [
       "Listagem completa de empresas participantes",
       "Agenda interativa do evento",
@@ -244,8 +252,14 @@ export const projects: Project[] = [
     category: 'web',
     featured: true,
     image: "/images/projects/fitness4u.jpg",
-    githubUrl: "https://github.com/cabrit0/fitness4u",
-    liveUrl: "https://fitness4u-app.netlify.app",
+    images: [
+      "/images/projects/fitness4U1.png",
+      "/images/projects/fitness4U2.png",
+      "/images/projects/fitness4U3.png",
+      "/images/projects/fitness4U4.png"
+    ],
+    githubUrl: "https://github.com/cabrit0/fitness_ai_frontend",
+    liveUrl: "https://fitness4u-n7f4.onrender.com/",
     features: [
       "Sistema completo de autenticação e autorização",
       "Base de dados com mais de 1000 exercícios",
@@ -275,8 +289,14 @@ export const projects: Project[] = [
     category: 'web',
     featured: true,
     image: "/images/projects/faltas4u.jpg",
-    githubUrl: "https://github.com/cabrit0/faltas4u",
-    liveUrl: "https://faltas4u-app.netlify.app"
+    images: [
+      "/images/projects/ferias4U1.png",
+      "/images/projects/ferias4U2.png",
+      "/images/projects/ferias4U3.png",
+      "/images/projects/ferias4U4.jpg"
+    ],
+    githubUrl: "https://github.com/cabrit0/FeriasAPP_API",
+    liveUrl: "https://feriasapp.onrender.com/"
   },
   {
     title: "CryptoPartner",
@@ -285,8 +305,8 @@ export const projects: Project[] = [
     category: 'web',
     featured: false,
     image: "/images/projects/cryptopartner.jpg",
-    githubUrl: "https://github.com/cabrit0/cryptopartner",
-    liveUrl: "https://cryptopartner-app.netlify.app"
+    githubUrl: "https://github.com/cabrit0/cryptoPartner",
+    liveUrl: "https://crypto-partner.netlify.app/"
   },
   {
     title: "Contact with login system",
@@ -295,8 +315,10 @@ export const projects: Project[] = [
     category: 'web',
     featured: false,
     image: "/images/projects/contact-system.jpg",
-    githubUrl: "https://github.com/cabrit0/contact-login-system",
-    liveUrl: "https://contact-system-demo.netlify.app"
+    images: [
+      "/images/projects/agenda.jpg"
+    ],
+    githubUrl: "https://github.com/cabrit0/AGENDA",
   },
   {
     title: "Personal Portfolio",
@@ -305,8 +327,15 @@ export const projects: Project[] = [
     category: 'web',
     featured: false,
     image: "/images/projects/portfolio.jpg",
-    githubUrl: "https://github.com/cabrit0/personal-portfolio",
-    liveUrl: "https://cabrit0-portfolio.netlify.app"
+    images: [
+      "/images/projects/webPortfolio1.png",
+      "/images/projects/webPortfolio2.png",
+      "/images/projects/webPortfolio3.png",
+      "/images/projects/webPortfolio4.png",
+      "/images/projects/webPortfolio5.png"
+    ],
+    githubUrl: "https://github.com/cabrit0/webPortfolio",
+    liveUrl: "https://webportfolio-0prr.onrender.com/"
   },
   {
     title: "Gestor de Gastos Financeiros",
@@ -316,8 +345,13 @@ export const projects: Project[] = [
     category: 'mobile',
     featured: true,
     image: "/images/projects/expense-manager.jpg",
-    githubUrl: "https://github.com/cabrit0/flutter-expense-manager",
-    liveUrl: "https://expense-manager-demo.netlify.app",
+    images: [
+      "/images/projects/gestorGastosFlutter1.png",
+      "/images/projects/gestorGastosFlutter2.png",
+      "/images/projects/gestorGastosFlutter3.png",
+      "/images/projects/gestorGastosFlutter4.png"
+    ],
+    githubUrl: "https://github.com/cabrit0/gestao_gastos",
     features: [
       "Registo de despesas e receitas",
       "Categorização automática de gastos",
@@ -348,8 +382,23 @@ export const projects: Project[] = [
     category: 'web',
     featured: true,
     image: "/images/projects/travel-management.jpg",
-    githubUrl: "https://github.com/cabrit0/travel-management-system",
-    liveUrl: "https://travel-management-demo.netlify.app"
+    images: [
+      "/images/projects/felixbus1.png",
+      "/images/projects/felixbus2.png",
+      "/images/projects/felixbus3.png",
+      "/images/projects/felixbus4.png",
+      "/images/projects/felixbus5.png"
+    ],
+    githubUrl: "https://github.com/DevJoseanneGourgel/JoaoCabrito_JoseanneGourgel",
+  },
+  {
+    title: "Gerador de Passwords Seguras",
+    description: "Aplicação web para geração de passwords seguras com diferentes níveis de complexidade, implementando algoritmos de aleatoriedade e critérios de segurança personalizáveis.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    category: 'web',
+    featured: false,
+    image: "/images/projects/password-generator.jpg",
+    githubUrl: "https://github.com/cabrit0/password-generator",
   }
 ]
 

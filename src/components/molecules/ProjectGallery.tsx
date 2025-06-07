@@ -122,17 +122,17 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
           <AnimatePresence>
             {isLightboxOpen && (
               <motion.div
-                className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm"
+                className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={closeLightbox}
               >
-                {/* Close button - Fixed position */}
+                {/* Close button - Fixed position with mobile optimization */}
                 <Button
                   variant="glass"
                   size="icon"
-                  className="fixed top-6 right-6 z-[60] bg-black/70 border-white/20 text-white hover:bg-black/90 transition-colors duration-200"
+                  className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10000] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-2xl"
                   onClick={closeLightbox}
                 >
                   <Icon name="x" size="default" />
@@ -260,17 +260,17 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
         <AnimatePresence>
           {isLightboxOpen && (
             <motion.div
-              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center"
+              className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeLightbox}
             >
-              {/* Close button - Fixed position */}
+              {/* Close button - Fixed position with mobile optimization */}
               <Button
                 variant="glass"
                 size="icon"
-                className="fixed top-6 right-6 z-[60] bg-black/70 border-white/20 text-white hover:bg-black/90 transition-colors duration-200"
+                className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[10000] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-2xl"
                 onClick={closeLightbox}
               >
                 <Icon name="x" size="default" />
@@ -303,7 +303,7 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
                     <Button
                       variant="glass"
                       size="icon"
-                      className="absolute left-4 top-1/2 -translate-y-1/2 z-[55] bg-black/70 border-white/20 text-white hover:bg-black/90 transition-colors duration-200"
+                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-[9998] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-xl"
                       onClick={prevImage}
                     >
                       <Icon name="chevronLeft" size="default" />
@@ -312,7 +312,7 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
                     <Button
                       variant="glass"
                       size="icon"
-                      className="absolute right-4 top-1/2 -translate-y-1/2 z-[55] bg-black/70 border-white/20 text-white hover:bg-black/90 transition-colors duration-200"
+                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-[9998] bg-black/80 border-white/30 text-white hover:bg-black/90 transition-colors duration-200 shadow-xl"
                       onClick={nextImage}
                     >
                       <Icon name="chevronRight" size="default" />
@@ -322,19 +322,19 @@ const ProjectGallery = React.forwardRef<HTMLDivElement, ProjectGalleryProps>(
 
                 {/* Image counter */}
                 {images.length > 1 && (
-                  <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-[55] bg-black/70 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
+                  <div className="fixed bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 z-[9997] bg-black/80 backdrop-blur-sm rounded-full px-3 py-1 sm:px-4 sm:py-2 text-white text-xs sm:text-sm">
                     {selectedImage + 1} / {images.length}
                   </div>
                 )}
 
                 {/* Thumbnail strip */}
                 {images.length > 1 && (
-                  <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] flex gap-2 bg-black/70 backdrop-blur-sm rounded-full p-2">
+                  <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-[9997] flex gap-1 sm:gap-2 bg-black/80 backdrop-blur-sm rounded-full p-1 sm:p-2 max-w-[90vw] overflow-x-auto">
                     {images.map((image, index) => (
                       <button
                         key={index}
                         className={cn(
-                          "relative w-12 h-12 rounded-lg overflow-hidden transition-all duration-200",
+                          "relative w-8 h-8 sm:w-12 sm:h-12 rounded-lg overflow-hidden transition-all duration-200 flex-shrink-0",
                           selectedImage === index
                             ? "ring-2 ring-brand-primary scale-110"
                             : "opacity-60 hover:opacity-100"
