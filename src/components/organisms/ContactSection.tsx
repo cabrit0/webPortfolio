@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { TypographyH2, TypographyH3, TypographyP } from "@/components/ui/typography"
 import { Button, Icon, SocialIcon, Separator } from "@/components/atoms"
 import { ContactForm, type ContactFormData } from "@/components/molecules"
+import { DownloadCV } from "@/components/molecules/DownloadCV"
 import AnimatedSection from "@/components/animations/AnimatedSection"
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem } from "@/lib/animations"
 
@@ -209,17 +210,13 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(
                     <div className="space-y-4">
                       <TypographyH3 className="text-lg">Quick Actions</TypographyH3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <Button
+                        <DownloadCV
                           variant="outline"
                           className="justify-start hover:text-brand-primary hover:border-brand-primary/50"
-                          leftIcon={<Icon name="download" size="sm" />}
-                          onClick={() => {
-                            // Download CV logic
-                            console.log('Download CV')
-                          }}
+                          showIcon={true}
                         >
                           Download CV
-                        </Button>
+                        </DownloadCV>
                         <Button
                           variant="outline"
                           className="justify-start hover:text-brand-primary hover:border-brand-primary/50"

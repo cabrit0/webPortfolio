@@ -4,7 +4,6 @@ import * as React from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/atoms/Button"
 import { cn } from "@/lib/utils"
-import { personalInfo } from "@/data/profile"
 
 interface DownloadCVProps {
   variant?: "primary" | "secondary" | "accent" | "outline" | "ghost" | "success" | "danger" | "glass"
@@ -14,9 +13,9 @@ interface DownloadCVProps {
   children?: React.ReactNode
 }
 
-export function DownloadCV({ 
-  variant = "outline", 
-  size = "default", 
+export function DownloadCV({
+  variant = "outline",
+  size = "default",
   className,
   showIcon = true,
   children = "Download CV"
@@ -25,18 +24,18 @@ export function DownloadCV({
 
   const handleDownload = async () => {
     setIsDownloading(true)
-    
+
     try {
       // Simulate download process
       await new Promise(resolve => setTimeout(resolve, 1000))
-      
+
       // Create a temporary link to trigger download
       // Using the CabritoCV.pdf file from the project root
       const link = document.createElement('a')
       link.href = '/CabritoCV.pdf' // File in public root
       link.download = 'CabritoCV.pdf'
       link.target = '_blank'
-      
+
       // Fallback: If PDF doesn't exist, show a message
       const response = await fetch(link.href, { method: 'HEAD' })
       if (!response.ok) {
@@ -44,11 +43,11 @@ export function DownloadCV({
         alert('CV estará disponível em breve! Por favor contacte-me diretamente por agora.')
         return
       }
-      
+
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
-      
+
     } catch (error) {
       console.error('Download failed:', error)
       alert('Falha no download. Por favor tente novamente ou contacte-me diretamente.')
@@ -75,8 +74,8 @@ export function DownloadCV({
         {showIcon && (
           <motion.span
             animate={isDownloading ? { rotate: 360 } : { rotate: 0 }}
-            transition={{ 
-              duration: isDownloading ? 1 : 0.3, 
+            transition={{
+              duration: isDownloading ? 1 : 0.3,
               repeat: isDownloading ? Infinity : 0,
               ease: "linear"
             }}
@@ -85,7 +84,7 @@ export function DownloadCV({
             {isDownloading ? "⏳" : "📄"}
           </motion.span>
         )}
-        
+
         <motion.span
           initial={{ opacity: 1 }}
           animate={{ opacity: isDownloading ? 0.7 : 1 }}
@@ -113,9 +112,31 @@ export function AdvancedDownloadCV({ className }: { className?: string }) {
   const [isHovered, setIsHovered] = React.useState(false)
   const [downloadCount, setDownloadCount] = React.useState(0)
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     setDownloadCount(prev => prev + 1)
-    // Trigger download logic here
+
+    try {
+      // Create a temporary link to trigger download
+      const link = document.createElement('a')
+      link.href = '/CabritoCV.pdf' // File in public root
+      link.download = 'CabritoCV.pdf'
+      link.target = '_blank'
+
+      // Check if PDF exists
+      const response = await fetch(link.href, { method: 'HEAD' })
+      if (!response.ok) {
+        alert('CV estará disponível em breve! Por favor contacte-me diretamente por agora.')
+        return
+      }
+
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+    } catch (error) {
+      console.error('Download failed:', error)
+      alert('Falha no download. Por favor tente novamente ou contacte-me diretamente.')
+    }
   }
 
   return (
@@ -124,9 +145,10 @@ export function AdvancedDownloadCV({ className }: { className?: string }) {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <DownloadCV
+      <Button
         variant="outline"
         size="lg"
+        onClick={handleDownload}
         className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold border-2 border-brand-accent/60 text-brand-accent hover:bg-brand-accent/15 hover:border-brand-accent hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-500 rounded-2xl backdrop-blur-sm"
       >
         <span className="flex items-center gap-2">
@@ -138,13 +160,13 @@ export function AdvancedDownloadCV({ className }: { className?: string }) {
             →
           </motion.span>
         </span>
-      </DownloadCV>
+      </Button>
 
       {/* Tooltip */}
       <motion.div
         initial={{ opacity: 0, y: 10, scale: 0.8 }}
-        animate={{ 
-          opacity: isHovered ? 1 : 0, 
+        animate={{
+          opacity: isHovered ? 1 : 0,
           y: isHovered ? -10 : 10,
           scale: isHovered ? 1 : 0.8
         }}

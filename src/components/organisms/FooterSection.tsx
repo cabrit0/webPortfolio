@@ -63,7 +63,7 @@ const FooterSection = React.forwardRef<HTMLElement, FooterSectionProps>(
       {
         title: "Resources",
         links: [
-          { label: "Download CV", href: "/cv.pdf", external: true },
+          { label: "Download CV", href: "/CabritoCV.pdf", external: true },
           { label: "GitHub", href: "https://github.com", external: true },
           { label: "LinkedIn", href: "https://linkedin.com", external: true },
           { label: "Email", href: "mailto:contact@example.com", external: true }

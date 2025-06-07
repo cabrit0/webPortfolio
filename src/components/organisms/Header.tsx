@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { getNavigationWithActive, labels, type NavigationItem } from "@/config/navigation"
 import DrawerMenu from "@/components/molecules/DrawerMenu"
-
+import { DownloadCV } from "@/components/molecules/DownloadCV"
 import { Button, Icon } from "@/components/atoms"
 
 export interface HeaderProps {
@@ -54,21 +54,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
 
 
 
-    const handleCtaClick = () => {
-      if (onCtaClick) {
-        onCtaClick()
-      } else if (ctaHref) {
-        if (ctaHref.startsWith('http')) {
-          window.open(ctaHref, '_blank')
-        } else {
-          // Assume it's a file download
-          const link = document.createElement('a')
-          link.href = ctaHref
-          link.download = ctaLabel
-          link.click()
-        }
-      }
-    }
+
 
     const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen)
     const closeDrawer = () => setIsDrawerOpen(false)
@@ -123,16 +109,15 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.6 }}
                 >
-                  <Button
+                  <DownloadCV
                     variant="primary"
                     size="sm"
-                    onClick={handleCtaClick}
-                    leftIcon={<Icon name="download" size="sm" />}
                     className="glow-effect"
+                    showIcon={true}
                   >
                     <span className="hidden sm:inline">{ctaLabel}</span>
                     <span className="sm:hidden">CV</span>
-                  </Button>
+                  </DownloadCV>
                 </motion.div>
               )}
 
