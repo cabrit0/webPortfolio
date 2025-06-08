@@ -118,7 +118,7 @@ export const experience: Experience[] = [
   {
     company: "Dinefer, SA",
     position: "Técnico de eletrónica",
-    period: "2020 - 2025",
+    period: "2020 - 2026",
     description: "Eletrónica realizada em módulos para teste de cablagem automóvel. Testes compostos por deteções específicas, estanqueidade e outras lógicas requeridas por clientes. Trabalhei em regime de trabalhador-estudante, demonstrando capacidade de gestão de tempo e pressão.",
     technologies: ["Eletrónica", "Testes Automóveis", "Sistemas de Deteção"],
     type: 'work'

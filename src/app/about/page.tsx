@@ -59,7 +59,7 @@ export default function AboutPage() {
   const stats = [
     { label: "Projetos Realizados", value: "9+", icon: "briefcase" },
     { label: "Tecnologias Usadas", value: "17+", icon: "code" },
-    { label: "Ano de Finalização", value: "2025", icon: "star" },
+    { label: "Ano de Finalização", value: "2026", icon: "star" },
     { label: "Experiência Profissional", value: "1 ano", icon: "building" }
   ]
 
