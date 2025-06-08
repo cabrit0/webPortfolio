@@ -42,7 +42,6 @@ const nextConfig = {
   compress: true,
   // Experimental features para performance
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 }
