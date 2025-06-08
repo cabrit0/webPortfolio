@@ -549,7 +549,7 @@ export const technologies = {
 export const socialLinks = [
   {
     platform: "linkedin",
-    href: "https://www.linkedin.com/in/cabrit0dev/",
+    href: "https://www.linkedin.com/in/cabrit0/",
     icon: "linkedin", // Official LinkedIn icon
     color: "#0077B5",
     label: "LinkedIn"
