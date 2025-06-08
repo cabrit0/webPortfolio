@@ -246,7 +246,7 @@ const ContactForm = React.forwardRef<HTMLFormElement, ContactFormProps>(
                   variant="ghost"
                   size="sm"
                   leftIcon={<Icon name="linkedin" size="sm" />}
-                  onClick={() => window.open('https://linkedin.com/in/joao')}
+                  onClick={() => window.open('https://www.linkedin.com/in/cabrit0dev/')}
                 >
                   LinkedIn
                 </Button>

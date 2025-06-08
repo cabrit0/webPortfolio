@@ -17,7 +17,7 @@ export function Footer({ className }: FooterProps) {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/cabrit0/",
+      url: "https://www.linkedin.com/in/cabrit0dev/",
       platform: "linkedin" as const,
       color: "hover:text-blue-400"
     },

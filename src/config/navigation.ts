@@ -76,7 +76,7 @@ export const navigationConfig: NavigationConfig = {
     {
       id: "linkedin",
       label: "LinkedIn",
-      href: "https://linkedin.com/in/cabrit0/",
+      href: "https://www.linkedin.com/in/cabrit0dev/",
       icon: "briefcase",
       external: true,
       description: "Perfil profissional no LinkedIn"
