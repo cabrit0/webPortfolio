@@ -4,6 +4,7 @@ import * as React from "react"
 import { personalInfo } from "@/data/profile"
 
 import { DownloadCV } from "@/components/molecules/DownloadCV"
+import { SplitCVButton } from "@/components/molecules/SplitCVButton"
 import { SocialIcon } from "@/components/atoms"
 import { cn } from "@/lib/utils"
 
@@ -78,13 +79,12 @@ export function Footer({ className }: FooterProps) {
 
           {/* Right Section - Download CV */}
           <div>
-            <DownloadCV
+            <SplitCVButton
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold border-2 border-brand-accent/60 text-brand-accent hover:bg-brand-accent/15 hover:border-brand-accent hover:shadow-2xl hover:shadow-brand-accent/20 transition-all duration-500 rounded-2xl backdrop-blur-sm"
-            >
-              Download CV
-            </DownloadCV>
+              className="w-full sm:w-auto"
+              onDownload={(lang) => console.log(`Footer CV downloaded: ${lang}`)}
+            />
           </div>
         </div>
 

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { getNavigationWithActive, labels, type NavigationItem } from "@/config/navigation"
 import DrawerMenu from "@/components/molecules/DrawerMenu"
 import { DownloadCV } from "@/components/molecules/DownloadCV"
+import { SplitCVButton } from "@/components/molecules/SplitCVButton"
 import { Button, Icon } from "@/components/atoms"
 
 export interface HeaderProps {
@@ -109,15 +110,12 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.6 }}
                 >
-                  <DownloadCV
+                  <SplitCVButton
                     variant="primary"
                     size="sm"
-                    className="glow-effect"
-                    showIcon={true}
-                  >
-                    <span className="hidden sm:inline">{ctaLabel}</span>
-                    <span className="sm:hidden">CV</span>
-                  </DownloadCV>
+                    className="glow-effect px-8"
+                    onDownload={(lang) => console.log(`CV downloaded: ${lang}`)}
+                  />
                 </motion.div>
               )}
 

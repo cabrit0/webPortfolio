@@ -8,6 +8,7 @@ import { TypographyH2, TypographyH3, TypographyP } from "@/components/ui/typogra
 import { Button, Icon, SocialIcon, Separator } from "@/components/atoms"
 import { ContactForm, type ContactFormData } from "@/components/molecules"
 import { DownloadCV } from "@/components/molecules/DownloadCV"
+import { SplitCVButton } from "@/components/molecules/SplitCVButton"
 import AnimatedSection from "@/components/animations/AnimatedSection"
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem } from "@/lib/animations"
 
@@ -210,13 +211,12 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(
                     <div className="space-y-4">
                       <TypographyH3 className="text-lg">Quick Actions</TypographyH3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <DownloadCV
+                        <SplitCVButton
                           variant="outline"
-                          className="justify-start hover:text-brand-primary hover:border-brand-primary/50"
-                          showIcon={true}
-                        >
-                          Download CV
-                        </DownloadCV>
+                          size="default"
+                          className="justify-start"
+                          onDownload={(lang) => console.log(`Contact CV downloaded: ${lang}`)}
+                        />
                         <Button
                           variant="outline"
                           className="justify-start hover:text-brand-primary hover:border-brand-primary/50"

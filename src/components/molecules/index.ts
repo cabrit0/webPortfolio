@@ -70,4 +70,8 @@ export { SectionHeader } from "./SectionHeader"
 // Scroll components
 export { ScrollToTopAnimated } from "./ScrollToTopAnimated"
 
+// CV Download components
+export { DownloadCV } from "./DownloadCV"
+export { SplitCVButton } from "./SplitCVButton"
+
 
