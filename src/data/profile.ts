@@ -328,6 +328,45 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: "Kwiz - Plataforma Educacional de Gestão de Quizzes",
+    description: "Plataforma educacional full-stack com sistema de autenticação JWT e autorização baseada em roles (RBAC). API RESTful modular em Node.js/Express com MongoDB, implementando gestão completa de utilizadores, quizzes, turmas e avaliações.",
+    longDescription: "Plataforma educacional full-stack com sistema de autenticação JWT e autorização baseada em roles (RBAC). API RESTful modular em Node.js/Express com MongoDB, implementando gestão completa de utilizadores, quizzes, turmas e avaliações. Frontend em React/TypeScript com interface responsiva, navegação protegida e gestão de estado com Context API. Sistema multi-role (Admin, Professor, Aluno) com permissões específicas, aprovação de registos, criação dinâmica de quizzes, atribuição de assignments e visualização de estatísticas de desempenho.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT"],
+    category: 'web',
+    featured: true,
+    image: "/images/projects/kwiz1.png",
+    images: [
+      "/images/projects/kwiz1.png",
+      "/images/projects/kwiz2.png",
+      "/images/projects/kwiz3.png",
+      "/images/projects/kwiz4.png",
+      "/images/projects/kwiz5.png"
+    ],
+    features: [
+      "Sistema de autenticação JWT seguro",
+      "Autorização baseada em roles (RBAC) - Admin, Professor, Aluno",
+      "Aprovação de registos de utilizadores",
+      "Criação dinâmica de quizzes com questões personalizadas",
+      "Gestão completa de turmas e atribuição de assignments",
+      "Visualização de estatísticas de desempenho",
+      "Interface responsiva e moderna",
+      "Navegação protegida por roles"
+    ],
+    challenges: [
+      "Implementação de sistema RBAC com três níveis de acesso",
+      "Gestão de estado complexo com Context API",
+      "Design de API RESTful modular e escalável",
+      "Sistema de aprovação de registos com workflow"
+    ],
+    learnings: [
+      "Arquitetura full-stack com React/TypeScript e Node.js",
+      "Implementação avançada de autenticação JWT",
+      "Padrões de autorização baseada em roles",
+      "Gestão de estado com React Context API",
+      "Design de sistemas educacionais multi-utilizador"
+    ]
+  },
+  {
     title: "CryptoPartner",
     description: "Aplicação web interativa para monitorização de criptomoedas em tempo real, desenvolvida com React e integração de APIs externas para dados financeiros atualizados.",
     longDescription: "Aplicação frontend desenvolvida aplicando conhecimentos de programação web moderna e integração de APIs. Implementa consumo de dados em tempo real de mercados de criptomoedas, gestão de estado com React Hooks, e interface responsiva para visualização de informações financeiras. O projeto demonstra competências em desenvolvimento frontend, manipulação de dados dinâmicos e design de interfaces para dados financeiros.",
