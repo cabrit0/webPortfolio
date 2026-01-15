@@ -342,6 +342,7 @@ export const projects: Project[] = [
       "/images/projects/kwiz4.png",
       "/images/projects/kwiz5.png"
     ],
+    liveUrl: "https://angela-ai-livid.vercel.app/",
     features: [
       "Sistema de autenticação JWT seguro",
       "Autorização baseada em roles (RBAC) - Admin, Professor, Aluno",
@@ -364,6 +365,45 @@ export const projects: Project[] = [
       "Padrões de autorização baseada em roles",
       "Gestão de estado com React Context API",
       "Design de sistemas educacionais multi-utilizador"
+    ]
+  },
+  {
+    title: "Cyber Siege: O Protocolo Final",
+    description: "Jogo educacional multiplayer de cibersegurança apresentado a alunos do 9º ano para sensibilização sobre perigos da internet, com mecânicas de ataque vs. defesa em tempo real.",
+    longDescription: "Cyber Siege é uma aplicação web interativa e educacional desenvolvida para sensibilizar alunos do 9º ano de uma escola secundária sobre conceitos de cibersegurança e perigos da internet. O projeto foi apresentado como ferramenta interativa para que os alunos pudessem aprender de forma prática e envolvente. Inspirada na estética cyberpunk, a aplicação simula cenários de cibersegurança num formato 1v1 em tempo real, colocando dois jogadores em papéis opostos — Atacante e Defensor — para simular ameaças do mundo real como phishing, malware, intrusões de rede e engenharia social. O jogo apresenta 11 cenários práticos onde cada ronda é uma corrida contra o relógio que ensina boas práticas de segurança informática de forma gamificada.",
+    technologies: ["React", "Node.js", "Socket.IO", "TailwindCSS", "Express.js", "WebSockets"],
+    category: 'web',
+    featured: true,
+    image: "/images/projects/cyber-siege1.png",
+    images: [
+      "/images/projects/cyber-siege1.png",
+      "/images/projects/cyber-siege2.png",
+      "/images/projects/cyber-siege3.png",
+      "/images/projects/cyber-siege4.png",
+      "/images/projects/cyber-siege5.png"
+    ],
+    githubUrl: "https://github.com/cabrit0/cyber-siege",
+    liveUrl: "https://cyber-siege.vercel.app/",
+    features: [
+      "Multiplayer em tempo real via WebSockets (Socket.IO)",
+      "Sistema de salas com códigos partilháveis para jogos 1v1",
+      "11 cenários temáticos: Phishing, Tailgating, Ransomware, Roubo de Identidade, Fake News, etc.",
+      "Mecânica de ataque/defesa com temporizador",
+      "Feedback pedagógico e explicação educativa das respostas",
+      "Design cyberpunk com animações dinâmicas e estética neon",
+      "Seleção de papel (Atacante/Defensor)"
+    ],
+    challenges: [
+      "Implementação de comunicação em tempo real com Socket.IO",
+      "Sincronização de estado de jogo entre dois jogadores",
+      "Design de mecânicas de jogo equilibradas para atacante e defensor",
+      "Criação de cenários educativos realistas de cibersegurança"
+    ],
+    learnings: [
+      "Arquitetura de aplicações multiplayer em tempo real",
+      "Integração de WebSockets com React e Node.js",
+      "Design de sistemas de gamificação educacional",
+      "Desenvolvimento de interfaces cyberpunk imersivas"
     ]
   },
   {
